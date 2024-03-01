@@ -21,6 +21,11 @@ Route::get('/pelatihan', function() {
     return view('pelatihan');
 });
 
+<<<<<<< HEAD
 Route::get('/login', function() {
     return view('login');
+=======
+Route::get('/register', function(){
+    return view('register');
+>>>>>>> 0b67fa27bded0e2eeb07b3ddb193a9e3f7ff06a9
 });
