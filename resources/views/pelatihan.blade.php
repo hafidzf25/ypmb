@@ -15,7 +15,6 @@
             <option value="SMA">SMA</option>
         </select>
     </div>
-<<<<<<< HEAD
     @for ($i = 1; $i <= 2; $i++)
     <div class="container" style="align: center;">
         <div class="row justify-content-center row-cols-1 row-cols-md-4 g-4" style="padding-bottom: 2em">
@@ -67,6 +66,4 @@
             </div>
         </div>
     </div>
-=======
->>>>>>> a8af9c679d4cc20dc563cc2c31d6f394a33cd316
 @endsection
