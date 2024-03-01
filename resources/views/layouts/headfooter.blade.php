@@ -52,7 +52,7 @@
 
       @yield('content')
       
-      <div class="container-fluid" style="padding: 3em; background-color: #38B6FF; color: white;">
+      <div class="container-fluid" style="padding: 3em; background-color: #38B6FF; color: white; margin-top: 1em;">
         <div class="row align-items-center">
           <div class="col-4">
             <span id="cerdas">Cerdas</span>

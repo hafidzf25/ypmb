@@ -43,3 +43,17 @@ body {
 .carousel-pelatihan-img {
     height: 10em;
 }
+
+
+
+
+
+/* Pelatihan Page */
+
+.judul-radius {
+    border-radius: 0 0 3em 3em; /* Atas kiri, atas kanan, bawah kanan, bawah kiri */
+    background-color: #38B6FF;
+    padding: 3em;
+    font-weight: 900;
+    color: white;
+}
