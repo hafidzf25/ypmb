@@ -34,15 +34,16 @@
                   Jenjang
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">SD</a></li>
-                  <li><a class="dropdown-item" href="#">SMP</a></li>
-                  <li><a class="dropdown-item" href="#">SMA</a></li>
+                  <li><a class="dropdown-item" href="#">Raudaltul Athfal</a></li>
+                  <li><a class="dropdown-item" href="#">Madrasah Ibtidaiyah</a></li>
+                  <li><a class="dropdown-item" href="#">Madrasah Tsanawiyah</a></li>
+                  <li><a class="dropdown-item" href="#">Madrasah Aliyah</a></li>
                 </ul>
               </li>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-4 custom-rounded search-custom-width" type="search" placeholder="Cari Pelatihan" aria-label="Search">
-              <button class="btn btn-info text-white custom-rounded custom-width" type="submit">Masuk</button>
+              <a href="{{ url('login') }}" class="btn btn-info text-white custom-rounded custom-width">Masuk</a>
             </form>
           </div>
         </div>
