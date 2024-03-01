@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row custom-rounded" style="padding:2em; border: 1px black solid; margin-left:27em; margin-right:27em; margin-top:5em; margin-bottom:5em; box-shadow: 0 0 5px rgba(0,0,0,0.5);">
+        <div class="row custom-rounded" style="padding:2em; border: 1px black solid; margin-left:25em; margin-right:25em; margin-top:5em; margin-bottom:5em; box-shadow: 0 0 5px rgba(0,0,0,0.5);">
             <div class="col text-center" style="padding-top: 2em;">
                 <h1>DAFTAR</h1>
             </div>
