@@ -15,6 +15,4 @@
             <option value="SMA">SMA</option>
         </select>
     </div>
-    
-
 @endsection
