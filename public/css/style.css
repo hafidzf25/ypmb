@@ -1,0 +1,45 @@
+body {
+    font-family: 'Montserrat';
+}
+
+#cerdas{
+    font-family: "Aladin", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+.custom-rounded {
+    border-radius: 30px; /* Atur nilai radius sesuai keinginan */
+}
+.custom-width {
+    padding-left: 18px; /* Atur padding sesuai kebutuhan */
+    padding-right: 18px; /* Atur padding sesuai kebutuhan */
+}
+.card-width {
+    padding-left: 3em; /* Atur padding sesuai kebutuhan */
+    padding-right: 3em; /* Atur padding sesuai kebutuhan */
+}
+.search-custom-width {
+    width: 250px; /* Input box memanjang untuk mengisi ruang yang tersedia */
+}
+.navbar-custom {
+    padding-left: 50px; /* Atur padding kiri */
+    padding-right: 50px; /* Atur padding kanan */
+    background-color: white;
+}
+.custom-inner-shadow {
+    box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.2); /* Mengatur efek bayangan dalam */
+}
+.carousel-container {
+    background-color: #38B6FF; /* Atur warna latar belakang menjadi biru */
+    padding: 30px; /* Tambahkan padding sesuai kebutuhan */
+    border-radius: 25px; /* Atur nilai radius sesuai keinginan */
+}
+.carousel-img-radius {
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Atur bayangan sesuai kebutuhan */
+}
+
+.carousel-pelatihan-img {
+    height: 10em;
+}
