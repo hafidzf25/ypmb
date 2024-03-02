@@ -44,7 +44,11 @@
                                 <img src="star.png" alt=""> 4.8
                             </p>
                             <div style="text-align: center;">
-                                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
+                                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
+                                    <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white">
+                                        Lihat Selengkapnya
+                                    </a>
+                                </button>
                             </div>  
                         </div>
                     </div>
