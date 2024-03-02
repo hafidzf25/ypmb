@@ -21,7 +21,7 @@
                     <div class="card">
                         <img src="{{ asset('images/cards-2.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
                         <div class="card-body">
-                        <h5 class="card-title" style="font-weight: bolder;">{{ $pelatihan->nama_pelatihan }}</h5>
+                            <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($pelatihan->nama_pelatihan, 39) }}</h5>
                         <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
                             <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
                             <img src="kalender.png" alt=""> {{ $pelatihan->tanggal_awal }} - {{ $pelatihan->tanggal_akhir }}
