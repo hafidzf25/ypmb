@@ -57,7 +57,7 @@
             Pelatihan Populer
           </div>
           <div class="col text-end" style="font-weight: bolder; font-size: 1.2em;">
-            <a href="" style="text-decoration: none; color: inherit;">
+            <a href="{{ url('pelatihan') }}" style="text-decoration: none; color: inherit;">
               Lihat Semua
             </a>
           </div>
