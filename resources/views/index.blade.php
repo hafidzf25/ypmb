@@ -40,7 +40,7 @@
         </div>
       </div>
       
-      <div class="container-fluid" style="padding: 35px;">
+      <div class="container-fluid" style="padding: 1vh;">
         <div class="row">
           <div class="col-6" style="font-weight: bolder; font-size: 28px;">
             <img src="{{ asset('images/about-cerdas.png') }}" alt="" style="max-width: 100%; height: auto;">
