@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PelatihanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +28,5 @@ Route::get('/login', function() {
 Route::get('/register', function(){
     return view('register');
 });
+
+Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');

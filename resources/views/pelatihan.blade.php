@@ -16,15 +16,15 @@
     </div>
     <div class="container" style="align: center;">
         <div class="row justify-content-center row-cols-1 row-cols-md-4 g-4" style="padding-bottom: 2em">
-            @for ($j = 1; $j <= 6; $j++)
+            @foreach ($data as $pelatihan)
                 <div class="col" style="margin: 0em 3.43em 2em 3.43em">
                     <div class="card">
                         <img src="{{ asset('images/cards-2.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
                         <div class="card-body">
-                        <h5 class="card-title" style="font-weight: bolder;">Pelatihan Deteksi Dini: Analisa...</h5>
+                        <h5 class="card-title" style="font-weight: bolder;">{{ $pelatihan->nama_pelatihan }}</h5>
                         <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
                             <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
-                            <img src="kalender.png" alt=""> 16 Feb 2024 - 19 Feb 2024
+                            <img src="kalender.png" alt=""> {{ $pelatihan->tanggal_awal }} - {{ $pelatihan->tanggal_akhir }}
                         </p>
                         <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
                             <i class="bi bi-people-fill" style="color: #38B6FF"></i>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     <div class="row" style="margin: 0em 10em 0em 1em;">
