@@ -40,7 +40,7 @@
         </div>
       </div>
       
-      <div class="container-fluid" style="padding: 35px;">
+      <div class="container-fluid" style="padding: 1vh;">
         <div class="row">
           <div class="col-6" style="font-weight: bolder; font-size: 28px;">
             <img src="{{ asset('images/about-cerdas.png') }}" alt="" style="max-width: 100%; height: auto;">
@@ -83,7 +83,11 @@
                 <img src="star.png" alt=""> 4.8
             </p>
             <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
+                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
+                  <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white;">
+                    Lihat Selengkapnya
+                  </a>
+                </button>
             </div>  
             </div>
           </div>
@@ -106,8 +110,12 @@
                 <img src="star.png" alt=""> 4.8
             </p>
             <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
-            </div>  
+                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
+                  <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white;">
+                    Lihat Selengkapnya
+                  </a>
+                </button>
+            </div>    
             </div>
           </div>
         </div>
@@ -129,7 +137,11 @@
                 <img src="star.png" alt=""> 4.8
             </p>
             <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
+                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
+                  <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white;">
+                    Lihat Selengkapnya
+                  </a>
+                </button>
             </div>  
             </div>
           </div>
@@ -152,7 +164,11 @@
                 <img src="star.png" alt=""> 4.8
             </p>
             <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
+                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
+                  <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white;">
+                    Lihat Selengkapnya
+                  </a>
+                </button>
             </div>  
             </div>
           </div>
