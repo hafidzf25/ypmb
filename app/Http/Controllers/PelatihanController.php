@@ -14,7 +14,7 @@ class PelatihanController extends Controller
             ->when($search, function ($query, $search) {
                 return $query->where('nama_pelatihan', 'like', '%' . $search . '%');
             })
-            ->paginate(10);
+            ->paginate(3);
 
         $title = "Pelatihan"; // Set the title
 
