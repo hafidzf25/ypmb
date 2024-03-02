@@ -41,10 +41,13 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-4 custom-rounded search-custom-width" type="search" placeholder="Cari Pelatihan" aria-label="Search">
-              <a href="{{ url('login') }}" class="btn btn-info text-white custom-rounded custom-width">Masuk</a>
-            </form>
+            @if(!(request()->is('login') || request()->is('register')))
+              <!-- Konten yang ingin ditampilkan jika halaman selain login dan register sedang dibuka -->
+              <form class="d-flex" role="search">
+                <input class="form-control me-4 custom-rounded search-custom-width" type="search" placeholder="Cari Pelatihan" aria-label="Search">
+                <a href="{{ url('login') }}" class="btn btn-info text-white custom-rounded custom-width">Masuk</a>
+              </form>
+            @endif
           </div>
         </div>
       </nav>
