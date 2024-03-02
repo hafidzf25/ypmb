@@ -1,4 +1,4 @@
-@extends('layouts.headfooter')
+@extends('layouts.headfooter', ['title'=>'Home'])
 
 @section('content')
     <div class="container-fluid" style="padding-left: 3em; padding-right: 3em; padding-bottom: 1em;">

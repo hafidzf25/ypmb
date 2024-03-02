@@ -65,14 +65,26 @@
                     <li>Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.</li>
                 </ol>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 m-3" style="padding-right:0; padding-left:0; height: 300px; box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); border-radius: 20px; font-weight:bold">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 m-3" style="padding-right:0; padding-left:0; height: auto; box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); border-radius: 20px; font-weight:bold">
                 <div class="col" style="background-color: #38B6FF; color:white; padding:2.5vh; border-radius: 20px 20px 0 0; ">
                     Modul Pelatihan
                 </div>
-                <div class="col text-center">
+                <div class="col text-center mt-3">
                     <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
                         <span>
                             Section 1 : Pendahuluan           
+                            <i class="bi bi-caret-down-fill"></i>
+                        </span>
+                    </button>
+                    <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
+                        <span>
+                            Section 2 : Kelompok Dasar           
+                            <i class="bi bi-caret-down-fill"></i>
+                        </span>
+                    </button>
+                    <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
+                        <span>
+                            Section 3 : Kelompok Inti        
                             <i class="bi bi-caret-down-fill"></i>
                         </span>
                     </button>

@@ -1,4 +1,4 @@
-@extends('layouts.headfooter')
+@extends('layouts.headfooter', ['title'=>'Pelatihan'])
 
 @section('content')
     <div class="container-fluid judul-radius">
@@ -28,7 +28,7 @@
             @foreach ($data as $pelatihan)
                 <div class="col" style="margin: 0em 3.43em 2em 3.43em">
                     <div class="card">
-                        <img src="images/pelatihan{{ $pelatihan->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
+                        <img src="images/pelatihan/{{ $pelatihan->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
                         <div class="card-body">
                             <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($pelatihan->nama_pelatihan, 30) }}</h5>
                             <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
@@ -44,7 +44,11 @@
                                 <img src="star.png" alt=""> 4.8
                             </p>
                             <div style="text-align: center;">
-                                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
+                                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
+                                    <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white">
+                                        Lihat Selengkapnya
+                                    </a>
+                                </button>
                             </div>  
                         </div>
                     </div>
