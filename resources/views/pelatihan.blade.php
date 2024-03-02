@@ -33,7 +33,7 @@
                             <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($pelatihan->nama_pelatihan, 30) }}</h5>
                             <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
                                 <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
-                                <img src="kalender.png" alt=""> {{ $pelatihan->tanggal_awal }} - {{ $pelatihan->tanggal_akhir }}
+                                <img style="max-width: 100%;" src="kalender.png" alt=""> {{ $pelatihan->tanggal_awal }} - {{ $pelatihan->tanggal_akhir }}
                             </p>
                             <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
                                 <i class="bi bi-people-fill" style="color: #38B6FF"></i>
