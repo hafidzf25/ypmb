@@ -1,4 +1,4 @@
-@extends('layouts.headfooter')
+@extends('layouts.headfooter', ['title'=>'Login'])
 
 @section('content')
     <div class="container-fluid" style="display: flex; justify-content: center; align-items: center; height: 120vh; padding: 3em 3em 1em;">
