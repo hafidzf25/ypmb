@@ -16,7 +16,7 @@
         </select>
     </div>
     <div class="container" style="align: center;">
-        <div class="row justify-content-center row-cols-1 row-cols-md-4 g-4" style="padding-bottom: 2em">
+        <div class="row justify-content-center row-cols-md-4 g-4" style="padding-bottom: 2em">
             @for ($j = 1; $j <= 6; $j++)
                 <div class="col" style="margin: 0em 3.43em 2em 3.43em">
                     <div class="card">
@@ -36,7 +36,9 @@
                             <img src="star.png" alt=""> 4.8
                         </p>
                         <div style="text-align: center;">
-                            <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
+                            <button class="btn btn-info text-white custom-rounded card-width" type="submit">
+                                <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color: white">Lihat Selengkapnya</a>
+                            </button>
                         </div>  
                         </div>
                     </div>
