@@ -8,8 +8,8 @@
             </div>
             <div class="col-auto">
                 <form action="{{ route('pelatihan') }}" method="GET" class="input-group" style="margin-top: 50px;">
-                    <input type="text" name="search" class="form-control me-4 custom-rounded search-custom-width" placeholder="Cari Pelatihan" aria-label="Search">
-                    <button type="submit" class="btn custom-rounded" style="background-color: #FEAD01">Cari</button>
+                    <input type="text" name="search" class="form-control custom-rounded search-custom-width" placeholder="Cari Pelatihan" aria-label="Search" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                    <button type="submit" class="btn custom-rounded" style="background-color: #FEAD01; border-top-left-radius: 0; border-bottom-left-radius: 0;">Cari</button>
                 </form>
             </div>
         </div>
