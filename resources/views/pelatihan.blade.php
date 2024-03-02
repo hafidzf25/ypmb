@@ -28,7 +28,7 @@
             @foreach ($data as $pelatihan)
                 <div class="col" style="margin: 0em 3.43em 2em 3.43em">
                     <div class="card">
-                        <img src="{{ asset('images/cards-2.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
+                        <img src="images/pelatihan{{ $pelatihan->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
                         <div class="card-body">
                             <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($pelatihan->nama_pelatihan, 30) }}</h5>
                             <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
