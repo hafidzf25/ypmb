@@ -1,4 +1,4 @@
-@extends('layouts.headfooter')
+@extends('layouts.headfooter', ['title'=>'Home'])
 
 @section('content')
     <div class="container-fluid" style="padding-left: 3em; padding-right: 3em; padding-bottom: 1em;">
@@ -57,7 +57,7 @@
             Pelatihan Populer
           </div>
           <div class="col text-end" style="font-weight: bolder; font-size: 1.2em;">
-            <a href="" style="text-decoration: none; color: inherit;">
+            <a href="{{ url('pelatihan') }}" style="text-decoration: none; color: inherit;">
               Lihat Semua
             </a>
           </div>

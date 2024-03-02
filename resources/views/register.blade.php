@@ -1,4 +1,4 @@
-@extends ('layouts.headfooter')
+@extends('layouts.headfooter', ['title'=>'Register'])
 
 @section('content')
     <div class="container-fluid">
