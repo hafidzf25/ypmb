@@ -65,113 +65,35 @@
       </div>
 
       <div class="row row-cols-1 row-cols-md-4 g-4" style="padding: 2em;">
+        @foreach ($data as $index)
         <div class="col">
           <div class="card">
-            <img src="{{ asset('images/cards-1.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
+            <img src="images/pelatihan/{{ $index->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
             <div class="card-body">
-            <h5 class="card-title" style="font-weight: bolder;">Pelatihan Deteksi Dini: Analisa...</h5>
-            <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
-                <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
-                <img src="kalender.png" alt=""> 16 Feb 2024 - 19 Feb 2024
-            </p>
-            <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
-                <i class="bi bi-people-fill" style="color: #38B6FF"></i>
-                <img src="people.png" alt=""> Peserta 4077
-            </p>
-            <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-                <i class="bi bi-star-fill" style="color: #38B6FF"></i>
-                <img src="star.png" alt=""> 4.8
-            </p>
-            <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
-                  <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white;">
-                    Lihat Selengkapnya
-                  </a>
-                </button>
-            </div>  
+                <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($index->nama_pelatihan, 30) }}</h5>
+                <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
+                    <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
+                    <img src="kalender.png" alt=""> {{ $index->tanggal_awal }} - {{ $index->tanggal_akhir }}
+                </p>
+                <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
+                    <i class="bi bi-people-fill" style="color: #38B6FF"></i>
+                    <img src="people.png" alt=""> Peserta 4077
+                </p>
+                <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
+                    <i class="bi bi-star-fill" style="color: #38B6FF"></i>
+                    <img src="star.png" alt=""> 4.8
+                </p>
+                <div style="text-align: center;">
+                    <button class="btn btn-info text-white custom-rounded card-width" type="submit">
+                        <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white">
+                            Lihat Selengkapnya
+                        </a>
+                    </button>
+                </div>  
             </div>
-          </div>
         </div>
-        <div class="col">
-          <div class="card">
-            <img src="{{ asset('images/cards-2.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
-            <div class="card-body">
-            <h5 class="card-title" style="font-weight: bolder;">Pelatihan Deteksi Dini: Analisa...</h5>
-            <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
-                <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
-                <img src="kalender.png" alt=""> 16 Feb 2024 - 19 Feb 2024
-            </p>
-            <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
-                <i class="bi bi-people-fill" style="color: #38B6FF"></i>
-                <img src="people.png" alt=""> Peserta 4077
-            </p>
-            <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-                <i class="bi bi-star-fill" style="color: #38B6FF"></i>
-                <img src="star.png" alt=""> 4.8
-            </p>
-            <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
-                  <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white;">
-                    Lihat Selengkapnya
-                  </a>
-                </button>
-            </div>    
-            </div>
-          </div>
         </div>
-        <div class="col">
-          <div class="card">
-            <img src="{{ asset('images/cards-2.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
-            <div class="card-body">
-            <h5 class="card-title" style="font-weight: bolder;">Pelatihan Deteksi Dini: Analisa...</h5>
-            <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
-                <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
-                <img src="kalender.png" alt=""> 16 Feb 2024 - 19 Feb 2024
-            </p>
-            <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
-                <i class="bi bi-people-fill" style="color: #38B6FF"></i>
-                <img src="people.png" alt=""> Peserta 4077
-            </p>
-            <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-                <i class="bi bi-star-fill" style="color: #38B6FF"></i>
-                <img src="star.png" alt=""> 4.8
-            </p>
-            <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
-                  <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white;">
-                    Lihat Selengkapnya
-                  </a>
-                </button>
-            </div>  
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="{{ asset('images/cards-1.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
-            <div class="card-body">
-            <h5 class="card-title" style="font-weight: bolder;">Pelatihan Deteksi Dini: Analisa...</h5>
-            <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
-                <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
-                <img src="kalender.png" alt=""> 16 Feb 2024 - 19 Feb 2024
-            </p>
-            <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
-                <i class="bi bi-people-fill" style="color: #38B6FF"></i>
-                <img src="people.png" alt=""> Peserta 4077
-            </p>
-            <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-                <i class="bi bi-star-fill" style="color: #38B6FF"></i>
-                <img src="star.png" alt=""> 4.8
-            </p>
-            <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">
-                  <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white;">
-                    Lihat Selengkapnya
-                  </a>
-                </button>
-            </div>  
-            </div>
-          </div>
+        @endforeach
         </div>
       </div>
 @endsection

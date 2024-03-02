@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Pelatihan;
+use App\Models\Index;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -10,13 +10,13 @@ class IndexController extends Controller
     {
         $search = $request->input('search');
         
-        $data = Pelatihan::select('id_pelatihan', 'nama_pelatihan', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul', 'id_jenjang')
+        $data = Index::select('id_pelatihan', 'nama_pelatihan', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul', 'id_jenjang')
             ->when($search, function ($query, $search) {
                 return $query->where('nama_pelatihan', 'like', '%' . $search . '%');
             })
             ->paginate(4);
 
-        $title = "index"; // Set the title
+        $title = "Index"; // Set the title
 
         return view('index', compact('data', 'title'));
     }
