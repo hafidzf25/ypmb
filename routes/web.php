@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PelatihanController;
+use App\Http\Controllers\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,4 +35,4 @@ Route::get('/register', function(){
 });
 
 Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
-Route::get('/index', [PelatihanController::class, 'index'])->name('index');
+Route::get('/', [IndexController::class, 'index'])->name('index');
