@@ -59,38 +59,6 @@
       <br>
 
       @yield('content')
-      
-      <div class="container-fluid" style="padding: 3em; background-color: #38B6FF; color: white; margin-top: 1em;">
-        <div class="row align-items-center">
-          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
-            <span id="cerdas">Cerdas</span>
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
-            <p>
-              <img src="{{ asset('images/footer-1.png') }}" alt="" style="width: 30em;">
-            </p>
-            <span>
-              <a href="https://twitter.com">
-                <img src="{{ asset('images/socmed-x.png') }}" alt="" style="padding: 0.5em;">
-              </a>
-              <a href="https://instagram.com">
-                <img src="{{ asset('images/socmed-ig.png') }}" alt="" style="padding: 0.5em;">
-              </a>
-              <a href="https://youtube.com">
-                <img src="{{ asset('images/socmed-yt.png') }}" alt="" style="padding: 0.5em;">
-              </a>
-              <a href="https://facebook.com">
-                <img src="{{ asset('images/socmed-fb.png') }}" alt="" style="padding: 0.5em;">
-              </a>
-            </span>
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-end">
-            <img src="{{ asset('images/telephone.png') }}" alt="">
-            <span>Kontak</span>
-            <span>(021) 888888</span>
-          </div>
-        </div>
-      </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
