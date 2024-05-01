@@ -1,7 +1,7 @@
 @extends('layouts.headfooter', ['title'=>'Home'])
 
 @section('content')
-    <div class="container-fluid" style="padding-left: 3em; padding-right: 3em; padding-bottom: 1em;">
+    <div class="container-fluid" style="padding-left: 3em; padding-right: 3em; padding-bottom: 1em; padding-top: 4em;">
         <div class="row justify-content-center">
             <div class="col carousel-container">
               <div id="carouselExample" class="carousel slide">
