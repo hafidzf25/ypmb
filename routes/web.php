@@ -22,6 +22,7 @@ Route::get('/pelatihan', function() {
     return view('pelatihan');
 });
 
+
 Route::get('/detailpelatihan', function() {
     return view('detailpelatihan');
 });
@@ -36,3 +37,15 @@ Route::get('/register', function(){
 
 Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
 Route::get('/', [IndexController::class, 'index'])->name('index');
+
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/loginadmin', function () {
+    return view('admin.sign-in');
+});
+
+Route::get('/registeradmin', function () {
+    return view('admin.sign-up');
+});
