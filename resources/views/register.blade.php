@@ -4,15 +4,15 @@
 <div class="container" style="padding: 7em 1em;">
     <div class="row justify-content-center">
         <div class="col-lg-4 col-md-8 col-sm-10">
-            <div class="Login_Form" style="background: white; box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.25); border-radius: 40px; padding: 2em;">
-                <form method="POST" action="{{ url('login') }}">
+            <div class="Register_Form" style="background: white; box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.25); border-radius: 40px; padding: 2em;">
+                <form method="POST" action="{{ url('register') }}">
                     @csrf
                     <div class="text-center mb-4">
                         <h1>DAFTAR</h1>
                     </div>
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan NIK" required>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>

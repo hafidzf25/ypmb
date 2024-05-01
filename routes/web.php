@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +30,12 @@ Route::get('/detailpelatihan', function() {
 Route::get('/login', function() {
     return view('login');
 });
+
+Route::get('/', [LoginController::class, 'login'])->name('login');
+Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+
+Route::get('index', [HomeController::class, 'index'])->name('index')->middleware('auth');
+Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
 
 Route::get('/register', function(){
     return view('register');

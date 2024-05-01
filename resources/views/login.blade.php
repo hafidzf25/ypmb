@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-lg-4 col-md-8 col-sm-10">
             <div class="Login_Form" style="background: white; box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.25); border-radius: 40px; padding: 2em;">
-                <form method="POST" action="{{ url('login') }}">
+                <form method="POST" action="{{ url('actionlogin') }}">
                     @csrf
                     <div class="text-center mb-4">
                         <h1>MASUK</h1>
                     </div>
                     <div class="mb-3">
-                        <label for="nik_user" class="form-label">NIK</label>
-                        <input type="text" class="form-control" id="nik_user" name="nik_user" placeholder="Masukkan NIK" required>
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
                     </div>
                     <div class="mb-3">
                         <label for="password_user" class="form-label">Password</label>
