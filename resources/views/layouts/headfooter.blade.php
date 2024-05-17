@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body>
+<body>  
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ url('/') }}" id="cerdas">Cerdas</a>
