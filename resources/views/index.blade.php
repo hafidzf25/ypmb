@@ -1,7 +1,7 @@
-@extends('layouts.headfooter')
+@extends('layouts.headfooter', ['title'=>'Home'])
 
 @section('content')
-    <div class="container-fluid" style="padding-left: 3em; padding-right: 3em; padding-bottom: 1em;">
+    <div class="container-fluid" style="padding-left: 3em; padding-right: 3em; padding-bottom: 1em; padding-top: 4em;">
         <div class="row justify-content-center">
             <div class="col carousel-container">
               <div id="carouselExample" class="carousel slide">
@@ -32,15 +32,15 @@
         </div>
       </div>
 
-      <div class="container-fluid" style="padding-top: 3em;">
+      <div class="container-fluid" style="padding-top: 1em; padding-bottom: 1em">
         <div class="row text-center align-items-center">
           <div class="col" style="font-weight: bolder; font-size: 2em;">
-            Tentang Cerdas
+            Tentang PMB
           </div>
         </div>
       </div>
       
-      <div class="container-fluid" style="padding: 35px;">
+      <div class="container-fluid" style="padding: 1vh;">
         <div class="row">
           <div class="col-6" style="font-weight: bolder; font-size: 28px;">
             <img src="{{ asset('images/about-cerdas.png') }}" alt="" style="max-width: 100%; height: auto;">
@@ -51,13 +51,13 @@
         </div>
       </div>
 
-      <div class="container-fluid" style="padding-left: 2em; padding-right: 2em;">
+      <div class="container-fluid" style="padding-left: 2em; padding-right: 2em; padding-top: 1em;">
         <div class="row align-items-center">
           <div class="col" style="font-weight: bolder; font-size: 2em;">
             Pelatihan Populer
           </div>
           <div class="col text-end" style="font-weight: bolder; font-size: 1.2em;">
-            <a href="" style="text-decoration: none; color: inherit;">
+            <a href="{{ url('pelatihan') }}" style="text-decoration: none; color: inherit;">
               Lihat Semua
             </a>
           </div>
@@ -65,85 +65,81 @@
       </div>
 
       <div class="row row-cols-1 row-cols-md-4 g-4" style="padding: 2em;">
+        @foreach ($data as $index)
         <div class="col">
           <div class="card">
-            <img src="{{ asset('images/cards-1.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
+            <img src="images/pelatihan/{{ $index->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
             <div class="card-body">
-              <h5 class="card-title" style="font-weight: bolder;">Pelatihan Deteksi Dini: Analisa...</h5>
-              <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
-                <img src="kalender.png" alt=""> 16 Feb 2024 - 19 Feb 2024
-              </p>
-              <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
-                <img src="people.png" alt=""> Peserta 4077
-              </p>
-              <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-                <img src="star.png" alt=""> 4.8
-              </p>
-              <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
-              </div>
+                <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($index->nama_pelatihan, 30) }}</h5>
+                <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
+                    <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
+                    <img src="kalender.png" alt=""> {{ $index->tanggal_awal }} - {{ $index->tanggal_akhir }}
+                </p>
+                <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
+                    <i class="bi bi-people-fill" style="color: #38B6FF"></i>
+                    <img src="people.png" alt=""> Peserta 4077
+                </p>
+                <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
+                    <i class="bi bi-star-fill" style="color: #38B6FF"></i>
+                    <img src="star.png" alt=""> 4.8
+                </p>
+                <div style="text-align: center;">
+                    <button onclick="window.location.href='{{ url('detailpelatihan') }}'" class="btn btn-info text-white custom-rounded card-width" type="submit">
+                        <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white">
+                            Lihat Selengkapnya
+                        </a>
+                    </button>
+                </div>  
             </div>
+        </div>
+        </div>
+        @endforeach
+        </div>
+      </div>
+
+      <div class="container-fluid" style="padding-left: 2em; padding-right: 2em;">
+        <div class="row align-items-center">
+          <div class="col" style="font-weight: bolder; font-size: 2em;">
+            Seminar Populer
+          </div>
+          <div class="col text-end" style="font-weight: bolder; font-size: 1.2em;">
+            <a href="{{ url('seminar') }}" style="text-decoration: none; color: inherit;">
+              Lihat Semua
+            </a>
           </div>
         </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-4 g-4" style="padding: 2em;">
+        @foreach ($data as $index)
         <div class="col">
           <div class="card">
-            <img src="{{ asset('images/cards-2.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
+            <img src="images/pelatihan/{{ $index->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
             <div class="card-body">
-              <h5 class="card-title" style="font-weight: bolder;">Pelatihan Deteksi Dini: Analisa...</h5>
-              <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
-                <img src="kalender.png" alt=""> 16 Feb 2024 - 19 Feb 2024
-              </p>
-              <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
-                <img src="people.png" alt=""> Peserta 4077
-              </p>
-              <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-                <img src="star.png" alt=""> 4.8
-              </p>
-              <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
-              </div>  
+                <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($index->nama_pelatihan, 30) }}</h5>
+                <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
+                    <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
+                    <img src="kalender.png" alt=""> {{ $index->tanggal_awal }} - {{ $index->tanggal_akhir }}
+                </p>
+                <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
+                    <i class="bi bi-people-fill" style="color: #38B6FF"></i>
+                    <img src="people.png" alt=""> Peserta 4077
+                </p>
+                <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
+                    <i class="bi bi-star-fill" style="color: #38B6FF"></i>
+                    <img src="star.png" alt=""> 4.8
+                </p>
+                <div style="text-align: center;">
+                    <button onclick="window.location.href='{{ url('detailpelatihan') }}'" class="btn btn-info text-white custom-rounded card-width" type="submit">
+                        <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white">
+                            Lihat Selengkapnya
+                        </a>
+                    </button>
+                </div>  
             </div>
-          </div>
         </div>
-        <div class="col">
-          <div class="card">
-            <img src="{{ asset('images/cards-1.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
-            <div class="card-body">
-              <h5 class="card-title" style="font-weight: bolder;">Pelatihan Deteksi Dini: Analisa...</h5>
-              <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
-                <img src="kalender.png" alt=""> 16 Feb 2024 - 19 Feb 2024
-              </p>
-              <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
-                <img src="people.png" alt=""> Peserta 4077
-              </p>
-              <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-                <img src="star.png" alt=""> 4.8
-              </p>
-              <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
-              </div>  
-            </div>
-          </div>
         </div>
-        <div class="col">
-          <div class="card">
-            <img src="{{ asset('images/cards-2.png') }}" class="card-img-top" alt="..." style="height: 10em; ">
-            <div class="card-body">
-              <h5 class="card-title" style="font-weight: bolder;">Pelatihan Deteksi Dini: Analisa...</h5>
-              <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
-                <img src="kalender.png" alt=""> 16 Feb 2024 - 19 Feb 2024
-              </p>
-              <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
-                <img src="people.png" alt=""> Peserta 4077
-              </p>
-              <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-                <img src="star.png" alt=""> 4.8
-              </p>
-              <div style="text-align: center;">
-                <button class="btn btn-info text-white custom-rounded card-width" type="submit">Lihat Selengkapnya</button>
-              </div>  
-            </div>
-          </div>
+        @endforeach
         </div>
       </div>
 @endsection

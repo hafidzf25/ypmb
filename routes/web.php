@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PelatihanController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Admin;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\Auth\AuthenticateUsers;
+use App\Http\Controllers\SeminarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +20,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::get('/pelatihan', function() {
     return view('pelatihan');
+});
+
+Route::get('/editprofil', function() {
+    return view('editprofil');
+});
+
+Route::get('/seminar', function() {
+    return view('seminar');
 });
 
 Route::get('/detailpelatihan', function() {
@@ -29,7 +44,32 @@ Route::get('/login', function() {
     return view('login');
 });
 
+Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+
+Route::get('/', [HomeController::class, 'index'])->name('/')->middleware('auth');
+Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
+
 Route::get('/register', function(){
     return view('register');
 });
 
+Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
+Route::get('/', [IndexController::class, 'index'])->name('index');
+
+Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
+Route::get('/', [IndexController::class, 'index'])->name('index');
+
+Route::group([
+    'prefix'=>config('admin.prefix'),
+    'namespace'=>'App\\Http\\Controllers',
+],function () {
+
+    Route::get('/',[Admin\Auth\LoginAdminController::class, 'loginForm']);
+    Route::get('/login',[Admin\Auth\LoginAdminController::class, 'loginForm'])->name('admin.login');
+    Route::post('/login',[Admin\Auth\LoginAdminController::class, 'signin']);
+    Route::get('/dashboard',[Admin\HomeController::class, 'index'])->name('admin.dashboard');
+    Route::get('/tables',[Admin\HomeController::class, 'tables'])->name('admin.tables');
+    
+    // Route::middleware(['auth:adminMiddle'])->group(function () {
+    // });
+});
