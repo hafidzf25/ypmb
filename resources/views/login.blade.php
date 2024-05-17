@@ -5,6 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-lg-4 col-md-8 col-sm-10">
             <div class="Login_Form" style="background: white; box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.25); border-radius: 40px; padding: 2em;">
+                
+                @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+
                 <form method="POST" action="{{ url('actionlogin') }}">
                     @csrf
                     <div class="text-center mb-4">
