@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('screenshot');
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id_user')->on('t_user');
+            $table->foreign('id_user')->references('id_user')->on('users');
             $table->foreign('id_pelatihan')->references('id_pelatihan')->on('t_pelatihan');
         });
     }
