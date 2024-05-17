@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('t_admin', function (Blueprint $table) {
             $table->id('id_admin');
-            $table->string('username_admin');
+            $table->string('username');
             $table->enum('role', ['admin'])->default('admin');
-            $table->string('password_admin');
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });

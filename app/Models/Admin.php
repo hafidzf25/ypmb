@@ -13,13 +13,14 @@ class Admin extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $table = 't_admin';
+
     protected $fillable = [
-        'username_admin',
-        'password_admin',
+        'username',
+        'password',
     ];
 
     protected $hidden = [
-        'password_admin',
+        'password',
         'remember_token',
     ];
 }

@@ -18,6 +18,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="csrf-token" content="{{csrf_token()}}">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets_admin/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets_admin/img/favicon.png">
   <title>
@@ -48,32 +49,28 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form method="post" action="">
-                    @csrf
-                    <div class="mb-3">
-                    <input type="text" class="form-control form-control-lg{{ $errors->has('username_admin') ? ' is-invalid':'' }}" name="username_admin" placeholder="Email" aria-label="Email">
-                        @error('username_admin')
-                          <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-                    <div class="mb-3">
-                    <input type="password" class="form-control form-control-lg{{ $errors->has('password_admin') ? ' is-invalid':'' }}" name="password_admin" placeholder="Password" aria-label="Password">
-                      @error('password_admin')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="rememberMe">
-                      <label class="form-check-label" for="rememberMe">Remember me</label>
-                    </div>
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
-                    </div>
-                  </form>
+                <form method="post" action="{{ route('admin.login') }}">
+                  @csrf
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg @error('username_admin') is-invalid @enderror" id="inputUsername" name="username" placeholder="Username" aria-label="Username"> 
+                    @error('username')
+                      <span class="invalid-feedback">{{$message}}</span>
+                    @enderror
+                  </div>
+                  <div class="mb-3">
+                    <input type="password" class="form-control form-control-lg @error('password_admin') is-invalid @enderror" id="inputPassword" name="password" placeholder="Password" aria-label="Password">
+                    @error('password')
+                      <span class="invalid-feedback">{{$message}}</span>
+                    @enderror
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">{{__('Login')}}</button>
+                  </div>
+                </form>
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">

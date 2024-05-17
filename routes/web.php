@@ -50,11 +50,12 @@ Route::group([
     'namespace'=>'App\\Http\\Controllers',
 ],function () {
 
-    Route::get('/sign-in',[Admin\Auth\LoginAdminController::class, 'formLogin'])->name('admin.sign-in');
-    Route::post('/sign-in',[Admin\Auth\LoginAdminController::class, 'signin']);
-
-    Route::middleware(['auth:admin'])->group(function () {
-        Route::post('logout',[Admin\Auth\LoginAdminController::class, 'logout'])->name('admin.logout');
-        Route::view('/','admin.dashboard')->name('admin.dashboard');
-    });
+    Route::get('/',[Admin\Auth\LoginAdminController::class, 'loginForm']);
+    Route::get('/login',[Admin\Auth\LoginAdminController::class, 'loginForm'])->name('admin.login');
+    Route::post('/login',[Admin\Auth\LoginAdminController::class, 'signin']);
+    Route::get('/dashboard',[Admin\HomeController::class, 'index'])->name('admin.dashboard');
+    Route::get('/tables',[Admin\HomeController::class, 'tables'])->name('admin.tables');
+    
+    // Route::middleware(['auth:adminMiddle'])->group(function () {
+    // });
 });
