@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Admin;
+use App\Http\Controllers\Admin\Auth\AuthenticateUsers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,14 +47,16 @@ Route::get('/register', function(){
 Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-});
+Route::group([
+    'prefix'=>config('admin.prefix'),
+    'namespace'=>'App\\Http\\Controllers',
+],function () {
 
-Route::get('/loginadmin', function () {
-    return view('admin.sign-in');
-});
+    Route::get('/sign-in',[Admin\Auth\LoginAdminController::class, 'formLogin'])->name('admin.sign-in');
+    Route::post('/sign-in',[Admin\Auth\LoginAdminController::class, 'signin']);
 
-Route::get('/registeradmin', function () {
-    return view('admin.sign-up');
+    Route::middleware(['auth:admin'])->group(function () {
+        Route::post('logout',[Admin\Auth\LoginAdminController::class, 'logout'])->name('admin.logout');
+        Route::view('/','admin.dashboard')->name('admin.dashboard');
+    });
 });
