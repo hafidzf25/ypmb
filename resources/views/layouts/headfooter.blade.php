@@ -41,16 +41,20 @@
                 </ul>
               </li>
             </ul>
-            @if(!(request()->is('login') || request()->is('register') || request()->is('pelatihan')))
-              <!-- Konten yang ingin ditampilkan jika halaman selain login dan register sedang dibuka -->
-              <form class="d-flex" role="search">
-                <input class="form-control me-4 custom-rounded search-custom-width" type="search" placeholder="Cari Pelatihan" aria-label="Search">
-                <a href="{{ url('login') }}" class="btn btn-info text-white custom-rounded custom-width">Masuk</a>
-              </form>
-            @endif
-
-            @if(request()->is('pelatihan'))
-                <a href="{{ url('login') }}" class="btn btn-info text-white custom-rounded custom-width">Masuk</a>
+            <input class="form-control me-4 custom-rounded search-custom-width" type="search" placeholder="Cari Pelatihan" aria-label="Search">
+            @if(auth()->check())
+                <!-- Jika pengguna sudah login -->
+                <form class="d-flex" role="search">
+                    <span class="navbar-text me-4">{{ auth()->user()->name }}</span>
+                    <form class="d-flex" role="search">
+                        <a href="{{ route('actionlogout') }}" class="btn btn-info text-white custom-rounded custom-width">Keluar</a>
+                    </form>
+                </form>
+            @else
+                <!-- Jika pengguna belum login -->
+                <form class="d-flex" role="search">
+                    <a href="{{ url('login') }}" class="btn btn-info text-white custom-rounded custom-width">Masuk</a>
+                </form>
             @endif
           </div>
         </div>

@@ -17,14 +17,13 @@ use App\Http\Controllers\Admin\Auth\AuthenticateUsers;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::get('/pelatihan', function() {
     return view('pelatihan');
 });
-
 
 Route::get('/detailpelatihan', function() {
     return view('detailpelatihan');
@@ -34,10 +33,9 @@ Route::get('/login', function() {
     return view('login');
 });
 
-Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 
-Route::get('index', [HomeController::class, 'index'])->name('index')->middleware('auth');
+Route::get('/', [HomeController::class, 'index'])->name('/')->middleware('auth');
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
 
 Route::get('/register', function(){
