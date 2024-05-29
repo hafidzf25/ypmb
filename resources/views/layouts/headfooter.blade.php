@@ -56,7 +56,7 @@
         <!-- Jika pengguna sudah login -->
         <div class="dropdown" style="padding-right: 1.5em;">
           <button class="btn custom-width dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="{{ asset('images/profile.jpg') }}" alt="" class="rounded-circle" width="40" height="40">
+            <img src="{{ asset(auth()->user()->foto) }}" alt="" class="rounded-circle" width="40" height="40">
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" style="font-weight: bold;">{{ auth()->user()->name }}</a>

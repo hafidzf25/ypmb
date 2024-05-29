@@ -5,6 +5,7 @@ use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Auth\AuthenticateUsers;
 use App\Http\Controllers\SeminarController;
@@ -52,6 +53,9 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 Route::get('/register', function(){
     return view('register');
 });
+
+Route::get('register', [RegisterController::class, 'register'])->name('register');
+Route::post('register/action', [RegisterController::class, 'actionregister'])->name('actionregister');
 
 Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
 Route::get('/', [IndexController::class, 'index'])->name('index');
