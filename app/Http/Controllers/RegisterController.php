@@ -33,7 +33,8 @@ class RegisterController extends Controller
             'email' => $request->email,
             'name' => $request->name,
             'password' => Hash::make($request->password),
-            'foto' => $path
+            'foto' => $path,
+            'active' => 1
         ]);
 
         Session::flash('message', 'Daftar Berhasil. Akun Anda sudah Aktif silahkan Masuk menggunakan email dan password.');
