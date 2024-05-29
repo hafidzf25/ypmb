@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Session;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+use App\Mail\MailSend;
 
 class RegisterController extends Controller
 {
@@ -16,6 +19,7 @@ class RegisterController extends Controller
     
     public function actionregister(Request $request)
     {
+        $str = Str::random(100);
 
         $request->validate([
             'password' => 'required|string|min:8',
@@ -34,10 +38,37 @@ class RegisterController extends Controller
             'name' => $request->name,
             'password' => Hash::make($request->password),
             'foto' => $path,
-            'active' => 1
+            'verify_key' => $str
         ]);
 
-        Session::flash('message', 'Daftar Berhasil. Akun Anda sudah Aktif silahkan Masuk menggunakan email dan password.');
+        $details = [
+            'name' => $request->name,
+            'website' => 'www.cerdas.com',
+            'datetime' => date('Y-m-d H:i:s'),
+            'url' => request()->getHttpHost().'/register/verify/'.$str
+        ];
+
+        Mail::to($request->email)->send(new MailSend($details));
+
+        Session::flash('message', 'Link verifikasi telah dikrim ke Email Anda. Silahkan Cek Email Anda untuk Mengaktifkan Akun');
         return redirect('register');
+    }
+    
+    public function verify($verify_key)
+    {
+        $keyCheck = User::select('verify_key')
+                    ->where('verify_key', $verify_key)
+                    ->exists();
+        
+        if ($keyCheck) {
+            $user = User::where('verify_key', $verify_key)
+            ->update([
+                'active' => 1
+            ]);
+            
+            return "Verifikasi Berhasil. Akun Anda sudah aktif.";
+        }else{
+            return "Key tidak valid!";
+        }
     }
 }

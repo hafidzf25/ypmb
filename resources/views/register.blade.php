@@ -33,7 +33,7 @@
                     <div class="mb-3">
                         <label for="foto" class="form-label">FOTO PROFIL</label><br>
                         <div style="display: flex; align-items: center;">
-                            <button type="button" class="addfiles btn btn-danger" onclick="document.getElementById('fileupload').click();" style="color: white; margin-right: 1em;">Unggah Foto</button>
+                            <button type="button" class="addfiles btn btn-danger" style="color: white; margin-right: 1em;">Unggah Foto</button>
                             <input id="fileupload" type="file" name="foto" style="display: none;" onchange="previewImage(event)">
                             <img id="imagePreview" src="" alt="Image Preview" style="display: none; width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-left: 1em;">
                         </div>

@@ -56,6 +56,7 @@ Route::get('/register', function(){
 
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('register/action', [RegisterController::class, 'actionregister'])->name('actionregister');
+Route::get('register/verify/{verify_key}', [RegisterController::class, 'verify'])->name('verify');
 
 Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
 Route::get('/', [IndexController::class, 'index'])->name('index');
