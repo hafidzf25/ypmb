@@ -17,6 +17,10 @@ class RegisterController extends Controller
     public function actionregister(Request $request)
     {
 
+        $request->validate([
+            'password' => 'required|string|min:8',
+        ]);
+
         $path = null;
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
@@ -32,7 +36,7 @@ class RegisterController extends Controller
             'foto' => $path
         ]);
 
-        Session::flash('message', 'Register Berhasil. Akun Anda sudah Aktif silahkan Login menggunakan username dan password.');
+        Session::flash('message', 'Daftar Berhasil. Akun Anda sudah Aktif silahkan Masuk menggunakan email dan password.');
         return redirect('register');
     }
 }
