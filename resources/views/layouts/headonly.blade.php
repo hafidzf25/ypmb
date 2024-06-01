@@ -25,22 +25,6 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active me-1 ms-2" aria-current="page" href="{{ url('pelatihan') }}">Pelatihan</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle me-2 ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Jenjang
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Raudaltul Athfal</a></li>
-                  <li><a class="dropdown-item" href="#">Madrasah Ibtidaiyah</a></li>
-                  <li><a class="dropdown-item" href="#">Madrasah Tsanawiyah</a></li>
-                  <li><a class="dropdown-item" href="#">Madrasah Aliyah</a></li>
-                </ul>
-              </li>
-            </ul>
             @if(!(request()->is('login') || request()->is('register') || request()->is('pelatihan')))
               <!-- Konten yang ingin ditampilkan jika halaman selain login dan register sedang dibuka -->
               <form class="d-flex" role="search">
