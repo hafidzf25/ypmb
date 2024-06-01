@@ -40,8 +40,16 @@ Route::get('/detailpelatihan', function() {
     return view('detailpelatihan');
 });
 
+Route::get('/detailseminar', function() {
+    return view('detailseminar');
+});
+
 Route::get('/login', function() {
     return view('login');
+});
+
+Route::get('/pembayaran', function() {
+    return view('pembayaran');
 });
 
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
@@ -69,7 +77,4 @@ Route::group([
     Route::post('/login',[Admin\Auth\LoginAdminController::class, 'signin']);
     Route::get('/dashboard',[Admin\HomeController::class, 'index'])->name('admin.dashboard');
     Route::get('/tables',[Admin\HomeController::class, 'tables'])->name('admin.tables');
-    
-    // Route::middleware(['auth:adminMiddle'])->group(function () {
-    // });
 });

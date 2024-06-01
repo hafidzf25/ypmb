@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Montserrat:wght@100&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -35,23 +36,14 @@
             <a class="nav-link active me-1 ms-2" aria-current="page" href="{{ url('seminar') }}">Seminar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active me-1 ms-2" aria-current="page" href="#">Tentang PMB</a>
+            <a class="nav-link active me-1 ms-2" aria-current="page" href="{{url('/')}}#tentangpmb">Tentang PMB</a>
           </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle me-2 ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Jenjang
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Raudaltul Athfal</a></li>
-              <li><a class="dropdown-item" href="#">Madrasah Ibtidaiyah</a></li>
-              <li><a class="dropdown-item" href="#">Madrasah Tsanawiyah</a></li>
-              <li><a class="dropdown-item" href="#">Madrasah Aliyah</a></li>
-            </ul>
-          </li> -->
         </ul>
+        @if($title == 'Home')
         <form action="{{ route('pelatihan') }}" method="GET">
           <input class="form-control me-4 custom-rounded search-custom-width" type="search" placeholder="Cari Pelatihan" aria-label="Search">
         </form>
+        @endif
         @if(auth()->check())
         <!-- Jika pengguna sudah login -->
         <div class="dropdown" style="padding-right: 1.5em;">
@@ -79,14 +71,14 @@
 
   @yield('content')
 
-  <div class="container-fluid" style="padding: 3em; background-color: #38B6FF; color: white; margin-top: 1em;">
+  <div class="container-fluid text-center text-xl-start" style="padding: 3em; background-color: #38B6FF; color: white; margin-top: 1em;">
     <div class="row align-items-center">
       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
         <span id="cerdas">PMB</span>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-xl-center">
         <p>
-          <img src="{{ asset('images/footer-1.png') }}" alt="" style="width: 30em;">
+          <img src="{{ asset('images/footer-1.png') }}" alt="" style="max-width:100%; height:auto;">
         </p>
         <span>
           <a href="https://twitter.com">
@@ -103,7 +95,7 @@
           </a>
         </span>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-end">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-xl-end">
         <img src="{{ asset('images/telephone.png') }}" alt="">
         <span>Kontak</span>
         <span>(021) 888888</span>

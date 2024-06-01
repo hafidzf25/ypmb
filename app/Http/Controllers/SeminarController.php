@@ -14,7 +14,7 @@ class SeminarController extends Controller
             ->when($search, function ($query, $search) {
                 return $query->where('nama_pelatihan', 'like', '%' . $search . '%');
             })
-            ->paginate(6);
+            ->paginate(8);
 
         $title = "Seminar"; // Set the title
 
