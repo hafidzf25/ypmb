@@ -8,6 +8,10 @@ use Session;
 
 class LoginController extends Controller
 {
+    public function index() {
+        return view('login');
+    }
+
     public function login()
     {
         if (Auth::check()) {
@@ -36,5 +40,9 @@ class LoginController extends Controller
     {
         Auth::logout();
         return redirect('/login');
+    }
+
+    public function edit_profil() {
+        return view('editprofil');
     }
 }
