@@ -25,42 +25,37 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
-Route::get('/pelatihan', function () {
-    return view('pelatihan');
-});
+Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
+Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
 
+Route::get('/detailpelatihan/{id}', [PelatihanController::class, 'detailpelatihan'])->name('detailpelatihan');
+Route::get('/detailseminar/{id}', [SeminarController::class, 'detailseminar'])->name('detailseminar');
 
 Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
     Route::get('/pembayaran', [AnggotaController::class, 'pembayaran'])->name('pembayaran');
-    Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
     Route::get('editprofil/{id}', [UserController::class, 'edit'])->name('editprofil');
     Route::post('editprofil/{id}', [UserController::class, 'update'])->name('updateprofil');
-});
-
-Route::get('/detailpelatihan', function () {
-    return view('detailpelatihan');
-});
-
-Route::get('/detailseminar', function () {
-    return view('detailseminar');
 });
 
 Route::get('/login', function () {
     if (Auth::check()) {
         return redirect('/');
-    }else{
+    } else {
         return view('login');
     }
 })->name('login');
 
+Route::get('/register', function () {
+    if (Auth::check()) {
+        return redirect('/');
+    } else {
+        return view('register');
+    }
+});
 
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
-
-Route::get('/', [HomeController::class, 'index'])->name('/')->middleware('auth');
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
 
 Route::get('/register', function () {

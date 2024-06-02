@@ -10,7 +10,7 @@ class IndexController extends Controller
     {
         $search = $request->input('search');
         
-        $data = Index::select('id_pelatihan', 'nama_pelatihan', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul', 'id_jenjang')
+        $data = Index::select('id_pelatihan', 'nama_pelatihan', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul')
             ->when($search, function ($query, $search) {
                 return $query->where('nama_pelatihan', 'like', '%' . $search . '%');
             })
@@ -20,6 +20,4 @@ class IndexController extends Controller
 
         return view('index', compact('data', 'title'));
     }
-
-    
 }

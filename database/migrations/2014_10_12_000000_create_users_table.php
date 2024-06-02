@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id('id'); 
             $table->string('name');
             $table->string('email')->unique();
+            $table->integer('active')->default(0);
             $table->timestamp('email_verified_at')->nullable()->useCurrentOnUpdate();
             $table->string('password');
             $table->string('foto');
+            $table->string('verify_key');
+            $table->string('instansi')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

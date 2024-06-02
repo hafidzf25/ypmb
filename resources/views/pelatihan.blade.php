@@ -1,4 +1,4 @@
-@extends('layouts.headfooter', ['title'=>'Pelatihan'])
+@extends('layouts.headfooter', ['title'=>$title])
 
 @section('content')
 
@@ -75,7 +75,7 @@
                         <img src="star.png" alt=""> 4.8
                     </p>
                     <div style="text-align: center;">
-                        <a href="{{ url('detailpelatihan') }}" class="btn btn-info" style="text-decoration: none; color:white">
+                        <a href="{{ url('/detailpelatihan/' . $pelatihan->id_pelatihan) }}" class="btn btn-info" style="text-decoration: none; color:white">
                             Lihat Selengkapnya
                         </a>
                     </div>
