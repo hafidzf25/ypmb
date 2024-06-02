@@ -23,52 +23,41 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
-Route::get('/pelatihan', function () {
-    return view('pelatihan');
-});
+Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
+Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
 
-
-Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
-    Route::get('/pembayaran', [AnggotaController::class, 'pembayaran'])->name('pembayaran');
-    Route::get('/editprofil', [LoginController::class, 'edit_profil'])->name('editprofil');
-    Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
-});
-
-Route::get('/detailpelatihan', function () {
-    return view('detailpelatihan');
-});
+Route::get('/detailpelatihan/{id}', [PelatihanController::class, 'detailpelatihan'])->name('detailpelatihan');
 
 Route::get('/detailseminar', function () {
     return view('detailseminar');
 });
 
+Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
+    Route::get('/pembayaran', [AnggotaController::class, 'pembayaran'])->name('pembayaran');
+    Route::get('/editprofil', [LoginController::class, 'edit_profil'])->name('editprofil');
+});
+
 Route::get('/login', function () {
     if (Auth::check()) {
         return redirect('/');
-    }else{
+    } else {
         return view('login');
     }
 })->name('login');
 
-
-Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
-
-Route::get('/', [HomeController::class, 'index'])->name('/')->middleware('auth');
-Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
-
 Route::get('/register', function () {
-    return view('register');
+    if (Auth::check()) {
+        return redirect('/');
+    } else {
+        return view('register');
+    }
 });
 
+Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
 Route::post('/actionregister', [RegisterController::class, 'actionregister'])->name('actionregister');
-
-Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
-Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::group([
     'prefix' => config('admin.prefix'),

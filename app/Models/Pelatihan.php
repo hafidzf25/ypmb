@@ -18,6 +18,7 @@ class Pelatihan extends Model
         'tanggal_awal',
         'tanggal_akhir',
         'foto_sampul',
-        'id_jenjang'
+        'deskripsi_singkat',
+        'deskripsi_lengkap'
     ];
 }

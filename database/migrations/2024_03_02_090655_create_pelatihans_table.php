@@ -17,10 +17,10 @@ return new class extends Migration
             $table->date('tanggal_awal');
             $table->date('tanggal_akhir');
             $table->string('foto_sampul');
-            $table->unsignedBigInteger('id_jenjang');
-            $table->timestamps();
+            $table->text('deskripsi_singkat');
+            $table->text('deskripsi_lengkap');
 
-            $table->foreign('id_jenjang')->references('id_jenjang')->on('t_jenjang');
+            $table->timestamps();
         });
     }
 
