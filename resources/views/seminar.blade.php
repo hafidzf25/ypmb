@@ -74,7 +74,7 @@
                         <img src="star.png" alt=""> 4.8
                     </p>
                     <div style="text-align: center;">
-                        <a href="{{ url('detailseminar') }}" class="btn btn-info" style="text-decoration: none; color:white">
+                        <a href="{{ url('/detailseminar/' . $seminar->id_seminar) }}" class="btn btn-info" style="text-decoration: none; color:white">
                             Lihat Selengkapnya
                         </a>
                     </div>
