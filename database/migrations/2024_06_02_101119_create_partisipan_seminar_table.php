@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('t_partisipan_seminar', function (Blueprint $table) {
             $table->id('id_partisipan_seminar');
-            $table->id('id');
-            $table->id('id_seminar');
+            $table->integer('id');
+            $table->integer('id_seminar');
             $table->string('sertifikat');
 
             $table->timestamps();
