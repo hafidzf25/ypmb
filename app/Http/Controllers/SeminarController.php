@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Seminar;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SeminarController extends Controller
@@ -19,5 +20,17 @@ class SeminarController extends Controller
         $title = "Seminar"; // Set the title
 
         return view('seminar', compact('data', 'title'));
+    }
+
+    public function detailseminar($id) {
+        Carbon::setLocale('id');
+        
+        $data = Seminar::where('id_seminar', $id)->first();
+
+        $title = $data->nama_seminar;
+        $data->tanggal_awal = Carbon::parse($data->tanggal_awal)->format('d F Y');
+        $data->tanggal_akhir = Carbon::parse($data->tanggal_akhir)->format('d F Y');
+
+        return view('detailseminar', compact('data', 'title'));
     }
 }

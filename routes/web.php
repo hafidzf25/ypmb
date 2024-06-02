@@ -31,10 +31,7 @@ Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelat
 Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
 
 Route::get('/detailpelatihan/{id}', [PelatihanController::class, 'detailpelatihan'])->name('detailpelatihan');
-
-Route::get('/detailseminar', function () {
-    return view('detailseminar');
-});
+Route::get('/detailseminar/{id}', [SeminarController::class, 'detailseminar'])->name('detailseminar');
 
 Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
     Route::get('/pembayaran', [AnggotaController::class, 'pembayaran'])->name('pembayaran');

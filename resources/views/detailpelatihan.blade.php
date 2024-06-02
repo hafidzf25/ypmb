@@ -39,26 +39,6 @@
 
 <div class="container-fluid">
     <div class="row" style="padding:2em; margin-top:1vh; margin-bottom:5vh; display: flex; align-items: flex-start;">
-        <!-- <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 p-3 m-3" style="box-shadow: 0 0 4px rgba(0,0,0,0.5); border-radius:20px">
-            <span style="font-weight:bolder; font-size:3vh">
-                Informasi Umum
-            </span>
-            <p class="pt-2">Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.</p>
-            <p>Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.</p>
-            <p>Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.</p>
-            <p style="font-weight: bolder;">NAMA PELATIHAN : PELATIHAN  MEDIA PENYULUHAN BERBASIS TEKNOLOGI INFORMASI DAN KOMUNIKASI (TIK)</p>
-            <p>Kompetensi Teknis  : Penguasaan media penyuluhan dalam pelaksanaan tugas sebagai Penyuluh Agama</p>
-            <p>Sasaran Pelatihan : Penyuluh Agama</p>
-            <p>Tujuan Pelatihan :  Meningkatkan kompetensi Fungsional Penyuluh dalam membuat media penyuluhan dengan menggunakan TIK</p>
-            <p>Latar belakang Pelatihan : Era digital ini merupakan era percepatan teknologi, seluruh ASN harus memiliki literasi digital di Era transformasi digital ini, seluruh staf pemerintahan atau ASN harus paham digital. Salah satunya adalah para penyuluh agama Kementerian Agama yang memiliki tupoksi yang sangat penting dalam menyampaikan hal-hal bagi masyarakat Indonesia. Penyuluh Agama yang memiliki kompetensi membuat media berbasis TIK sangat diperlukan agar dapat memberikan pemahaman yang masif dan komprehensif kepada Masyarakat dengan memanfaatkan TIK. </p>
-            <p>Mengapa harus ikuti pelatihan ini : Pelatihan ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.</p>
-            <ol>
-                <li>Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.</li>
-                <li>Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.</li>
-                <li>Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.</li>
-                <li>Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.</li>
-            </ol>
-        </div> -->
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 p-3 m-3" style="box-shadow: 0 0 4px rgba(0,0,0,0.5); border-radius:20px">
             <span style="font-weight:bolder; font-size:3vh">
                 Informasi Umum
