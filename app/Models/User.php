@@ -26,6 +26,7 @@ class User extends Authenticatable
         'foto',
         'verify_key',
         'active',
+        'instansi',
     ];
 
     /**

@@ -52,7 +52,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" style="font-weight: bold;">{{ auth()->user()->name }}</a>
-            <a class="dropdown-item" href="{{ url('editprofil') }}">Edit Profil</a>
+            <a class="dropdown-item" href="{{ route('editprofil', ['id' => auth()->user()->id]) }}">Edit Profil</a>
             <a class="dropdown-item" href="{{ route('actionlogout') }}">Keluar</a>
           </div>
         </div>

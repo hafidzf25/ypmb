@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Auth\AuthenticateUsers;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SeminarController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -34,8 +35,9 @@ Route::get('/pelatihan', function () {
 
 Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
     Route::get('/pembayaran', [AnggotaController::class, 'pembayaran'])->name('pembayaran');
-    Route::get('/editprofil', [LoginController::class, 'edit_profil'])->name('editprofil');
     Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
+    Route::get('editprofil/{id}', [UserController::class, 'edit'])->name('editprofil');
+    Route::post('editprofil/{id}', [UserController::class, 'update'])->name('updateprofil');
 });
 
 Route::get('/detailpelatihan', function () {
@@ -64,10 +66,11 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('register/verify/{verify_key}', [RegisterController::class, 'verify'])->name('verify');
+
 Route::post('/actionregister', [RegisterController::class, 'actionregister'])->name('actionregister');
 
 Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
-Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::group([
