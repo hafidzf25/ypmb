@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Pelatihan;
+use App\Models\Seminar;
 use Illuminate\Http\Request;
 
 class SeminarController extends Controller
@@ -10,9 +10,9 @@ class SeminarController extends Controller
     {
         $search = $request->input('search');
         
-        $data = Pelatihan::select('id_pelatihan', 'nama_pelatihan', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul', 'id_jenjang')
+        $data = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul')
             ->when($search, function ($query, $search) {
-                return $query->where('nama_pelatihan', 'like', '%' . $search . '%');
+                return $query->where('nama_seminar', 'like', '%' . $search . '%');
             })
             ->paginate(8);
 

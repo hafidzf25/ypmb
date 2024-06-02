@@ -55,15 +55,15 @@
 </div>
 <div class="container-fluid">
     <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" style="padding-top: 0em; padding-left: 2em; padding-right: 2em; padding-bottom: 2em;">
-        @foreach ($data as $pelatihan)
+        @foreach ($data as $seminar)
         <div class="col">
             <div class="card">
-                <img src="images/pelatihan/{{ $pelatihan->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
+                <img src="images/seminar/{{ $seminar->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
                 <div class="card-body">
-                    <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($pelatihan->nama_pelatihan, 30) }}</h5>
+                    <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($seminar->nama_seminar, 30) }}</h5>
                     <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
                         <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
-                        <img style="max-width: 100%;" src="kalender.png" alt=""> {{ $pelatihan->tanggal_awal }} - {{ $pelatihan->tanggal_akhir }}
+                        <img style="max-width: 100%;" src="kalender.png" alt=""> {{ $seminar->tanggal_awal }} - {{ $seminar->tanggal_akhir }}
                     </p>
                     <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
                         <i class="bi bi-people-fill" style="color: #38B6FF"></i>
