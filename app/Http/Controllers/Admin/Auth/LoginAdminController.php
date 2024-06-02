@@ -7,59 +7,45 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
+use App\Models\Admin;
+
 class LoginAdminController extends Controller
 {
-    protected $redirectTo = '/admin/dashboard';
-
     public function __construct()
     {
-        $this->middleware('guest:adminMiddle')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
     }
 
-    protected function guard()
-    {
-        return Auth::guard('adminMiddle');
+    public function index(){
+        return view('admin.login');
     }
 
-    public function loginForm()
+    public function login_proses(Request $request)
     {
-        if (Auth::guard('adminMiddle')->check()) {
-            return redirect()->route('admin.dashboard');
-        }
-        return view('admin.sign-in');
-    }
-
-    public function signin(Request $request)
-    {
-        $credentials = $request->validate([
-            'username' => 'required|exists:t_admin,username', // Pastikan kolom sesuai
-            'password' => 'required'
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
         ]);
 
-        // Menggunakan Auth::guard untuk login
-        if (Auth::guard('adminMiddle')->attempt([
-            'username' => $credentials['username'],
-            'password' => $credentials['password']
-        ], $request->filled('remember'))) {
-            // Regenerasi sesi untuk keamanan tambahan
+        $data = [
+            'username' => $request->username,
+            'password' => $request->password  
+        ];
+
+        if (Auth::guard('admin')->attempt($data)) {
+            \Log::info('Admin logged in successfully', ['username' => $request->username]);
             $request->session()->regenerate();
-            return redirect()->intended($this->redirectTo);
-        }
 
-        // Jika login gagal, kirim pesan error
-        throw ValidationException::withMessages([
-            'username' => __('auth.failed'),
-        ]);
+            return redirect()->route('admin.dashboard'); // Mengarahkan ke halaman dashboard admin setelah berhasil masuk
+        } else {
+            \Log::info('Failed login attempt', ['data' => $data]);
+            return redirect()->route('admin.login')->with('failed', 'Username atau Password salah!');
+        }        
     }
 
-    public function logout(Request $request)
-    {
-        Auth::guard('adminMiddle')->logout();
-
-        // Invalidate sesi untuk keamanan tambahan
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect()->route('admin.sign-in');
+    
+    public function logout(){
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.login')->with('success', 'Berhasil Logout!');
     }
 }
