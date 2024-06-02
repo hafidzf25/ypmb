@@ -17,6 +17,9 @@ class LoginAdminController extends Controller
     }
 
     public function index(){
+        if(Auth::guard('admin')->check()) {
+            return redirect()->route('admin.dashboard');
+        }
         return view('admin.login');
     }
 
@@ -33,17 +36,13 @@ class LoginAdminController extends Controller
         ];
 
         if (Auth::guard('admin')->attempt($data)) {
-            \Log::info('Admin logged in successfully', ['username' => $request->username]);
             $request->session()->regenerate();
-
             return redirect()->route('admin.dashboard'); // Mengarahkan ke halaman dashboard admin setelah berhasil masuk
         } else {
-            \Log::info('Failed login attempt', ['data' => $data]);
             return redirect()->route('admin.login')->with('failed', 'Username atau Password salah!');
         }        
     }
 
-    
     public function logout(){
         Auth::guard('admin')->logout();
         return redirect()->route('admin.login')->with('success', 'Berhasil Logout!');
