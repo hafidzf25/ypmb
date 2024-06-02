@@ -13,7 +13,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-5 col-sm-12 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset($user->foto) }}" alt="" style="width:380px; height: 380px; border: 5px solid white; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
+                        <img src="{{ asset($user->foto) }}" class="rounded-circle" alt="" style="width:20rem; height: 20rem; border: 5px solid white; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
                     </div>
                     <div class="col pt-4 pb-4" style="background-color: white;">
                         @if(session('success'))

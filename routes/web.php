@@ -38,17 +38,8 @@ Route::get('/detailseminar', function () {
 
 Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
     Route::get('/pembayaran', [AnggotaController::class, 'pembayaran'])->name('pembayaran');
-    Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
     Route::get('editprofil/{id}', [UserController::class, 'edit'])->name('editprofil');
     Route::post('editprofil/{id}', [UserController::class, 'update'])->name('updateprofil');
-});
-
-Route::get('/detailpelatihan', function () {
-    return view('detailpelatihan');
-});
-
-Route::get('/detailseminar', function () {
-    return view('detailseminar');
 });
 
 Route::get('/login', function () {
