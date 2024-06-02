@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\Auth\LoginAdminController;
 use App\Http\Controllers\Admin\Auth\AuthenticateUsers;
 use App\Http\Controllers\SeminarController;
 
@@ -64,17 +65,17 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
-Route::group([
-    'prefix'=>config('admin.prefix'),
-    'namespace'=>'App\\Http\\Controllers',
-],function () {
 
-    Route::get('/',[Admin\Auth\LoginAdminController::class, 'loginForm']);
-    Route::get('/login',[Admin\Auth\LoginAdminController::class, 'loginForm'])->name('admin.login');
-    Route::post('/login',[Admin\Auth\LoginAdminController::class, 'signin']);
-    Route::get('/dashboard',[Admin\HomeController::class, 'index'])->name('admin.dashboard');
-    Route::get('/tables',[Admin\HomeController::class, 'tables'])->name('admin.tables');
-    
-    // Route::middleware(['auth:adminMiddle'])->group(function () {
-    // });
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/', [LoginAdminController::class, 'index'])->name('login');
+    Route::get('/login', [LoginAdminController::class, 'index'])->name('login');
+    Route::post('/login', [LoginAdminController::class, 'login_proses']);
+    Route::get('/logout', [LoginAdminController::class, 'logout'])->name('logout');
+
 });
+
+// Rute yang memerlukan autentikasi admin
+Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'admin.'], function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+});
+
