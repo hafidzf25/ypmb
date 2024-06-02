@@ -20,4 +20,6 @@ class IndexController extends Controller
 
         return view('index', compact('data', 'title'));
     }
+
+    
 }

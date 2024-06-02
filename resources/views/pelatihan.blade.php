@@ -1,10 +1,41 @@
 @extends('layouts.headfooter', ['title'=>'Pelatihan'])
 
 @section('content')
+
+<style>
+    .responsive-text {
+        font-size: 4.2em;
+    }
+
+    @media (max-width: 1200px) {
+        .responsive-text {
+            font-size: 4.2em;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .responsive-text {
+            font-size: 3.4em;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .responsive-text {
+            font-size: 3.1em;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .responsive-text {
+            font-size: 2.8em;
+        }
+    }
+</style>
+
 <div class="container-fluid judul-radius" style="padding-top: 15vh;">
     <div class="row align-items-center">
         <div class="col">
-            <p style="font-size: 4.2em;">Temukan Pelatihan Untuk Tingkatkan Kompetensi Anda</p>
+            <p class="responsive-text">Temukan Pelatihan Untuk Tingkatkan Kompetensi Anda</p>
         </div>
         <div class="col-auto">
             <form action="{{ route('pelatihan') }}" method="GET" class="input-group" style="margin-top: 50px;">
@@ -23,10 +54,10 @@
         <option value="SMA">SMA</option>
     </select>
 </div>
-<div class="container-fluid" style="align: center;">
-    <div class="row justify-content-center row-cols-1 row-cols-md-4 g-4" style="padding-bottom: 2em">
+<div class="container-fluid">
+    <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" style="padding-top: 0em; padding-left: 2em; padding-right: 2em; padding-bottom: 2em;">
         @foreach ($data as $pelatihan)
-        <div class="col" style="margin: 0em 3.43em 2em 3.43em">
+        <div class="col">
             <div class="card">
                 <img src="images/pelatihan/{{ $pelatihan->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
                 <div class="card-body">
@@ -44,11 +75,9 @@
                         <img src="star.png" alt=""> 4.8
                     </p>
                     <div style="text-align: center;">
-                        <button class="btn btn-info text-white custom-rounded card-width" type="submit">
-                            <a href="{{ url('detailpelatihan') }}" style="text-decoration: none; color:white">
-                                Lihat Selengkapnya
-                            </a>
-                        </button>
+                        <a href="{{ url('detailpelatihan') }}" class="btn btn-info" style="text-decoration: none; color:white">
+                            Lihat Selengkapnya
+                        </a>
                     </div>
                 </div>
             </div>

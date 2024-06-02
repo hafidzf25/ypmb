@@ -44,7 +44,16 @@ body {
     height: 10em;
 }
 
-
+/* Tambahkan ini di file CSS Anda */
+@media (max-width: 768px) {
+    .custom-carousel .carousel-item {
+      height: 300px; /* Atur tinggi sesuai kebutuhan Anda */
+    }
+    .custom-carousel .carousel-item img {
+      height: 100%; /* Agar gambar menyesuaikan dengan tinggi carousel */
+      object-fit: cover; /* Agar gambar tidak terdistorsi */
+    }
+  }
 
 
 
