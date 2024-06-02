@@ -76,11 +76,9 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/', [LoginAdminController::class, 'index'])->name('login');
     Route::get('/login', [LoginAdminController::class, 'index'])->name('login');
     Route::post('/login', [LoginAdminController::class, 'login_proses']);
     Route::get('/logout', [LoginAdminController::class, 'logout'])->name('logout');
-
 });
 
 // Rute yang memerlukan autentikasi admin
