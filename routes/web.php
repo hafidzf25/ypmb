@@ -79,5 +79,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 // Rute yang memerlukan autentikasi admin
 Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'admin.'], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    
+    Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::delete('/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
+    Route::get('/user/toggle/{id}', [UserController::class, 'toggleStatus'])->name('user.toggle');
 });
 
