@@ -67,7 +67,7 @@
 
 <div class="container-fluid">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" style="padding: 2em;">
-    @foreach ($data as $index)
+    @foreach ($datapelatihan as $index)
     <div class="col">
       <div class="card">
         <img src="images/pelatihan/{{ $index->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
@@ -86,7 +86,7 @@
             <img src="star.png" alt=""> 4.8
           </p>
           <div style="text-align: center;">
-            <a href="{{ url('detailpelatihan') }}" class="btn btn-info" style="text-decoration: none; color:white">
+            <a href="{{ url('/detailpelatihan/' . $index->id_pelatihan) }}" class="btn btn-info" style="text-decoration: none; color:white">
               Lihat Selengkapnya
             </a>
           </div>
@@ -112,12 +112,12 @@
 
 <div class="container-fluid">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" style="padding: 2em;">
-    @foreach ($data as $index)
+    @foreach ($dataseminar as $index)
     <div class="col">
       <div class="card">
         <img src="images/pelatihan/{{ $index->foto_sampul }}" class="card-img-top" alt="..." style="height: 10em; ">
         <div class="card-body">
-          <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($index->nama_pelatihan, 30) }}</h5>
+          <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($index->nama_seminar, 30) }}</h5>
           <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
             <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
             <img src="kalender.png" alt=""> {{ $index->tanggal_awal }} - {{ $index->tanggal_akhir }}
@@ -131,7 +131,7 @@
             <img src="star.png" alt=""> 4.8
           </p>
           <div style="text-align: center;">
-            <a href="{{ url('detailseminar') }}" class="btn btn-info" style="text-decoration: none; color:white">
+            <a href="{{ url('/detailseminar/' . $index->id_seminar) }}" class="btn btn-info" style="text-decoration: none; color:white">
               Lihat Selengkapnya
             </a>
           </div>

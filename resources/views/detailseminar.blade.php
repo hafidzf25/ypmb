@@ -19,7 +19,7 @@
                 </span>
             </div>
             <div class="col mb-3 mt-3" style="line-height: 2.5vh; font-weight:500">
-                <span style="font-size: 0.9rem; line-height:1vh;">
+                <span style="font-size: 0.9rem;  line-height:1vh;">
                 {{$data->deskripsi_singkat}} </span>
             </div>
             <div class="row align-items-center" style="font-size: smaller; font-weight:500; padding: 1vh 1vh 1vh 1vh;">
