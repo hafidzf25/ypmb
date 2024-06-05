@@ -31,7 +31,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="../assets_admin/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="/assets_admin/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
@@ -68,9 +68,7 @@
             </div>
           </form>
         </div>
-      </li>
-
-      
+      </li>      
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -79,7 +77,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('admin.dashboard') }}" class="brand-link">
-      <img src="../assets_admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="/assets_admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
@@ -132,7 +130,15 @@
             <a href="{{route('admin.user')}}" class="nav-link {{ Request::routeIs('admin.user') ? 'active' : '' }}">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                User
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.seminar')}}" class="nav-link {{ Request::routeIs('admin.seminar') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Seminar
               </p>
             </a>
           </li>

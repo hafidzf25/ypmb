@@ -83,5 +83,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
     Route::get('/user', [UserController::class, 'index'])->name('user');
     Route::delete('/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
     Route::get('/user/toggle/{id}', [UserController::class, 'toggleStatus'])->name('user.toggle');
+
+    Route::get('/seminar', [SeminarController::class, 'index'])->name('seminar');
+    Route::get('/seminar/create', [SeminarController::class, 'create'])->name('seminar.create');
+    Route::post('/seminar/store', [SeminarController::class, 'store'])->name('seminar.store');
+    Route::delete('/seminar/delete/{id_seminar}', [SeminarController::class, 'delete'])->name('seminar.delete');
+    Route::get('/seminar/toggle/{id_seminar}', [SeminarController::class, 'toggleStatus'])->name('seminar.toggle');
 });
 
