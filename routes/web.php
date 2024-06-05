@@ -94,5 +94,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
     Route::put('/seminar/update/{id_seminar}', [SeminarController::class, 'update'])->name('seminar.update');
     Route::delete('/seminar/delete/{id_seminar}', [SeminarController::class, 'delete'])->name('seminar.delete');
     Route::get('/seminar/toggle/{id_seminar}', [SeminarController::class, 'toggleStatus'])->name('seminar.toggle');
+
+    Route::get('/pelatihan', [PelatihanController::class, 'index'])->name('pelatihan');
+    Route::get('/pelatihan/create', [PelatihanController::class, 'create'])->name('pelatihan.create');
+    Route::post('/pelatihan/store', [PelatihanController::class, 'store'])->name('pelatihan.store');
+    Route::get('/pelatihan/edit/{id_pelatihan}', [PelatihanController::class, 'edit'])->name('pelatihan.edit');
+    Route::put('/pelatihan/update/{id_pelatihan}', [PelatihanController::class, 'update'])->name('pelatihan.update');
+    Route::delete('/pelatihan/delete/{id_pelatihan}', [PelatihanController::class, 'delete'])->name('pelatihan.delete');
+    Route::get('/pelatihan/toggle/{id_pelatihan}', [PelatihanController::class, 'toggleStatus'])->name('pelatihan.toggle');
 });
 

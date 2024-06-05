@@ -42,7 +42,8 @@ class PelatihanSeeder extends Seeder
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.'
+                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'status' => 1,
             ],
             [
                 'nama_pelatihan' => 'Latihan Lari 2',
@@ -72,7 +73,8 @@ class PelatihanSeeder extends Seeder
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.'
+                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'status' => 1,
             ],
             [
                 'nama_pelatihan' => 'Latihan Lari 3',
@@ -102,7 +104,8 @@ class PelatihanSeeder extends Seeder
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.'
+                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'status' => 1,
             ],
             [
                 'nama_pelatihan' => 'Latihan Lari 4',
@@ -132,7 +135,8 @@ class PelatihanSeeder extends Seeder
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.'
+                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'status' => 1,
             ],
             [
                 'nama_pelatihan' => 'Latihan Lari 4',
@@ -162,7 +166,8 @@ class PelatihanSeeder extends Seeder
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.'
+                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'status' => 1,
             ],
             [
                 'nama_pelatihan' => 'Latihan Lari 5',
@@ -192,7 +197,8 @@ class PelatihanSeeder extends Seeder
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.'
+                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'status' => 1,
             ],
             [
                 'nama_pelatihan' => 'Latihan Lari 6',
@@ -222,7 +228,8 @@ class PelatihanSeeder extends Seeder
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.'
+                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'status' => 1,
             ],
             [
                 'nama_pelatihan' => 'Latihan Lari 7',
@@ -252,7 +259,8 @@ class PelatihanSeeder extends Seeder
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.'
+                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'status' => 1,
             ],
         ];
         Pelatihan::insert($pelatihan);

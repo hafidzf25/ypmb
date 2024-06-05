@@ -19,6 +19,7 @@ class Pelatihan extends Model
         'tanggal_akhir',
         'foto_sampul',
         'deskripsi_singkat',
-        'deskripsi_lengkap'
+        'deskripsi_lengkap',
+        'status'
     ];
 }

@@ -23,12 +23,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Seminar</h1>
+            <h1 class="m-0">Data Pelatihan</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-              <li class="breadcrumb-item active">Data Seminar</li>
+              <li class="breadcrumb-item active">Data Pelatihan</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -43,7 +43,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tabel Seminar</h3>
+                <h3 class="card-title">Tabel Pelatihan</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -77,32 +77,32 @@
                       use Illuminate\Support\Str;
                       $no = 1;
                     @endphp
-                    @foreach ($seminars as $seminar)
+                    @foreach ($pelatihans as $pelatihan)
                       <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $seminar->nama_seminar }}</td>
-                        <td>{{ $seminar->tanggal_awal }}</td>
-                        <td>{{ $seminar->tanggal_akhir }}</td>
-                        <td>{{ Str::limit($seminar->deskripsi_singkat, 20) }}</td>
-                        <td>{{ Str::limit($seminar->deskripsi_lengkap, 20) }}</td>
+                        <td>{{ $pelatihan->nama_pelatihan }}</td>
+                        <td>{{ $pelatihan->tanggal_awal }}</td>
+                        <td>{{ $pelatihan->tanggal_akhir }}</td>
+                        <td>{{ Str::limit($pelatihan->deskripsi_singkat, 20) }}</td>
+                        <td>{{ Str::limit($pelatihan->deskripsi_lengkap, 20) }}</td>
                         <td>
-                          <span class="tag {{ $seminar->status ? 'tag-success' : 'tag-danger' }}">
-                            {{ $seminar->status ? 'OnGoing' : 'END' }}
+                          <span class="tag {{ $pelatihan->status ? 'tag-success' : 'tag-danger' }}">
+                            {{ $pelatihan->status ? 'OnGoing' : 'END' }}
                           </span>
                         </td>
                         <td>
-                          <a data-toggle="modal" data-target="#modal-hapus{{ $seminar->id_seminar }}" class="btn btn-danger">
+                          <a data-toggle="modal" data-target="#modal-hapus{{ $pelatihan->id_pelatihan }}" class="btn btn-danger">
                             <i class="fas fa-trash-alt"></i> Hapus
                           </a>
-                          <a href="{{ route('admin.seminar.edit', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-primary">
+                          <a href="{{ route('admin.pelatihan.edit', ['id_pelatihan' => $pelatihan->id_pelatihan]) }}" class="btn btn-primary">
                             <i class="fas fa-edit"></i> Edit
                           </a>
-                          <a href="{{ route('admin.seminar.toggle', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-info">
+                          <a href="{{ route('admin.pelatihan.toggle', ['id_pelatihan' => $pelatihan->id_pelatihan]) }}" class="btn btn-info">
                             <i class="fas fa-edit"></i> Status
                           </a>
                         </td>
                       </tr>
-                      <div class="modal fade" id="modal-hapus{{ $seminar->id_seminar }}">
+                      <div class="modal fade" id="modal-hapus{{ $pelatihan->id_pelatihan }}">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -112,10 +112,10 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                              <p>Apakah kamu yakin ingin menghapus data seminar <b>{{ $seminar->nama_seminar }}</b>?</p>
+                              <p>Apakah kamu yakin ingin menghapus data pelatihan <b>{{ $pelatihan->nama_pelatihan }}</b>?</p>
                             </div>
                             <div class="modal-footer justify-content-between">
-                              <form action="{{ route('admin.seminar.delete', ['id_seminar' => $seminar->id_seminar]) }}" method="POST">
+                              <form action="{{ route('admin.pelatihan.delete', ['id_pelatihan' => $pelatihan->id_pelatihan]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -133,8 +133,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <a href="{{ route('admin.seminar.create') }}" class="btn btn-success">
-                  <i class="fas fa-plus"></i> Tambah Seminar
+                <a href="{{ route('admin.pelatihan.create') }}" class="btn btn-success">
+                  <i class="fas fa-plus"></i> Tambah Pelatihan
                 </a>
               </div>
             </div>

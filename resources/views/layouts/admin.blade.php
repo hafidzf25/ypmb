@@ -142,6 +142,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('admin.pelatihan')}}" class="nav-link {{ Request::routeIs('admin.pelatihan') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Pelatihan
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
