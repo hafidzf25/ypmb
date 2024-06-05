@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Auth\LoginAdminController;
 use App\Http\Controllers\Admin\Auth\AuthenticateUsers;
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\DetailPelatihanController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SeminarController;
 use App\Http\Controllers\UserController;
@@ -34,9 +36,10 @@ Route::get('/detailpelatihan/{id}', [PelatihanController::class, 'detailpelatiha
 Route::get('/detailseminar/{id}', [SeminarController::class, 'detailseminar'])->name('detailseminar');
 
 Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
-    Route::get('/pembayaran', [AnggotaController::class, 'pembayaran'])->name('pembayaran');
+    Route::get('/pembayaran/{id}', [DetailPelatihanController::class, 'pembayaran'])->name('pembayaran');
     Route::get('editprofil/{id}', [UserController::class, 'edit'])->name('editprofil');
     Route::post('editprofil/{id}', [UserController::class, 'update'])->name('updateprofil');
+    Route::post('/pembayaran', [PembayaranController::class, 'store'])->name('pembayaran.store');
 });
 
 Route::get('/login', function () {

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id_partisipan_pembayaran_pelatihan');
             $table->unsignedBigInteger('id');
             $table->unsignedBigInteger('id_pelatihan');
+            $table->integer('konfirmasi')->default(0);
             $table->string('bukti_pembayaran');
 
             $table->timestamps();

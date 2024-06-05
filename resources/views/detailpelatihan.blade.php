@@ -30,7 +30,7 @@
                     </span>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl text-end">
-                    <a href="{{ url('pembayaran') }}" class="btn btn-info text-white custom-width" style="background-color: #FEAD01; border-radius:1vh; width:20vh">Daftar</a>
+                    <a href="{{ url('/pembayaran/' . $data->id_pelatihan) }}" class="btn btn-info text-white custom-width" style="background-color: #FEAD01; border-radius:1vh; width:20vh">Daftar</a>
                 </div>
             </div>
         </div>
