@@ -97,7 +97,7 @@
                           <a data-toggle="modal" data-target="#modal-hapus{{ $seminar->id_seminar }}" class="btn btn-danger">
                             <i class="fas fa-trash-alt"></i> Hapus
                           </a>
-                          <a href="{{ route('admin.seminar.toggle', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-primary">
+                          <a href="{{ route('admin.seminar.edit', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-primary">
                             <i class="fas fa-edit"></i> Edit
                           </a>
                           <a href="{{ route('admin.seminar.toggle', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-info">
