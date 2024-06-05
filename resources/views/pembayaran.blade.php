@@ -13,26 +13,26 @@
                 </div>
                 <div class="row">
                     <div class="col pt-4 pb-4" style="background-color: white;">
+                        <div class="row mb-3">
+                            <label for="inputNamaLengkap" class="col-sm-4 col-form-label">Nama Lengkap</label>
+                            <div class="col">
+                                <input type="text" class="form-control" id="inputNamaLengkap" value="{{ auth()->user()->name }}" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputEmail" class="col-sm-4 col-form-label">Email</label>
+                            <div class="col">
+                                <input type="email" class="form-control" id="inputEmail" value="{{ auth()->user()->email }}" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputInstansi" class="col-sm-4 col-form-label">Instansi</label>
+                            <div class="col">
+                                <input type="text" class="form-control" id="inputInstansi" value="{{ auth()->user()->instansi }}" required>
+                            </div>
+                        </div>
+                        <hr>
                         <form action="#">
-                            <div class="row mb-3">
-                                <label for="inputNamaLengkap" class="col-sm-4 col-form-label">Nama Lengkap</label>
-                                <div class="col">
-                                    <input type="text" class="form-control" id="inputNamaLengkap" value="Damar Azrin Kareem" required>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputEmail" class="col-sm-4 col-form-label">Email</label>
-                                <div class="col">
-                                    <input type="email" class="form-control" id="inputEmail" required>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputInstansi" class="col-sm-4 col-form-label">Instansi</label>
-                                <div class="col">
-                                    <input type="text" class="form-control" id="inputInstansi" value="" required>
-                                </div>
-                            </div>
-                            <hr>
                             <div class="row mb-4">
                                 <div class="col-12 mb-3">
                                     <span>Biaya pendaftaran untuk pelatihan ini adalah Rp.15.000</span>
