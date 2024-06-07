@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('t_partisipan_seminar', function (Blueprint $table) {
             $table->id('id_partisipan_seminar');
-            $table->unsignedBigInteger('id');
+            $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_seminar');
             $table->string('sertifikat');
 
             $table->timestamps();
 
-            $table->foreign('id')->references('id')->on('users');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_seminar')->references('id_seminar')->on('t_seminar');
         });
     }

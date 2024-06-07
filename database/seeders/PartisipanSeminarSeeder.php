@@ -15,7 +15,7 @@ class PartisipanSeminarSeeder extends Seeder
     {
         $partisipanseminar = [
             [
-                'id' => 1,
+                'id_user' => 1,
                 'id_seminar' => 1,
                 'sertifikat' => 'test.png'
             ],

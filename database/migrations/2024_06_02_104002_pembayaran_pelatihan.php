@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('t_partisipan_pembayaran_pelatihan', function (Blueprint $table) {
             $table->id('id_partisipan_pembayaran_pelatihan');
-            $table->unsignedBigInteger('id');
+            $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_pelatihan');
             $table->integer('konfirmasi')->default(0);
             $table->string('bukti_pembayaran');
 
             $table->timestamps();
 
-            $table->foreign('id')->references('id')->on('users');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_pelatihan')->references('id_pelatihan')->on('t_pelatihan');
         });
     }
