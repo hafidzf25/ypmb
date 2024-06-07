@@ -12,6 +12,16 @@
                 </div>
                 <div class="row">
                     <div class="col pt-4 pb-4" style="background-color: white;">
+                        @if(session('error'))
+                            <div class="alert alert-danger" id="errorAlert">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+                        @if(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                         <div class="row mb-3">
                             <label for="inputNamaLengkap" class="col-sm-4 col-form-label">Nama Lengkap</label>
                             <div class="col">
@@ -59,7 +69,7 @@
                                     <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="width: 40%; border-radius: 10px; background-color:#38B6FF">Submit Pembayaran</button>
                                 </div>
                             </div>
-                            <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                            <input type="hidden" name="id_user" value="{{ auth()->user()->id }}">
                             <input type="hidden" name="id_pelatihan" value="{{ $data->id_pelatihan }}">
                         </form>                        
                     </div>
@@ -68,5 +78,11 @@
         </div>
     </div>
 </div>
+
+{{-- @if(session('error'))
+    <script>
+        alert('{{ session('error') }}');
+    </script>
+@endif --}}
 
 @endsection

@@ -14,7 +14,7 @@ class PembayaranPelatihan extends Model
 
     public $fillable = [
         'id_partisipan_pembayaran_pelatihan',
-        'id',
+        'id_user',
         'id_pelatihan',
         'konfirmasi',
         'bukti_pembayaran'
