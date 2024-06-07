@@ -119,14 +119,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('admin.logout')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Logout
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="{{route('admin.user')}}" class="nav-link {{ Request::routeIs('admin.user') ? 'active' : '' }}">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -147,6 +139,14 @@
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Pelatihan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.logout')}}" class="nav-link">
+            <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                Logout
               </p>
             </a>
           </li>
