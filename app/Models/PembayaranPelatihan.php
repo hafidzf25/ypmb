@@ -14,9 +14,14 @@ class PembayaranPelatihan extends Model
 
     public $fillable = [
         'id_partisipan_pembayaran_pelatihan',
-        'id',
+        'id_user',
         'id_pelatihan',
         'konfirmasi',
         'bukti_pembayaran'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }

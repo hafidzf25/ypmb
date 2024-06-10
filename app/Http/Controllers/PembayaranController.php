@@ -1,30 +1,37 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PembayaranPelatihan;
-use Illuminate\Support\Facades\Storage;
 
 class PembayaranController extends Controller
 {
     public function store(Request $request)
     {
+        // Check if a payment record already exists
+        $existingPayment = PembayaranPelatihan::where('id_user', $request->id_user)
+                                               ->where('id_pelatihan', $request->id_pelatihan)
+                                               ->first();
+
+        if ($existingPayment) {
+            return redirect()->back()->with('error', 'Anda sudah melakukan pemabayaran pada pelatihan ini, pembayaran anda sedang diverifikasi');
+        }
+
         $path = null;
         if ($request->hasFile('bukti_pembayaran')) {
             $file = $request->file('bukti_pembayaran');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('images'), $filename);
-            $path = 'images/' . $filename;
+            $file->move(public_path('images/bukti_pembayaran'), $filename);
+            $path = 'images/bukti_pembayaran/' . $filename;
         }
 
         PembayaranPelatihan::create([
-            'id' => $request->id,
+            'id_user' => $request->id_user,
             'id_pelatihan' => $request->id_pelatihan,
             'konfirmasi' => 0, 
             'bukti_pembayaran' => $path,
         ]);
 
-        return redirect()->back()->with('success', 'Pembayaran berhasil dikirim!');
+        return redirect()->back()->with('success', 'Pembayaran pelatihan berhasil dikirim!');
     }
 }

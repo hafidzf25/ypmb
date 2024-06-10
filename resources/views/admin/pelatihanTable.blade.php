@@ -78,7 +78,7 @@
                       $no = 1;
                     @endphp
                     @foreach ($pelatihans as $pelatihan)
-                      <tr>
+                    <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $pelatihan->nama_pelatihan }}</td>
                         <td>{{ $pelatihan->tanggal_awal }}</td>
@@ -99,6 +99,9 @@
                           </a>
                           <a href="{{ route('admin.pelatihan.toggle', ['id_pelatihan' => $pelatihan->id_pelatihan]) }}" class="btn btn-info">
                             <i class="fas fa-edit"></i> Status
+                          </a>
+                          <a href="{{ route('admin.pelatihan.participants', ['id_pelatihan' => $pelatihan->id_pelatihan]) }}" class="btn btn-secondary">
+                            <i class="fas fa-users"></i> Peserta
                           </a>
                         </td>
                       </tr>

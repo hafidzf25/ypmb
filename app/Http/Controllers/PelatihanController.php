@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Pelatihan;
+use App\Models\PembayaranPelatihan;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
@@ -159,5 +160,13 @@ class PelatihanController extends Controller
         }
 
         return redirect()->route('admin.pelatihan')->with('success', 'User status updated successfully');
+    }
+
+    public function participants($id_pelatihan)
+    {
+        $pelatihan = Pelatihan::findOrFail($id_pelatihan);
+        $participants = PembayaranPelatihan::with('user')->where('id_pelatihan', $id_pelatihan)->get();
+    
+        return view('admin/pelatihanparticipants', compact('pelatihan', 'participants'));
     }
 }

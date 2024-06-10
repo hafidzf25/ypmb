@@ -105,5 +105,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
     Route::put('/pelatihan/update/{id_pelatihan}', [PelatihanController::class, 'update'])->name('pelatihan.update');
     Route::delete('/pelatihan/delete/{id_pelatihan}', [PelatihanController::class, 'delete'])->name('pelatihan.delete');
     Route::get('/pelatihan/toggle/{id_pelatihan}', [PelatihanController::class, 'toggleStatus'])->name('pelatihan.toggle');
+    Route::get('/admin/pelatihan/{id_pelatihan}/participants', [App\Http\Controllers\PelatihanController::class, 'participants'])->name('pelatihan.participants');
+
 });
 
