@@ -30,8 +30,8 @@ class SeminarController extends Controller
     public function seminar(Request $request)
     {
         $search = $request->input('search');
-
-        $data = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'foto_sampul')
+        
+        $data = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'waktu_seminar', 'foto_sampul')
             ->when($search, function ($query, $search) {
                 return $query->where('nama_seminar', 'like', '%' . $search . '%');
             })
@@ -145,6 +145,7 @@ class SeminarController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_seminar' => 'required|string|max:255',
             'tanggal_seminar' => 'required|date',
+            'waktu_seminar' => 'required',
             'deskripsi_singkat' => 'required|string',
             'deskripsi_lengkap' => 'required|string',
             'foto_sampul' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -168,6 +169,7 @@ class SeminarController extends Controller
         $seminar = new Seminar([
             'nama_seminar' => $request->input('nama_seminar'),
             'tanggal_seminar' => $request->input('tanggal_seminar'),
+            'waktu_seminar' => $request->input('waktu_seminar'),
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'foto_sampul' => $filename,
@@ -195,6 +197,7 @@ class SeminarController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_seminar' => 'required|string|max:255',
             'tanggal_seminar' => 'required|date',
+            'waktu_seminar' => 'required',
             'deskripsi_singkat' => 'required|string',
             'deskripsi_lengkap' => 'required|string',
             'foto_sampul' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -221,6 +224,7 @@ class SeminarController extends Controller
         $seminars->update([
             'nama_seminar' => $request->input('nama_seminar'),
             'tanggal_seminar' => $request->input('tanggal_seminar'),
+            'waktu_seminar' => $request->input('waktu_seminar'),
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'link' => $request->input('link'),
@@ -230,7 +234,6 @@ class SeminarController extends Controller
         // Redirect to the seminar list or any other page with a success message
         return redirect()->route('admin.seminar')->with('success', 'Seminar updated successfully');
     }
-
 
     public function delete(Request $request, $id_seminar)
     {
@@ -254,5 +257,30 @@ class SeminarController extends Controller
         }
 
         return redirect()->route('admin.seminar')->with('success', 'User status updated successfully');
+    }
+
+    public function participants($id_seminar)
+    {
+        $seminar = Seminar::findOrFail($id_seminar);
+        $participants = PartisipanSeminar::with('user')->where('id_seminar', $id_seminar)->get();
+    
+        return view('admin/seminarparticipant', compact('seminar', 'participants'));
+    }
+
+    public function uploadCertificate(Request $request)
+    {
+        $participant = PartisipanSeminar::find($request->id_partisipan_seminar);
+    
+        $path = null;
+        if ($request->hasFile('sertifikat')) {
+            $file = $request->file('sertifikat');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('doc/Sertifikat_Seminar'), $filename);
+            $path = 'Sertifikat_Seminar/' . $filename;
+    
+            $participant->sertifikat = $path;
+            $participant->save();
+        }
+        return redirect()->back()->with('success', 'Sertifikat uploaded successfully!');
     }
 }

@@ -16,6 +16,7 @@ class Seminar extends Model
         'id_seminar',
         'nama_seminar',
         'tanggal_seminar',
+        'waktu_seminar',
         'foto_sampul',
         'deskripsi_singkat',
         'deskripsi_lengkap',

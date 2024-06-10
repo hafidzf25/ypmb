@@ -101,6 +101,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
     Route::put('/seminar/update/{id_seminar}', [SeminarController::class, 'update'])->name('seminar.update');
     Route::delete('/seminar/delete/{id_seminar}', [SeminarController::class, 'delete'])->name('seminar.delete');
     Route::get('/seminar/toggle/{id_seminar}', [SeminarController::class, 'toggleStatus'])->name('seminar.toggle');
+    Route::get('/seminar/{id_seminar}/participants', [App\Http\Controllers\SeminarController::class, 'participants'])->name('seminar.participants');
 
     Route::get('/pelatihan', [PelatihanController::class, 'index'])->name('pelatihan');
     Route::get('/pelatihan/search', [PelatihanController::class, 'search'])->name('pelatihan.search');
@@ -112,5 +113,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
     Route::get('/pelatihan/toggle/{id_pelatihan}', [PelatihanController::class, 'toggleStatus'])->name('pelatihan.toggle');
     Route::get('/pelatihan/{id_pelatihan}/participants', [App\Http\Controllers\PelatihanController::class, 'participants'])->name('pelatihan.participants');
     Route::get('/pembayaran/toggle/{id_ppp}', [PembayaranController::class, 'toggleStatusP'])->name('pembayaran.toggle');
+
+    Route::post('/seminar/upload-certificate', [SeminarController::class, 'uploadCertificate'])->name('seminar.upload-certificate');
+    Route::post('/pelatihan/upload-certificate', [PelatihanController::class, 'uploadCertificate'])->name('pelatihan.upload-certificate');
 });
 

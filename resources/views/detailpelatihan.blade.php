@@ -106,7 +106,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <embed src="{{ asset('images/Seminar/0023_0032.pdf') }}" type="application/pdf" width="100%" height="550px">
+                <embed src="{{ asset('doc/' . $sertifikat) }}" type="application/pdf" width="100%" height="550px">
             </div>
         </div>
     </div>

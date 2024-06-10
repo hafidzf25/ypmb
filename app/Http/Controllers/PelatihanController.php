@@ -44,7 +44,7 @@ class PelatihanController extends Controller
         Carbon::setLocale('id');
         
         $data = Pelatihan::where('id_pelatihan', $id)->first();
-
+    
         $title = $data->nama_pelatihan;
         $data->tanggal_awal = Carbon::parse($data->tanggal_awal)->format('d F Y');
         $data->tanggal_akhir = Carbon::parse($data->tanggal_akhir)->format('d F Y');
@@ -76,6 +76,7 @@ class PelatihanController extends Controller
 
         return view('detailpelatihan', compact('data', 'title', 'status', 'sertifikat', 'datapartisipan'));
     }
+    
 
     public function create(){
         return view('admin.addPelatihan');
@@ -203,5 +204,22 @@ class PelatihanController extends Controller
         $participants = PembayaranPelatihan::with('user')->where('id_pelatihan', $id_pelatihan)->get();
     
         return view('admin/pelatihanparticipants', compact('pelatihan', 'participants'));
+    }
+
+    public function uploadCertificate(Request $request)
+    {
+        $participant = PembayaranPelatihan::find($request->id_ppp);
+    
+        $path = null;
+        if ($request->hasFile('sertifikat')) {
+            $file = $request->file('sertifikat');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('doc/Sertifikat_Pelatihan'), $filename);
+            $path = 'Sertifikat_Pelatihan/' . $filename;
+    
+            $participant->sertifikat = $path;
+            $participant->save();
+        }
+        return redirect()->back()->with('success', 'Sertifikat uploaded successfully!');
     }
 }

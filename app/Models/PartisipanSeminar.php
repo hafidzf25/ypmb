@@ -14,8 +14,13 @@ class PartisipanSeminar extends Model
 
     public $fillable = [
         'id_partisipan_seminar',
-        'id',
+        'id_user',
         'id_seminar',
         'sertifikat'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }
