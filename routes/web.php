@@ -115,5 +115,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
     Route::get('/pembayaran/toggle/{id_ppp}', [PembayaranController::class, 'toggleStatusP'])->name('pembayaran.toggle');
 
     Route::post('/seminar/upload-certificate', [SeminarController::class, 'uploadCertificate'])->name('seminar.upload-certificate');
+    Route::post('/pelatihan/upload-certificate', [PelatihanController::class, 'uploadCertificate'])->name('pelatihan.upload-certificate');
 });
 

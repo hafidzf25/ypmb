@@ -203,7 +203,6 @@ class SeminarController extends Controller
         return redirect()->route('admin.seminar')->with('success', 'Seminar updated successfully');
     }
 
-
     public function delete(Request $request, $id_seminar)
     {
         $seminars = Seminar::find($id_seminar);
@@ -247,12 +246,9 @@ class SeminarController extends Controller
             $file->move(public_path('doc/Sertifikat_Seminar'), $filename);
             $path = 'Sertifikat_Seminar/' . $filename;
     
-            // Save the path to the participant's record
             $participant->sertifikat = $path;
             $participant->save();
         }
-
         return redirect()->back()->with('success', 'Sertifikat uploaded successfully!');
     }
-    
 }

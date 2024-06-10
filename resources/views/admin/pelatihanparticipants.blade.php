@@ -72,10 +72,19 @@
                                             Tidak ada bukti
                                             @endif
                                         </td>
+                                        <td>{{ $participant->sertifikat }}</td>
                                         <td>
                                             <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp]) }}" class="btn btn-info">
                                                 <i class="fas fa-edit"></i> Konfirmasi
                                             </a>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('admin.pelatihan.upload-certificate') }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <input type="hidden" name="id_ppp" value="{{ $participant->id_ppp }}">
+                                                <input type="file" name="sertifikat" required>
+                                                <button type="submit" class="btn btn-primary btn-sm">Upload</button>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach
