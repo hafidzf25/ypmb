@@ -19,4 +19,9 @@ class PembayaranPelatihan extends Model
         'konfirmasi',
         'bukti_pembayaran'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }
