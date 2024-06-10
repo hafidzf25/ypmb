@@ -221,4 +221,32 @@ class SeminarController extends Controller
 
         return redirect()->route('admin.seminar')->with('success', 'User status updated successfully');
     }
+
+    public function participants($id_seminar)
+    {
+        $seminar = Seminar::findOrFail($id_seminar);
+        $participants = PartisipanSeminar::with('user')->where('id_seminar', $id_seminar)->get();
+    
+        return view('admin/seminarparticipant', compact('seminar', 'participants'));
+    }
+
+    public function uploadCertificate(Request $request)
+    {
+        $participant = PartisipanSeminar::find($request->id_partisipan_seminar);
+    
+        $path = null;
+        if ($request->hasFile('sertifikat')) {
+            $file = $request->file('sertifikat');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('doc/Sertifikat_Seminar'), $filename);
+            $path = 'Sertifikat_Seminar/' . $filename;
+    
+            // Save the path to the participant's record
+            $participant->sertifikat = $path;
+            $participant->save();
+        }
+
+        return redirect()->back()->with('success', 'Sertifikat uploaded successfully!');
+    }
+    
 }

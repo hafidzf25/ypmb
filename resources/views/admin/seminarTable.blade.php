@@ -100,6 +100,9 @@
                           <a href="{{ route('admin.seminar.toggle', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-info">
                             <i class="fas fa-edit"></i> Status
                           </a>
+                          <a href="{{ route('admin.seminar.participants', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-secondary">
+                            <i class="fas fa-users"></i> Peserta
+                          </a>
                         </td>
                       </tr>
                       <div class="modal fade" id="modal-hapus{{ $seminar->id_seminar }}">
