@@ -13,7 +13,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-5 col-sm-12 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset($user->foto) }}" class="rounded-circle" alt="" style="width:20rem; height: 20rem; border: 5px solid white; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
+                        <img src="{{ asset($user->foto) }}" class="rounded-circle" alt="" style="width:18   rem; height: 18    rem; border: 5px solid white; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
                     </div>
                     <div class="col pt-4 pb-4" style="background-color: white;">
                         @if(session('success'))
@@ -23,12 +23,6 @@
                         @endif
                         <form action="{{ route('updateprofil', $user->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="row mb-3">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">ID Akun</label>
-                                <div class="col">
-                                    <input type="text" readonly class="form-control" id="staticEmail" value="{{ $user->id }}">
-                                </div>
-                            </div>
                             <div class="row mb-3">
                                 <label for="inputNamaLengkap" class="col-sm-4 col-form-label">Nama Lengkap</label>
                                 <div class="col">

@@ -59,7 +59,12 @@ class SeminarController extends Controller
 
         $sertifikat = 'null';
         if ($datapartisipan != null) {
-            $sertifikat = $datapartisipan->sertifikat;
+            if ($datapartisipan->sertifikat == '') {
+                $sertifikat = 'null';
+            }
+            else {
+                $sertifikat = $datapartisipan->sertifikat;
+            }
         }
 
         if ($exists) {
