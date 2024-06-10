@@ -8,13 +8,13 @@
       <div id="carouselExample" class="carousel slide custom-carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="{{ asset('images/headline-1.png') }}" class="d-block w-100 carousel-img-radius" alt="..." width="200 rem">
+            <img src="{{ asset('images/headline-1.png') }}" class="d-block w-100 carousel-img-radius" alt="..." style="width: 10rem; height: 18rem;">
           </div>
           <div class="carousel-item">
-            <img src="{{ asset('images/headline-2.jpeg') }}" class="d-block w-100 carousel-img-radius" alt="...">
+            <img src="{{ asset('images/headline-2.jpg') }}" class="d-block w-100 carousel-img-radius" alt="..." style="width: 10rem; height: 18rem;">
           </div>
           <div class="carousel-item">
-            <img src="{{ asset('images/headline-3.png') }}" class="d-block w-100 carousel-img-radius" alt="...">
+            <img src="{{ asset('images/headline-3.png') }}" class="d-block w-100 carousel-img-radius" alt="..." style="width: 10rem; height: 18rem;">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -47,7 +47,7 @@
       <img src="{{ asset('images/about-cerdas.png') }}" alt="" style="max-width: 100%; height: auto;">
     </div>
     <div class="col p-4" style="font-size: 18px; text-align:justify;">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Eu nisl nunc mi ipsum. Dignissim sodales ut eu sem integer vitae justo eget magna. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget. Suspendisse interdum consectetur libero id faucibus nisl. Commodo elit at imperdiet dui. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Aliquet nibh praesent tristique magna sit amet. Porttitor lacus luctus accumsan tortor. Mauris pharetra et ultrices neque ornare aenean euismod. Gravida quis blandit turpis cursus in hac. Ut pharetra sit amet aliquam.
+      PMB, singkatan dari Pengajar Madrasah Berbagi, adalah tonggak pendidikan yang menginspirasi dan membawa perubahan dalam kehidupan siswa-siswanya. Mereka bukan hanya pengajar, tetapi juga mentor, teman, dan pahlawan dalam perjalanan pendidikan. Dengan kebijaksanaan dan dedikasi mereka, PMB membimbing siswa-siswa menuju puncak kesuksesan, memberi mereka kepercayaan diri dan pengetahuan untuk menghadapi tantangan masa depan.
     </div>
   </div>
 </div>
@@ -79,7 +79,7 @@
           </p>
           <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
             <i class="bi bi-people-fill" style="color: #38B6FF"></i>
-            <img src="people.png" alt=""> Peserta 4077
+            <img src="people.png" alt=""> Peserta {{$index->totalPendaftar}}
           </p>
           <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
             <i class="bi bi-star-fill" style="color: #38B6FF"></i>
@@ -124,7 +124,7 @@
           </p>
           <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
             <i class="bi bi-people-fill" style="color: #38B6FF"></i>
-            <img src="people.png" alt=""> Peserta 4077
+            <img src="people.png" alt=""> Peserta {{$index->totalPendaftar}}
           </p>
           <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
             <i class="bi bi-star-fill" style="color: #38B6FF"></i>
