@@ -15,7 +15,7 @@ class SeminarSeeder extends Seeder
     {
         $seminar = [
             [
-                'nama_seminar' => 'Latihan Jogging',
+                'nama_seminar' => 'Seminar Bimbingan dan Konseling',
                 'tanggal_seminar' => '2010-03-10',
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test.png',
@@ -26,15 +26,15 @@ class SeminarSeeder extends Seeder
                                         
                                         Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
                                         
-                                        NAMA PELATIHAN : PELATIHAN  MEDIA PENYULUHAN BERBASIS TEKNOLOGI INFORMASI DAN KOMUNIKASI (TIK)
+                                         Pada pelatihan ini peserta akan mempelajari :
+
+                                        1. Implementasi Kurikulum Merdeka dalam Layanan Bimbingan dan Konseling 
+                                        2. Penyusunan Program Bimbingan dan Konseling
+                                        3. Strategi Layanan Bimbingan dan Konseling
+                                        4. Layanan Peminatan dan Perencanaan Individual
+                                        5. Evaluasi, Pelaporan, dan Tindak Lanjut
                                         
-                                        Kompetensi Teknis  : Penguasaan media penyuluhan dalam pelaksanaan tugas sebagai Penyuluh Agama
-                                        
-                                        Sasaran Pelatihan : Penyuluh Agama
-                                        
-                                        Tujuan Pelatihan :  Meningkatkan kompetensi Fungsional Penyuluh dalam membuat media penyuluhan dengan menggunakan TIK
-                                        
-                                        Latar belakang Pelatihan : Era digital ini merupakan era percepatan teknologi, seluruh ASN harus memiliki literasi digital di Era transformasi digital ini, seluruh staf pemerintahan atau ASN harus paham digital. Salah satunya adalah para penyuluh agama Kementerian Agama yang memiliki tupoksi yang sangat penting dalam menyampaikan hal-hal bagi masyarakat Indonesia. Penyuluh Agama yang memiliki kompetensi membuat media berbasis TIK sangat diperlukan agar dapat memberikan pemahaman yang masif dan komprehensif kepada Masyarakat dengan memanfaatkan TIK. 
+                                        Setelah mengikuti pelatihan ini, peserta diharapkan mampu Membuat Media Pembelajaran Berbasis Artificial Intelligence. Pelatihan ini akan berlangsung selama 5 hari. 
                                         
                                         Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
                                         
@@ -57,16 +57,15 @@ class SeminarSeeder extends Seeder
                                         
                                         Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
                                         
-                                        NAMA PELATIHAN : PELATIHAN  MEDIA PENYULUHAN BERBASIS TEKNOLOGI INFORMASI DAN KOMUNIKASI (TIK)
+                                        Pada pelatihan ini peserta akan mempelajari :
+
+                                        1. Artificial Intelligent (AI) dalam Pembelajaran
+                                        2. Pembuatan Presentasi Multimedia pembelajaran Berbasis AI
+                                        3. Pembuatan Video Pembelajaran Berbasis AI
+                                        4. Pembuatan Asesmen Pembelajaran Berbasis AI
                                         
-                                        Kompetensi Teknis  : Penguasaan media penyuluhan dalam pelaksanaan tugas sebagai Penyuluh Agama
-                                        
-                                        Sasaran Pelatihan : Penyuluh Agama
-                                        
-                                        Tujuan Pelatihan :  Meningkatkan kompetensi Fungsional Penyuluh dalam membuat media penyuluhan dengan menggunakan TIK
-                                        
-                                        Latar belakang Pelatihan : Era digital ini merupakan era percepatan teknologi, seluruh ASN harus memiliki literasi digital di Era transformasi digital ini, seluruh staf pemerintahan atau ASN harus paham digital. Salah satunya adalah para penyuluh agama Kementerian Agama yang memiliki tupoksi yang sangat penting dalam menyampaikan hal-hal bagi masyarakat Indonesia. Penyuluh Agama yang memiliki kompetensi membuat media berbasis TIK sangat diperlukan agar dapat memberikan pemahaman yang masif dan komprehensif kepada Masyarakat dengan memanfaatkan TIK. 
-                                        
+                                        Setelah mengikuti pelatihan ini, peserta diharapkan mampu Membuat Media Pembelajaran Berbasis Artificial Intelligence. Pelatihan ini akan berlangsung selama 5 hari. 
+
                                         Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
                                         
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
@@ -86,19 +85,10 @@ class SeminarSeeder extends Seeder
                                         
                                         Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
                                         
-                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
+                                       Peserta diharapkan mendaftar dan melakukan pelatihan sampai selesai secara mandiri. 
+                                       Pelatihan dilaksanakan selama 5 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
                                         
-                                        NAMA PELATIHAN : PELATIHAN  MEDIA PENYULUHAN BERBASIS TEKNOLOGI INFORMASI DAN KOMUNIKASI (TIK)
-                                        
-                                        Kompetensi Teknis  : Penguasaan media penyuluhan dalam pelaksanaan tugas sebagai Penyuluh Agama
-                                        
-                                        Sasaran Pelatihan : Penyuluh Agama
-                                        
-                                        Tujuan Pelatihan :  Meningkatkan kompetensi Fungsional Penyuluh dalam membuat media penyuluhan dengan menggunakan TIK
-                                        
-                                        Latar belakang Pelatihan : Era digital ini merupakan era percepatan teknologi, seluruh ASN harus memiliki literasi digital di Era transformasi digital ini, seluruh staf pemerintahan atau ASN harus paham digital. Salah satunya adalah para penyuluh agama Kementerian Agama yang memiliki tupoksi yang sangat penting dalam menyampaikan hal-hal bagi masyarakat Indonesia. Penyuluh Agama yang memiliki kompetensi membuat media berbasis TIK sangat diperlukan agar dapat memberikan pemahaman yang masif dan komprehensif kepada Masyarakat dengan memanfaatkan TIK. 
-                                        
-                                        Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
+                                       Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
                                         
                                         Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
@@ -108,7 +98,7 @@ class SeminarSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'nama_seminar' => 'Latihan Jogging 4',
+                'nama_seminar' => 'Seminar Anti Perundungan (Anti- Bullying) dan Kekerasan Terhadap Murid',
                 'tanggal_seminar' => '2010-03-13',
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test4.png',
@@ -117,17 +107,23 @@ class SeminarSeeder extends Seeder
                                         
                                         Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
                                         
-                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
-                                        
-                                        NAMA PELATIHAN : PELATIHAN  MEDIA PENYULUHAN BERBASIS TEKNOLOGI INFORMASI DAN KOMUNIKASI (TIK)
-                                        
-                                        Kompetensi Teknis  : Penguasaan media penyuluhan dalam pelaksanaan tugas sebagai Penyuluh Agama
-                                        
-                                        Sasaran Pelatihan : Penyuluh Agama
-                                        
-                                        Tujuan Pelatihan :  Meningkatkan kompetensi Fungsional Penyuluh dalam membuat media penyuluhan dengan menggunakan TIK
-                                        
-                                        Latar belakang Pelatihan : Era digital ini merupakan era percepatan teknologi, seluruh ASN harus memiliki literasi digital di Era transformasi digital ini, seluruh staf pemerintahan atau ASN harus paham digital. Salah satunya adalah para penyuluh agama Kementerian Agama yang memiliki tupoksi yang sangat penting dalam menyampaikan hal-hal bagi masyarakat Indonesia. Penyuluh Agama yang memiliki kompetensi membuat media berbasis TIK sangat diperlukan agar dapat memberikan pemahaman yang masif dan komprehensif kepada Masyarakat dengan memanfaatkan TIK. 
+                                       Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
+
+                                        Anti Perundungan (Anti- Bullying) dan Kekerasan Terhadap Murid
+
+                                        Sasaran
+
+                                        Sasaran dari pelatihan ini adalah tenga pendidik dan kependidikan, wali dari peserta didik, dan masyarakat umum yang memerlukan dan berkeinginan untuk meningkatkan pemahaman dan keterampilan dalam mencegah serta menanggapi perundungan dan kekerasan pada peserta didik
+
+                                        ⁠Tujuan
+
+                                        Tujuan dari pelatihan ini adalah meningkatkan pemahaman peserta terhadap fenomena perundungan dan kekerasan, sambil memberikan strategi yang efektif dalam mencegah, mendeteksi, dan menanggapi situasi tersebut di konteks pendidikan.                 
+
+                                        ⁠Latar Belakang
+
+                                        Pelatihan ini diselenggarakan sebagai tanggapan terhadap meningkatnya kasus perundungan dan kekerasan di kalangan peserta didik. Hal ini mendasari kebutuhan akan pendidikan yang lebih mendalam bagi para profesional pendidikan.  
+
+ 
                                         
                                         Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
                                         
@@ -139,7 +135,7 @@ class SeminarSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'nama_seminar' => 'Latihan Jogging 4',
+                'nama_seminar' => 'Seminar Implementasi Kurikulum Merdeka',
                 'tanggal_seminar' => '2010-03-13',
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test4.png',
@@ -148,17 +144,17 @@ class SeminarSeeder extends Seeder
                                         
                                         Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
                                         
-                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
-                                        
-                                        NAMA PELATIHAN : PELATIHAN  MEDIA PENYULUHAN BERBASIS TEKNOLOGI INFORMASI DAN KOMUNIKASI (TIK)
-                                        
-                                        Kompetensi Teknis  : Penguasaan media penyuluhan dalam pelaksanaan tugas sebagai Penyuluh Agama
-                                        
-                                        Sasaran Pelatihan : Penyuluh Agama
-                                        
-                                        Tujuan Pelatihan :  Meningkatkan kompetensi Fungsional Penyuluh dalam membuat media penyuluhan dengan menggunakan TIK
-                                        
-                                        Latar belakang Pelatihan : Era digital ini merupakan era percepatan teknologi, seluruh ASN harus memiliki literasi digital di Era transformasi digital ini, seluruh staf pemerintahan atau ASN harus paham digital. Salah satunya adalah para penyuluh agama Kementerian Agama yang memiliki tupoksi yang sangat penting dalam menyampaikan hal-hal bagi masyarakat Indonesia. Penyuluh Agama yang memiliki kompetensi membuat media berbasis TIK sangat diperlukan agar dapat memberikan pemahaman yang masif dan komprehensif kepada Masyarakat dengan memanfaatkan TIK. 
+                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 5 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
+                                        Setelah mengikuti pelatihan ini, peserta diharapkan mampu mengimplementasikan Kurikulum Merdeka di Madrasah. 
+
+                                        Pada pelatihan ini peserta akan mempelajari :
+
+                                        1.Perubahan Paradigma Pendidikan Madrasah
+                                        2.Pembelajaran Berdiferensiasi (Pengelolaan Pembelajaran pada Kurikulum Merdeka)
+                                        3.Asesmen Pembelajaran pada Kurikulum Merdeka
+                                        4.Proyek Penguatan Profil Pelajar Pancasila dan Profil Pelajar Rahmatan Lil alamin (P5 PPRA) 
+                                        5.Penyusunan Kurikulum Operasional Madrasah (KOM) 
+                                        6.Teknik Coaching dan Mentoring
                                         
                                         Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
                                         
@@ -170,7 +166,7 @@ class SeminarSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'nama_seminar' => 'Latihan Jogging 5',
+                'nama_seminar' => 'Seminar Karya Tulis Ilmiah bagi Penghulu dan Penyuluh',
                 'tanggal_seminar' => '2010-03-14',
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test5.png',
@@ -181,15 +177,15 @@ class SeminarSeeder extends Seeder
                                         
                                         Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
                                         
-                                        NAMA PELATIHAN : PELATIHAN  MEDIA PENYULUHAN BERBASIS TEKNOLOGI INFORMASI DAN KOMUNIKASI (TIK)
+                                        Dalam pelatihan ini peserta akan mempelajari :
+
+                                        1.Karya Tulis Ilmiah sebagai Pengembangan Profesi
+                                        2.Sistematika Karya Tulis Ilmiah dan Tata Bahasa Indonesia dalam Penyusunan KTI
+                                        3.Teknik Analisis Data
+                                        4.Penyusunan Karya Tulis Ilmiah
+                                        5.Media Publikasi
                                         
-                                        Kompetensi Teknis  : Penguasaan media penyuluhan dalam pelaksanaan tugas sebagai Penyuluh Agama
-                                        
-                                        Sasaran Pelatihan : Penyuluh Agama
-                                        
-                                        Tujuan Pelatihan :  Meningkatkan kompetensi Fungsional Penyuluh dalam membuat media penyuluhan dengan menggunakan TIK
-                                        
-                                        Latar belakang Pelatihan : Era digital ini merupakan era percepatan teknologi, seluruh ASN harus memiliki literasi digital di Era transformasi digital ini, seluruh staf pemerintahan atau ASN harus paham digital. Salah satunya adalah para penyuluh agama Kementerian Agama yang memiliki tupoksi yang sangat penting dalam menyampaikan hal-hal bagi masyarakat Indonesia. Penyuluh Agama yang memiliki kompetensi membuat media berbasis TIK sangat diperlukan agar dapat memberikan pemahaman yang masif dan komprehensif kepada Masyarakat dengan memanfaatkan TIK. 
+                                        Setelah mengikuti pelatihan ini, peserta diharapkan mampu memahami dan menyusun Karya Tulis Ilmiah sesuai kaidah. Pelatihan ini akan dilaksanakan selama 5 hari
                                         
                                         Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
                                         
@@ -201,7 +197,7 @@ class SeminarSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'nama_seminar' => 'Latihan Jogging 6',
+                'nama_seminar' => 'Seminar Kewirausahaan dan Ekonomi Kreatif di Pesantren',
                 'tanggal_seminar' => '2010-03-15',
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test6.png',
@@ -212,15 +208,28 @@ class SeminarSeeder extends Seeder
                                         
                                         Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
                                         
-                                        NAMA PELATIHAN : PELATIHAN  MEDIA PENYULUHAN BERBASIS TEKNOLOGI INFORMASI DAN KOMUNIKASI (TIK)
+                                       Pada pelatihan ini, peserta akan mempelajari : 
+
+                                        Best Practice Kewirausahaan dan Ekonomi Kreatif di Pesantren
+
+                                        1.Entrepreneurship MIndset : Dra. Budi Lestari, M.Pd
+                                        2.Business Skill : Dr. Fatma Widyastuti, S.Pd., M.Ed
+                                        3.Business Plan : Achmad Subkhan, S.H.I., M.S.I.
+                                        4.Marketing Mix : Dra. Hj. Ngamilah, M.S.I
+                                        5.Akuntansi dan Manajemen Keuangan : Dr. Hj. Siti Rokhanah, M.Ag.
+
+
+                                        Sasaran Pelatihan : pengelola pondok pesantren, santri/santriwati, alumni pondok pesantren.
+
+                                        Tujuan Pelatihan : Untuk menginternalisasi nilai, sikap dan keterampilan kewirausahaan di lingkungan pondok pesantren dengan pengelolaan modern. 
+
+                                        Latar Belakang Pelatihan
+
+                                        Pondok pesantren sebagai pusat pendidikan Islam sering memainkan peran krusial dalam membentuk karakter dan pengetahuan para santri. Dengan memahami pentingnya pengembangan ekonomi di tingkat komunitas, pesantren-pesantren modern mulai menyelenggarakan pelatihan kewirausahaan dan ekonomi kreatif. Langkah ini dilakukan untuk memberdayakan santri dan masyarakat sekitarnya agar mampu menghadapi tantangan ekonomi serta menciptakan lapangan kerja. Pelatihan tersebut bertujuan membangun keterampilan bisnis, pengetahuan manajemen, dan kreativitas dalam rangka mendukung pembangunan ekonomi lokal. Dengan demikian, pesantren bukan hanya tempat pendidikan agama, tetapi juga menjadi motor penggerak ekonomi yang berkelanjutan di wilayahnya.
+
                                         
-                                        Kompetensi Teknis  : Penguasaan media penyuluhan dalam pelaksanaan tugas sebagai Penyuluh Agama
-                                        
-                                        Sasaran Pelatihan : Penyuluh Agama
-                                        
-                                        Tujuan Pelatihan :  Meningkatkan kompetensi Fungsional Penyuluh dalam membuat media penyuluhan dengan menggunakan TIK
-                                        
-                                        Latar belakang Pelatihan : Era digital ini merupakan era percepatan teknologi, seluruh ASN harus memiliki literasi digital di Era transformasi digital ini, seluruh staf pemerintahan atau ASN harus paham digital. Salah satunya adalah para penyuluh agama Kementerian Agama yang memiliki tupoksi yang sangat penting dalam menyampaikan hal-hal bagi masyarakat Indonesia. Penyuluh Agama yang memiliki kompetensi membuat media berbasis TIK sangat diperlukan agar dapat memberikan pemahaman yang masif dan komprehensif kepada Masyarakat dengan memanfaatkan TIK. 
+
+                                        Pelatihan ini akan berlangsung selama 5 hari. 
                                         
                                         Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
                                         
@@ -232,7 +241,7 @@ class SeminarSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'nama_seminar' => 'Latihan Jogging 7',
+                'nama_seminar' => 'Seminar Numerasi : Ide Praktis Pembelajaran dan Permainan Numerik',
                 'tanggal_seminar' => '2010-03-16',
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test7.png',
@@ -243,22 +252,31 @@ class SeminarSeeder extends Seeder
                                         
                                         Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
                                         
-                                        NAMA PELATIHAN : PELATIHAN  MEDIA PENYULUHAN BERBASIS TEKNOLOGI INFORMASI DAN KOMUNIKASI (TIK)
-                                        
-                                        Kompetensi Teknis  : Penguasaan media penyuluhan dalam pelaksanaan tugas sebagai Penyuluh Agama
-                                        
-                                        Sasaran Pelatihan : Penyuluh Agama
-                                        
-                                        Tujuan Pelatihan :  Meningkatkan kompetensi Fungsional Penyuluh dalam membuat media penyuluhan dengan menggunakan TIK
-                                        
-                                        Latar belakang Pelatihan : Era digital ini merupakan era percepatan teknologi, seluruh ASN harus memiliki literasi digital di Era transformasi digital ini, seluruh staf pemerintahan atau ASN harus paham digital. Salah satunya adalah para penyuluh agama Kementerian Agama yang memiliki tupoksi yang sangat penting dalam menyampaikan hal-hal bagi masyarakat Indonesia. Penyuluh Agama yang memiliki kompetensi membuat media berbasis TIK sangat diperlukan agar dapat memberikan pemahaman yang masif dan komprehensif kepada Masyarakat dengan memanfaatkan TIK. 
-                                        
-                                        Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
-                                        
-                                        Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
-                                        Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
-                                        Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                                        Pada pelatihan ini peserta akan mempelajari :
+
+                                            A. Numerasi di mana-mana:
+
+                                            1. Pengantar Penguatan Numerasi dalam Kurikulum Merdeka
+
+                                            2. Pendekatan Numerasi Lintas Kurikulum
+
+                                            3. Numerasi di Lingkungan Sekitar
+
+                                            B. Ide-Ide Praktis Penggunaan Alat Matematika
+
+                                            1. Numerasi Berbasis Alat Elektronik
+
+                                            2. Numerasi Berbasis Alat Non Elektronik
+
+                                            C. Permainan Kaya Numerasi
+
+                                            1. Permainan Berbasis Digital Kaya Numerasi 
+
+                                            2. Permainan Berbasis Non Digital Kaya Numerasi
+                                            Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
+                                            Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
+                                            Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
+                                            Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
                 'link' => null,
                 'status' => 1,
             ],
