@@ -7,12 +7,6 @@
             <img src="{{ asset('images/img_pelatihan1.png') }}" alt="" style="max-width: 100%;">
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 pt-3">
-            <div class="col" style="font-weight: 400;">
-                <span>
-                    <i class="bi bi-star-fill" style="color: #EBFF00"></i>
-                    4.8 (1234 reviews)
-                </span>
-            </div>
             <div class="col mb-3 mt-3">
                 <span style="font-size: 5vh; line-height:6vh;">
                     {{$data->nama_pelatihan}}
@@ -59,9 +53,19 @@
                 </button>
                 <div class="collapse" id="collapseExample">
                     <div>
-                        Pembayaran sedang diverifikasi terlebih dahulu.<br><br>
+                        @if($status == 0)
+                        <button type="button" class="btn btn-danger">Belum Terdaftar</button> <br> <br>
+                        @else
+                        @if($datapartisipan->konfirmasi == 1)
+                        @if($data->link == '')
                         <button type="button" class="btn btn-danger">Menunggu</button> <br> <br>
-                        <button id="joinClassroomBtn" class="btn btn-info" style="color: white;">Join Classroom!</button>
+                        @else
+                        <a href="{{$data->link}}" class="btn btn-success" style="color: #FFFFFF;">Join Classroom</a>
+                        @endif
+                        @else
+                        Pembayaran sedang diverifikasi terlebih dahulu.<br><br>
+                        @endif
+                        @endif
                     </div>
                 </div>
                 <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="true" aria-controls="collapseExample2  " style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
@@ -72,8 +76,20 @@
                 </button>
                 <div class="collapse" id="collapseExample2">
                     <div>
+                        @if($status == 0)
+                        <button type="button" class="btn btn-danger">Belum Terdaftar</button> <br> <br>
+                        @else
+                        @if($datapartisipan->konfirmasi == 1)
+                        @if($sertifikat == 'null')
+                        <button type="button" class="btn btn-danger">Menunggu</button> <br> <br>
+                        @else
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Unduh </button>
+                        @endif
+                        @else
+                        Pembayaran sedang diverifikasi terlebih dahulu.<br><br>
+                        @endif
+                        @endif
                     </div>
                 </div>
                 <br>

@@ -23,7 +23,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{{ url('/') }}" style="font-size: xx-large;"  id="cerdas">PMB</a>
+      <a class="navbar-brand" href="{{ url('/') }}" style="font-size: xx-large;" id="cerdas">PMB</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -107,6 +107,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
     $(document).ready(function() {
@@ -116,6 +117,7 @@
       });
     });
   </script>
+  
 </body>
 
 </html>

@@ -31,6 +31,10 @@ class PelatihanController extends Controller
             })
             ->paginate(8);
 
+            foreach ($data as $pelatihan) {
+                $pelatihan->totalPendaftar = PembayaranPelatihan::where('id_pelatihan', $pelatihan->id_pelatihan)->count();
+            }
+
         $title = "Pelatihan"; // Set the title
 
         return view('pelatihan', compact('data', 'title'));
@@ -45,7 +49,32 @@ class PelatihanController extends Controller
         $data->tanggal_awal = Carbon::parse($data->tanggal_awal)->format('d F Y');
         $data->tanggal_akhir = Carbon::parse($data->tanggal_akhir)->format('d F Y');
 
-        return view('detailpelatihan', compact('data', 'title'));
+        $id_user = auth()->id();
+        $status = 0;
+        $exists = 0;
+
+        $exists = PembayaranPelatihan::where('id_user', $id_user)
+            ->where('id_pelatihan', $id)
+            ->exists();
+
+        $datapartisipan = PembayaranPelatihan::where('id_user', $id_user)
+            ->where('id_pelatihan', $id)
+            ->first();
+
+        $sertifikat = 'null';
+        if ($datapartisipan != null) {
+            if ($datapartisipan->sertifikat == '') {
+                $sertifikat = 'null';
+            } else {
+                $sertifikat = $datapartisipan->sertifikat;
+            }
+        }
+
+        if ($exists) {
+            $status = 1;
+        }
+
+        return view('detailpelatihan', compact('data', 'title', 'status', 'sertifikat', 'datapartisipan'));
     }
 
     public function create(){
