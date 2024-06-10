@@ -47,12 +47,6 @@
 </div>
 <div class="container-fluid" style="padding: 3.5em;">
     <h1 style="font-weight: 900;">Pelatihan Terbaru</h1>
-    <select class="form-select" aria-label="Default select example" style="width: 15em;">
-        <option value="Semua">Semua Pelatihan</option>
-        <option value="SD">SD</option>
-        <option value="SMP">SMP</option>
-        <option value="SMA">SMA</option>
-    </select>
 </div>
 <div class="container-fluid">
     <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" style="padding-top: 0em; padding-left: 2em; padding-right: 2em; padding-bottom: 2em;">

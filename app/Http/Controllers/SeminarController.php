@@ -55,6 +55,10 @@ class SeminarController extends Controller
         // Set locale to Indonesian
         Carbon::setLocale('id');
 
+        $modifiedTime = date("H:i", strtotime($data->waktu_seminar));
+
+        $data->waktu_seminar = $modifiedTime;
+
         // Parse and format the date
         $tgl_pelaksanaan = Carbon::parse($data->tanggal_seminar)->isoFormat('dddd, D MMMM YYYY');
 

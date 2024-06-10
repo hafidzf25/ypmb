@@ -60,7 +60,7 @@
                 </button>
                 <div class="collapse" id="collapseExample">
                     <div>
-                        Meeting akan dilaksanakan pada:<br>{{$tgl_pelaksanaan}}. 19.00<br><br>
+                        Meeting akan dilaksanakan pada:<br>{{$tgl_pelaksanaan}}. {{$data->waktu_seminar}}<br><br>
                         @if($status == 0)
                         <button type="button" class="btn btn-danger">Belum Terdaftar</button> <br> <br>
                         @elseif($data['link'] == '')
@@ -102,7 +102,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <embed src="{{ asset('doc/' . $sertifikat) }}" type="application/pdf" width="100%" height="550px">
+                <embed src="{{ asset('doc/Sertifikat_Seminar/' . $sertifikat) }}" type="application/pdf" width="100%" height="550px">
             </div>
         </div>
     </div>

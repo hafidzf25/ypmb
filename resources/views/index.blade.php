@@ -8,13 +8,13 @@
       <div id="carouselExample" class="carousel slide custom-carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="{{ asset('images/headline-1.png') }}" class="d-block w-100 carousel-img-radius" alt="...">
+            <img src="{{ asset('images/headline-1.png') }}" class="d-block w-100 carousel-img-radius" alt="..." width="200 rem">
           </div>
           <div class="carousel-item">
-            <img src="{{ asset('images/headline-2.png') }}" class="d-block w-100 carousel-img-radius" alt="...">
+            <img src="{{ asset('images/headline-2.jpeg') }}" class="d-block w-100 carousel-img-radius" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="{{ asset('images/headline-1.png') }}" class="d-block w-100 carousel-img-radius" alt="...">
+            <img src="{{ asset('images/headline-3.png') }}" class="d-block w-100 carousel-img-radius" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
