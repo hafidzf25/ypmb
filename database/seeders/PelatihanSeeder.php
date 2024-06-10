@@ -43,6 +43,7 @@ class PelatihanSeeder extends Seeder
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
                                         Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'link' => null,
                 'status' => 1,
             ],
             [
@@ -74,6 +75,7 @@ class PelatihanSeeder extends Seeder
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
                                         Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'link' => null,
                 'status' => 1,
             ],
             [
@@ -105,6 +107,7 @@ class PelatihanSeeder extends Seeder
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
                                         Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'link' => null,
                 'status' => 1,
             ],
             [
@@ -136,6 +139,7 @@ class PelatihanSeeder extends Seeder
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
                                         Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'link' => null,
                 'status' => 1,
             ],
             [
@@ -167,6 +171,7 @@ class PelatihanSeeder extends Seeder
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
                                         Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'link' => null,
                 'status' => 1,
             ],
             [
@@ -198,6 +203,7 @@ class PelatihanSeeder extends Seeder
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
                                         Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'link' => null,
                 'status' => 1,
             ],
             [
@@ -229,6 +235,7 @@ class PelatihanSeeder extends Seeder
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
                                         Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'link' => null,
                 'status' => 1,
             ],
             [
@@ -260,6 +267,7 @@ class PelatihanSeeder extends Seeder
                                         Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
                                         Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
                                         Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'link' => null,
                 'status' => 1,
             ],
         ];

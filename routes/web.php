@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\Auth\AuthenticateUsers;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\DetailPelatihanController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SeminarController;
 use App\Http\Controllers\UserController;
@@ -72,16 +73,18 @@ Route::post('/actionregister', [RegisterController::class, 'actionregister'])->n
 Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
-
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/login', [LoginAdminController::class, 'index'])->name('login');
-    Route::post('/login', [LoginAdminController::class, 'login_proses']);
+    Route::get('/', [LoginAdminController::class, 'index'])->name('login');
+    Route::post('/', [LoginAdminController::class, 'login_proses']);
     Route::get('/logout', [LoginAdminController::class, 'logout'])->name('logout');
 });
 
 // Rute yang memerlukan autentikasi admin
 Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'admin.'], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    
+    Route::get('/create', [AdminController::class, 'create'])->name('create');
+    Route::post('/store', [AdminController::class, 'store'])->name('store');
     
     Route::get('/user', [UserController::class, 'index'])->name('user');
     Route::delete('/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');

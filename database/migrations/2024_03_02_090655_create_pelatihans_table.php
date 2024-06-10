@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('foto_sampul');
             $table->text('deskripsi_singkat');
             $table->text('deskripsi_lengkap');
+            $table->string('link')->nullable();
             $table->integer('status');
-
+            
             $table->timestamps();
         });
     }

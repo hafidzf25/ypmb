@@ -78,6 +78,7 @@ class PelatihanController extends Controller
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'foto_sampul' => $filename,
+            'link' => null,
             'status' => 1, // Set status to 1
         ]);
     
@@ -103,6 +104,7 @@ class PelatihanController extends Controller
             'deskripsi_singkat' => 'required|string',
             'deskripsi_lengkap' => 'required|string',
             'foto_sampul' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'link' => 'nullable|string|max:255',
         ]);
     
         // If validation fails, return back with errors
@@ -128,6 +130,7 @@ class PelatihanController extends Controller
             'tanggal_akhir' => $request->input('tanggal_akhir'),
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
+            'link' => $request->input('link'),
             'foto_sampul' => $filename,
         ]);
     

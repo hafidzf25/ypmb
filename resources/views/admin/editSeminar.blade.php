@@ -59,6 +59,10 @@
                             <textarea class="form-control" name="deskripsi_lengkap" rows="3" placeholder="Enter ...">{{ $seminars->deskripsi_lengkap }}</textarea>
                         </div>
                         <div class="form-group">
+                            <label for="link">Link</label>
+                            <input type="text" name="link" id="link" class="form-control" value="{{ old('link', $seminars->link) }}">
+                        </div>
+                        <div class="form-group">
                             <label for="foto_sampul">Foto Sampul</label>
                             <div class="input-group">
                                 <div class="custom-file">

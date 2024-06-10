@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Admin</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -147,6 +147,14 @@
             <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
                 Logout
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.create')}}" class="nav-link {{ Request::routeIs('admin.create') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Tambah Admin
               </p>
             </a>
           </li>

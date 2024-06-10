@@ -20,6 +20,7 @@ class Pelatihan extends Model
         'foto_sampul',
         'deskripsi_singkat',
         'deskripsi_lengkap',
+        'link',
         'status'
     ];
 }
