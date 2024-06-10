@@ -34,4 +34,16 @@ class PembayaranController extends Controller
 
         return redirect()->back()->with('success', 'Pembayaran pelatihan berhasil dikirim!');
     }
+
+    public function toggleStatusP($id_ppp) {
+        $pembayaran = PembayaranPelatihan::find($id_ppp);
+
+        if ($pembayaran) {
+            // Toggle the active konfirmasi
+            $pembayaran->konfirmasi = $pembayaran->konfirmasi ? 0 : 1;
+            $pembayaran->save();
+        }
+
+        return redirect()->back()->with('success', 'User konfirmasi updated successfully');
+    }
 }

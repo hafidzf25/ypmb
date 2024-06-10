@@ -8,16 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class PembayaranPelatihan extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'id_partisipan_pembayaran_pelatihan';
+    protected $primaryKey = 'id_ppp';
     protected $table = 't_partisipan_pembayaran_pelatihan';
     public $timestamps = false;
 
     public $fillable = [
-        'id_partisipan_pembayaran_pelatihan',
+        'id_ppp',
         'id_user',
         'id_pelatihan',
         'konfirmasi',
-        'bukti_pembayaran'
+        'bukti_pembayaran',
+        'sertifikat_pelatihan'
     ];
 
     public function user()
