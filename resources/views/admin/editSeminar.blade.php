@@ -36,7 +36,6 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form>
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Seminar</label>
@@ -45,6 +44,10 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">Tanggal</label>
                             <input type="date" class="form-control" id="tanggal_seminar" name="tanggal_seminar" placeholder="Tanggal" value="{{ $seminars->tanggal_seminar }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="waktu">Waktu Pelaksanaan</label>
+                            <input type="time" class="form-control" id="waktu_seminar" name="waktu_seminar" placeholder="Waktu" value="{{ $seminars->waktu_seminar }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Deskripsi Singkat</label>
@@ -74,7 +77,6 @@
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                    </form>
                 </div>
                 <!-- /.card -->
                 </div>

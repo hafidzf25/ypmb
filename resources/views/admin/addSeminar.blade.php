@@ -46,6 +46,10 @@
                         <input type="date" class="form-control" id="tanggal_seminar" name="tanggal_seminar" placeholder="Tanggal">
                         </div>
                         <div class="form-group">
+                        <label for="exampleInputPassword1">Waktu Pelaksanaan</label>
+                        <input type="time" class="form-control" id="waktu_seminar" name="waktu_seminar" placeholder="Waktu">
+                        </div>
+                        <div class="form-group">
                         <label for="exampleInputPassword1">Deskripsi Singkat</label>
                         <textarea class="form-control" name="deskripsi_singkat" rows="3" placeholder="Enter ..."></textarea>
                         </div>

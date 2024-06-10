@@ -7,12 +7,6 @@
             <img src="{{ asset('images/img_pelatihan1.png') }}" alt="" style="max-width: 100%;">
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 pt-3">
-            <div class="col" style="font-weight: 400;">
-                <span>
-                    <i class="bi bi-star-fill" style="color: #EBFF00"></i>
-                    4.8 (1234 reviews)
-                </span>
-            </div>
             <div class="col mb-3 mt-3">
                 <span style="font-size: 5vh; line-height:6vh;">
                     {{$data->nama_seminar}}
@@ -26,8 +20,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-5">
                     <span>
                         <i class="bi bi-calendar-week-fill" style="color: white; margin-right:0.5vh"></i>
-                        {{$data->tanggal_awal}} s.d {{$data->tanggal_akhir}}
-                    </span>
+                        Tanggal Pelaksanaan : {{$data->tanggal_seminar}} </span>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl text-end">
                     @if($status == 1)
@@ -67,7 +60,7 @@
                 </button>
                 <div class="collapse" id="collapseExample">
                     <div>
-                        Meeting akan dilaksanakan pada:<br>Selasa, 17 Mei 2024. 19.00<br><br>
+                        Meeting akan dilaksanakan pada:<br>{{$tgl_pelaksanaan}}. 19.00<br><br>
                         @if($status == 0)
                         <button type="button" class="btn btn-danger">Belum Terdaftar</button> <br> <br>
                         @elseif($data['link'] == '')
@@ -141,4 +134,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection

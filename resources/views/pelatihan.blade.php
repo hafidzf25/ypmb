@@ -68,11 +68,7 @@
                     </p>
                     <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
                         <i class="bi bi-people-fill" style="color: #38B6FF"></i>
-                        <img src="people.png" alt=""> Peserta 4077
-                    </p>
-                    <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-                        <i class="bi bi-star-fill" style="color: #38B6FF"></i>
-                        <img src="star.png" alt=""> 4.8
+                        <img src="people.png" alt=""> Peserta {{$pelatihan->totalPendaftar}}
                     </p>
                     <div style="text-align: center;">
                         <a href="{{ url('/detailpelatihan/' . $pelatihan->id_pelatihan) }}" class="btn btn-info" style="text-decoration: none; color:white">

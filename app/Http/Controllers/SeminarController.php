@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Validator;
 
 class SeminarController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $seminars = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'deskripsi_singkat', 'deskripsi_lengkap', 'status')->get();
 
         return view('admin.seminarTable', compact('seminars'));
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $search = $request->get('search');
         $seminars = Seminar::where('nama_seminar', 'like', '%' . $search . '%')->get();
         return view('admin.seminarTable', compact('seminars'));
@@ -29,11 +31,15 @@ class SeminarController extends Controller
     {
         $search = $request->input('search');
         
-        $data = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'foto_sampul')
+        $data = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'waktu_seminar', 'foto_sampul')
             ->when($search, function ($query, $search) {
                 return $query->where('nama_seminar', 'like', '%' . $search . '%');
             })
             ->paginate(8);
+
+        foreach ($data as $seminar) {
+            $seminar->totalPendaftar = PartisipanSeminar::where('id_seminar', $seminar->id_seminar)->count();
+        }
 
         $title = "Seminar"; // Set the title
 
@@ -46,28 +52,32 @@ class SeminarController extends Controller
 
         $data = Seminar::where('id_seminar', $id)->first();
 
+        // Set locale to Indonesian
+        Carbon::setLocale('id');
+
+        // Parse and format the date
+        $tgl_pelaksanaan = Carbon::parse($data->tanggal_seminar)->isoFormat('dddd, D MMMM YYYY');
+
         $title = $data->nama_seminar;
         $data->tanggal_seminar = Carbon::parse($data->tanggal_seminar)->format('d F Y');
-
 
         $id_user = auth()->id();
         $status = 0;
         $exists = 0;
 
         $exists = PartisipanSeminar::where('id_user', $id_user)
-                            ->where('id_seminar', $id)
-                            ->exists();
+            ->where('id_seminar', $id)
+            ->exists();
 
         $datapartisipan = PartisipanSeminar::where('id_user', $id_user)
-        ->where('id_seminar', $id)
-        ->first();
+            ->where('id_seminar', $id)
+            ->first();
 
         $sertifikat = 'null';
         if ($datapartisipan != null) {
             if ($datapartisipan->sertifikat == '') {
                 $sertifikat = 'null';
-            }
-            else {
+            } else {
                 $sertifikat = $datapartisipan->sertifikat;
             }
         }
@@ -76,7 +86,7 @@ class SeminarController extends Controller
             $status = 1;
         }
 
-        return view('detailseminar', compact('data', 'title', 'status', 'sertifikat'));
+        return view('detailseminar', compact('data', 'title', 'status', 'sertifikat', 'tgl_pelaksanaan'));
     }
 
     public function daftarseminar(Request $request)
@@ -87,23 +97,41 @@ class SeminarController extends Controller
             'id_seminar' => 'required',
         ]);
 
-        // Buat post baru berdasarkan data yang diterima dari request
+        $datapartisipan = PartisipanSeminar::where('id_user', $request->id_user)
+            ->where('id_seminar', $request->id_seminar)
+            ->first();
+        
         $post = new PartisipanSeminar();
         $post->id_user = $request->id_user;
         $post->id_seminar = $request->id_seminar;
         $post->sertifikat = $request->sertifikat;
-        $post->save();
 
-        Carbon::setLocale('id');
+        if ($datapartisipan == null) {
+            // Buat post baru berdasarkan data yang diterima dari request
+            $post->save();
 
-        $data = Seminar::where('id_seminar', $post->id_seminar)->first();
+            Carbon::setLocale('id');
 
-        $title = $data->nama_seminar;
-        $data->tanggal_awal = Carbon::parse($data->tanggal_awal)->format('d F Y');
-        $data->tanggal_akhir = Carbon::parse($data->tanggal_akhir)->format('d F Y');
+            $data = Seminar::where('id_seminar', $post->id_seminar)->first();
 
-        // Redirect ke halaman atau rute yang sesuai
-        return redirect()->route('detailseminar', ['id' => $post->id_seminar, 'title' => $title])->with('success', 'Post berhasil disimpan.');
+            $title = $data->nama_seminar;
+            $data->tanggal_awal = Carbon::parse($data->tanggal_awal)->format('d F Y');
+            $data->tanggal_akhir = Carbon::parse($data->tanggal_akhir)->format('d F Y');
+
+            // Redirect ke halaman atau rute yang sesuai
+            return redirect()->route('detailseminar', ['id' => $post->id_seminar, 'title' => $title])->with('message', 'Post berhasil disimpan.');
+        } else {
+            Carbon::setLocale('id');
+
+            $data = Seminar::where('id_seminar', $post->id_seminar)->first();
+
+            $title = $data->nama_seminar;
+            $data->tanggal_awal = Carbon::parse($data->tanggal_awal)->format('d F Y');
+            $data->tanggal_akhir = Carbon::parse($data->tanggal_akhir)->format('d F Y');
+
+            // Redirect ke halaman atau rute yang sesuai
+            return redirect()->route('detailseminar', ['id' => $post->id_seminar, 'title' => $title])->with('message', 'Post berhasil disimpan.');
+        }
     }
 
     public function create()
@@ -117,6 +145,7 @@ class SeminarController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_seminar' => 'required|string|max:255',
             'tanggal_seminar' => 'required|date',
+            'waktu_seminar' => 'required',
             'deskripsi_singkat' => 'required|string',
             'deskripsi_lengkap' => 'required|string',
             'foto_sampul' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -140,6 +169,7 @@ class SeminarController extends Controller
         $seminar = new Seminar([
             'nama_seminar' => $request->input('nama_seminar'),
             'tanggal_seminar' => $request->input('tanggal_seminar'),
+            'waktu_seminar' => $request->input('waktu_seminar'),
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'foto_sampul' => $filename,
@@ -167,6 +197,7 @@ class SeminarController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_seminar' => 'required|string|max:255',
             'tanggal_seminar' => 'required|date',
+            'waktu_seminar' => 'required',
             'deskripsi_singkat' => 'required|string',
             'deskripsi_lengkap' => 'required|string',
             'foto_sampul' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -193,6 +224,7 @@ class SeminarController extends Controller
         $seminars->update([
             'nama_seminar' => $request->input('nama_seminar'),
             'tanggal_seminar' => $request->input('tanggal_seminar'),
+            'waktu_seminar' => $request->input('waktu_seminar'),
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'link' => $request->input('link'),
