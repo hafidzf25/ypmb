@@ -9,8 +9,14 @@ use Illuminate\Support\Facades\Validator;
 class SeminarController extends Controller
 {
     public function index(){
-        $seminars = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_awal', 'tanggal_akhir', 'deskripsi_singkat', 'deskripsi_lengkap', 'status')->get();
+        $seminars = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'deskripsi_singkat', 'deskripsi_lengkap', 'status')->get();
 
+        return view('admin.seminarTable', compact('seminars'));
+    }
+
+    public function search(Request $request){
+        $search = $request->get('search');
+        $seminars = Seminar::where('nama_seminar', 'like', '%' . $search . '%')->get();
         return view('admin.seminarTable', compact('seminars'));
     }
 
@@ -18,7 +24,7 @@ class SeminarController extends Controller
     {
         $search = $request->input('search');
         
-        $data = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul')
+        $data = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'foto_sampul')
             ->when($search, function ($query, $search) {
                 return $query->where('nama_seminar', 'like', '%' . $search . '%');
             })
@@ -35,8 +41,8 @@ class SeminarController extends Controller
         $data = Seminar::where('id_seminar', $id)->first();
 
         $title = $data->nama_seminar;
-        $data->tanggal_awal = Carbon::parse($data->tanggal_awal)->format('d F Y');
-        $data->tanggal_akhir = Carbon::parse($data->tanggal_akhir)->format('d F Y');
+        $data->tanggal_seminar = Carbon::parse($data->tanggal_seminar)->format('d F Y');
+
 
         return view('detailseminar', compact('data', 'title'));
     }
@@ -49,8 +55,7 @@ class SeminarController extends Controller
         // Validate the request data
         $validator = Validator::make($request->all(), [
             'nama_seminar' => 'required|string|max:255',
-            'tanggal_awal' => 'required|date',
-            'tanggal_akhir' => 'required|date',
+            'tanggal_seminar' => 'required|date',
             'deskripsi_singkat' => 'required|string',
             'deskripsi_lengkap' => 'required|string',
             'foto_sampul' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -73,8 +78,7 @@ class SeminarController extends Controller
         // Create a new seminar with the validated data and set status to 1
         $seminar = new Seminar([
             'nama_seminar' => $request->input('nama_seminar'),
-            'tanggal_awal' => $request->input('tanggal_awal'),
-            'tanggal_akhir' => $request->input('tanggal_akhir'),
+            'tanggal_seminar' => $request->input('tanggal_seminar'),
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'foto_sampul' => $filename,
@@ -99,8 +103,7 @@ class SeminarController extends Controller
         // Validate the request data
         $validator = Validator::make($request->all(), [
             'nama_seminar' => 'required|string|max:255',
-            'tanggal_awal' => 'required|date',
-            'tanggal_akhir' => 'required|date',
+            'tanggal_seminar' => 'required|date',
             'deskripsi_singkat' => 'required|string',
             'deskripsi_lengkap' => 'required|string',
             'foto_sampul' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -126,8 +129,7 @@ class SeminarController extends Controller
         // Update the seminar with the validated data
         $seminars->update([
             'nama_seminar' => $request->input('nama_seminar'),
-            'tanggal_awal' => $request->input('tanggal_awal'),
-            'tanggal_akhir' => $request->input('tanggal_akhir'),
+            'tanggal_seminar' => $request->input('tanggal_seminar'),
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'link' => $request->input('link'),

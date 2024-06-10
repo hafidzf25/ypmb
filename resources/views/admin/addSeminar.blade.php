@@ -42,12 +42,8 @@
                         <input type="text" class="form-control" id="nama_seminar" name="nama_seminar" placeholder="Nama Seminar">
                         </div>
                         <div class="form-group">
-                        <label for="exampleInputPassword1">Tanggal Awal</label>
-                        <input type="date" class="form-control" id="tanggal_awal" name="tanggal_awal" placeholder="Tanggal Mulai">
-                        </div>
-                        <div class="form-group">
-                        <label for="exampleInputPassword1">Tanggal Akhir</label>
-                        <input type="date" class="form-control" id="tanggal_akhir" name="tanggal_akhir" placeholder="Tanggal Selesai">
+                        <label for="exampleInputPassword1">Tanggal</label>
+                        <input type="date" class="form-control" id="tanggal_seminar" name="tanggal_seminar" placeholder="Tanggal">
                         </div>
                         <div class="form-group">
                         <label for="exampleInputPassword1">Deskripsi Singkat</label>
