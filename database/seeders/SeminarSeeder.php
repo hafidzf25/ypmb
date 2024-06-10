@@ -46,8 +46,8 @@ class SeminarSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'nama_seminar' => 'Latihan Jogging 2',
-                'tanggal_seminar' => '2010-03-11',
+                'nama_seminar' => 'Seminar Media Pembelajaran Berbasis Artificial Intelligence',
+                'tanggal_seminar' => '2024-09-11',
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test2.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
@@ -76,8 +76,8 @@ class SeminarSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'nama_seminar' => 'Latihan Jogging 3',
-                'tanggal_seminar' => '2010-03-12',
+                'nama_seminar' => 'Seminar Publikasi Ilmiah (Introduction)',
+                'tanggal_seminar' => '2024-03-12',
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test3.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
