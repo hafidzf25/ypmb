@@ -43,7 +43,7 @@ class RegisterController extends Controller
 
         $details = [
             'name' => $request->name,
-            'website' => 'www.cerdas.com',
+            'website' => 'www.YPMB-Berbagi.com',
             'datetime' => date('Y-m-d H:i:s'),
             'url' => request()->getHttpHost().'/register/verify/'.$str
         ];
