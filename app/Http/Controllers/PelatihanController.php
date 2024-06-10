@@ -15,6 +15,12 @@ class PelatihanController extends Controller
         return view('admin.pelatihanTable', compact('pelatihans'));
     }
 
+    public function search(Request $request){
+        $search = $request->get('search');
+        $pelatihans = Pelatihan::where('nama_pelatihan', 'like', '%' . $search . '%')->get();
+        return view('admin.pelatihanTable', compact('pelatihans'));
+    }
+
     public function pelatihan(Request $request)
     {
         $search = $request->input('search');

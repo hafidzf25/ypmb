@@ -18,7 +18,7 @@ class IndexController extends Controller
             })
             ->paginate(4);
 
-        $dataseminar = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul')
+        $dataseminar = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'foto_sampul')
             ->when($search, function ($query, $search) {
                 return $query->where('nama_seminar', 'like', '%' . $search . '%');
             })

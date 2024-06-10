@@ -89,10 +89,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
     Route::post('/store', [AdminController::class, 'store'])->name('store');
     
     Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::get('/user/search', [UserController::class, 'search'])->name('user.search');
     Route::delete('/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
     Route::get('/user/toggle/{id}', [UserController::class, 'toggleStatus'])->name('user.toggle');
 
     Route::get('/seminar', [SeminarController::class, 'index'])->name('seminar');
+    Route::get('/seminar/search', [SeminarController::class, 'search'])->name('seminar.search');
     Route::get('/seminar/create', [SeminarController::class, 'create'])->name('seminar.create');
     Route::post('/seminar/store', [SeminarController::class, 'store'])->name('seminar.store');
     Route::get('/seminar/edit/{id_seminar}', [SeminarController::class, 'edit'])->name('seminar.edit');
@@ -101,6 +103,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
     Route::get('/seminar/toggle/{id_seminar}', [SeminarController::class, 'toggleStatus'])->name('seminar.toggle');
 
     Route::get('/pelatihan', [PelatihanController::class, 'index'])->name('pelatihan');
+    Route::get('/pelatihan/search', [PelatihanController::class, 'search'])->name('pelatihan.search');
     Route::get('/pelatihan/create', [PelatihanController::class, 'create'])->name('pelatihan.create');
     Route::post('/pelatihan/store', [PelatihanController::class, 'store'])->name('pelatihan.store');
     Route::get('/pelatihan/edit/{id_pelatihan}', [PelatihanController::class, 'edit'])->name('pelatihan.edit');

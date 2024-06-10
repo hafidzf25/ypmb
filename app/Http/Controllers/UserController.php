@@ -16,6 +16,12 @@ class UserController extends Controller
         return view('admin.userTable', compact('users'));
     }
 
+    public function search(Request $request){
+        $search = $request->get('search');
+        $users = User::where('name', 'like', '%' . $search . '%')->get();
+        return view('admin.userTable', compact('users'));
+    }
+
     public function edit($id)
     {
         $user = User::findOrFail($id);

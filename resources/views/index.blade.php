@@ -120,7 +120,7 @@
           <h5 class="card-title" style="font-weight: bolder;">{{ Illuminate\Support\Str::limit($index->nama_seminar, 30) }}</h5>
           <p class="card-text align-items-center" style="margin-bottom: 0.6em; margin-top: 1.5em;">
             <i class="bi bi-calendar-week-fill" style="color: #38B6FF"></i>
-            <img src="kalender.png" alt=""> {{ $index->tanggal_awal }} - {{ $index->tanggal_akhir }}
+            <img src="kalender.png" alt=""> {{ $index->tanggal_seminar }}
           </p>
           <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
             <i class="bi bi-people-fill" style="color: #38B6FF"></i>

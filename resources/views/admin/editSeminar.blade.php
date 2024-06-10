@@ -43,12 +43,8 @@
                             <input type="text" class="form-control" id="nama_seminar" name="nama_seminar" placeholder="Nama Seminar" value="{{ $seminars->nama_seminar }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Tanggal Awal</label>
-                            <input type="date" class="form-control" id="tanggal_awal" name="tanggal_awal" placeholder="Tanggal Mulai" value="{{ $seminars->tanggal_awal }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Tanggal Akhir</label>
-                            <input type="date" class="form-control" id="tanggal_akhir" name="tanggal_akhir" placeholder="Tanggal Selesai" value="{{ $seminars->tanggal_akhir }}">
+                            <label for="exampleInputPassword1">Tanggal</label>
+                            <input type="date" class="form-control" id="tanggal_seminar" name="tanggal_seminar" placeholder="Tanggal" value="{{ $seminars->tanggal_seminar }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Deskripsi Singkat</label>
