@@ -17,7 +17,7 @@
                     {{$data->deskripsi_singkat}} </span>
             </div>
             <div class="row align-items-center" style="font-size: smaller; font-weight:500; padding: 1vh 1vh 1vh 1vh;">
-                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-5">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-8">
                     <span>
                         <i class="bi bi-calendar-week-fill" style="color: white; margin-right:0.5vh"></i>
                         Tanggal Pelaksanaan : {{$data->tanggal_seminar}} </span>
@@ -66,7 +66,7 @@
                         @elseif($data['link'] == '')
                         <button type="button" class="btn btn-danger">Belum Dibuka</button> <br> <br>
                         @else
-                        <a href="{{$data->link}}" class="btn btn-success" style="color: #FFFFFF;">Join Zoom Meeting</a>
+                        <a href="{{$data->link}}" class="btn btn-success" style="color: #FFFFFF;">Join</a>
                         @endif
                     </div>
                 </div>

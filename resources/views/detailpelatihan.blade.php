@@ -23,7 +23,7 @@
                         {{$data->tanggal_awal}} s.d {{$data->tanggal_akhir}}
                     </span>
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl text-end">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl  text-end">
                     @if($status == 1)
                     <a class="btn btn-success text-white custom-width" style="border-radius:1vh; width:20vh">Terdaftar</a>
                     @else
@@ -68,7 +68,7 @@
                         @if($data->link == '')
                         <button type="button" class="btn btn-danger">Menunggu</button> <br> <br>
                         @else
-                        <a href="{{$data->link}}" class="btn btn-success" style="color: #FFFFFF;">Join Classroom</a>
+                        <a href="{{$data->link}}" class="btn btn-success" style="color: #FFFFFF;">Join</a>
                         @endif
                         @else
                         Pembayaran sedang diverifikasi terlebih dahulu.<br><br>
