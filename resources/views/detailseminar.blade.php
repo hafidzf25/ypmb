@@ -33,7 +33,11 @@
                     @if($status == 1)
                     <a class="btn btn-success text-white custom-width" style="border-radius:1vh; width:20vh">Terdaftar</a>
                     @else
+                    @if(auth()->check())
                     <a href="#" class="btn btn-info text-white custom-width" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #FEAD01; border-radius:1vh; width:20vh">Daftar</a>
+                    @else
+                    <a href="/login" class="btn btn-info text-white custom-width" style="background-color: #FEAD01; border-radius:1vh; width:20vh">Daftar</a>
+                    @endif
                     @endif
                 </div>
             </div>
@@ -64,7 +68,9 @@
                 <div class="collapse" id="collapseExample">
                     <div>
                         Meeting akan dilaksanakan pada:<br>Selasa, 17 Mei 2024. 19.00<br><br>
-                        @if($data['link'] == '')
+                        @if($status == 0)
+                        <button type="button" class="btn btn-danger">Belum Terdaftar</button> <br> <br>
+                        @elseif($data['link'] == '')
                         <button type="button" class="btn btn-danger">Belum Dibuka</button> <br> <br>
                         @else
                         <a href="{{$data->link}}" class="btn btn-success" style="color: #FFFFFF;">Join Zoom Meeting</a>
@@ -79,7 +85,9 @@
                 </button>
                 <div class="collapse" id="collapseExample2">
                     <div>
-                        @if($sertifikat == 'null')
+                        @if($status == 0)
+                        <button type="button" class="btn btn-danger">Belum Terdaftar</button> <br> <br>
+                        @elseif($sertifikat == 'null')
                         <button type="button" class="btn btn-danger">Belum Ada</button> <br> <br>
                         @else
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -119,6 +127,7 @@
                 Yakin untuk mendaftarkan ke seminar?
             </div>
             <div class="modal-footer">
+                @if(auth()->check())
                 <form action="{{ route('daftarseminar') }}" method="post">
                     @csrf
                     <input type="hidden" name="id_seminar" value="{{$data->id_seminar}}">
@@ -127,6 +136,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
                     <button class="btn btn-primary" type="submit">Ya</button>
                 </form>
+                @endif
             </div>
         </div>
     </div>

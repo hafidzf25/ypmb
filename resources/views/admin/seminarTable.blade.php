@@ -41,20 +41,24 @@
       <div class="container-fluid">
       <div class="row">
           <div class="col-12">
+            <a href="{{ route('admin.seminar.create') }}" class="btn btn-success mb-3">
+              <i class="fas fa-plus"></i> Tambah Seminar
+            </a>
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Tabel Seminar</h3>
-
                 <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                  <form action="{{ route('admin.seminar.search') }}" method="get">
+                      <div class="input-group input-group-sm" style="width: 150px;">
+                          <input type="text" name="search" class="form-control float-right" placeholder="Search">
 
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
+                          <div class="input-group-append">
+                              <button type="submit" class="btn btn-default">
+                                  <i class="fas fa-search"></i>
+                              </button>
+                          </div>
+                      </div>
+                  </form>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -64,8 +68,7 @@
                     <tr>
                       <th>No</th>
                       <th>Nama</th>
-                      <th>Tanggal Awal</th>
-                      <th>Tanggal Akhir</th>
+                      <th>Tanggal</th>
                       <th>Deskripsi Singkat</th>
                       <th>Deskripsi Lengkap</th>
                       <th>Action</th>
@@ -81,8 +84,7 @@
                       <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $seminar->nama_seminar }}</td>
-                        <td>{{ $seminar->tanggal_awal }}</td>
-                        <td>{{ $seminar->tanggal_akhir }}</td>
+                        <td>{{ $seminar->tanggal_seminar }}</td>
                         <td>{{ Str::limit($seminar->deskripsi_singkat, 20) }}</td>
                         <td>{{ Str::limit($seminar->deskripsi_lengkap, 20) }}</td>
                         <td>
@@ -135,11 +137,6 @@
                 </table>
               </div>
               <!-- /.card-body -->
-              <div class="card-footer">
-                <a href="{{ route('admin.seminar.create') }}" class="btn btn-success">
-                  <i class="fas fa-plus"></i> Tambah Seminar
-                </a>
-              </div>
             </div>
             <!-- /.card -->
           </div>

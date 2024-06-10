@@ -15,8 +15,7 @@ class Seminar extends Model
     public $fillable = [
         'id_seminar',
         'nama_seminar',
-        'tanggal_awal',
-        'tanggal_akhir',
+        'tanggal_seminar',
         'foto_sampul',
         'deskripsi_singkat',
         'deskripsi_lengkap',
