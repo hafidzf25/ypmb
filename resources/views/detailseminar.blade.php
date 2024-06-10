@@ -151,8 +151,14 @@
                 Yakin untuk mendaftarkan ke seminar?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                <a href="{{ url('detailseminar') }}" class="btn btn-primary">Yakin</a>
+                <form action="{{ route('daftarseminar') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="id_seminar" value="{{$data->id_seminar}}">
+                    <input type="hidden" name="id" value="{{auth()->user()->id}}">
+                    <input type="hidden" name="sertifikat" value="{{auth()->user()->email}}">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                    <button class="btn btn-primary" type="submit">Ya</button>
+                </form>
             </div>
         </div>
     </div>

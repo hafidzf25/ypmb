@@ -33,6 +33,8 @@ Route::get('/seminar', [SeminarController::class, 'seminar'])->name('seminar');
 Route::get('/detailpelatihan/{id}', [PelatihanController::class, 'detailpelatihan'])->name('detailpelatihan');
 Route::get('/detailseminar/{id}', [SeminarController::class, 'detailseminar'])->name('detailseminar');
 
+Route::post('/detailseminar/daftar', [SeminarController::class, 'daftarseminar'])->name('daftarseminar');
+
 Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
     Route::get('/pembayaran', [AnggotaController::class, 'pembayaran'])->name('pembayaran');
     Route::get('editprofil/{id}', [UserController::class, 'edit'])->name('editprofil');
