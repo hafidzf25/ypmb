@@ -15,7 +15,7 @@ class SeminarController extends Controller
 {
     public function index()
     {
-        $seminars = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'deskripsi_singkat', 'deskripsi_lengkap', 'status')->get();
+        $seminars = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'waktu_seminar', 'deskripsi_singkat', 'deskripsi_lengkap', 'status')->get();
 
         return view('admin.seminarTable', compact('seminars'));
     }
