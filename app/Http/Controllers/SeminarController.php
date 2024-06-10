@@ -57,7 +57,10 @@ class SeminarController extends Controller
         ->where('id_seminar', $id)
         ->first();
 
-        $sertifikat = $datapartisipan->sertifikat;
+        $sertifikat = 'null';
+        if ($datapartisipan != null) {
+            $sertifikat = $datapartisipan->sertifikat;
+        }
 
         if ($exists) {
             $status = 1;

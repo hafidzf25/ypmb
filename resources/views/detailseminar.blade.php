@@ -79,8 +79,12 @@
                 </button>
                 <div class="collapse" id="collapseExample2">
                     <div>
+                        @if($sertifikat == 'null')
+                        <button type="button" class="btn btn-danger">Belum Ada</button> <br> <br>
+                        @else
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Unduh </button>
+                        @endif
                     </div>
                 </div>
                 <br>
@@ -97,7 +101,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <embed src="{{ asset('doc/Sertifikat_Seminar/001.pdf') }}" type="application/pdf" width="100%" height="550px">
+                <embed src="{{ asset('doc/Sertifikat_Seminar/' . $sertifikat) }}" type="application/pdf" width="100%" height="550px">
             </div>
         </div>
     </div>
