@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 class SeminarController extends Controller
 {
     public function index(){
-        $seminars = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'deskripsi_singkat', 'deskripsi_lengkap', 'status')->get();
+        $seminars = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'waktu_seminar', 'deskripsi_singkat', 'deskripsi_lengkap', 'status')->get();
 
         return view('admin.seminarTable', compact('seminars'));
     }
@@ -29,7 +29,7 @@ class SeminarController extends Controller
     {
         $search = $request->input('search');
         
-        $data = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'foto_sampul')
+        $data = Seminar::select('id_seminar', 'nama_seminar', 'tanggal_seminar', 'waktu_seminar', 'foto_sampul')
             ->when($search, function ($query, $search) {
                 return $query->where('nama_seminar', 'like', '%' . $search . '%');
             })
@@ -112,6 +112,7 @@ class SeminarController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_seminar' => 'required|string|max:255',
             'tanggal_seminar' => 'required|date',
+            'waktu_seminar' => 'required',
             'deskripsi_singkat' => 'required|string',
             'deskripsi_lengkap' => 'required|string',
             'foto_sampul' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -135,6 +136,7 @@ class SeminarController extends Controller
         $seminar = new Seminar([
             'nama_seminar' => $request->input('nama_seminar'),
             'tanggal_seminar' => $request->input('tanggal_seminar'),
+            'waktu_seminar' => $request->input('waktu_seminar'),
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'foto_sampul' => $filename,
@@ -162,6 +164,7 @@ class SeminarController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_seminar' => 'required|string|max:255',
             'tanggal_seminar' => 'required|date',
+            'waktu_seminar' => 'required',
             'deskripsi_singkat' => 'required|string',
             'deskripsi_lengkap' => 'required|string',
             'foto_sampul' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -188,6 +191,7 @@ class SeminarController extends Controller
         $seminars->update([
             'nama_seminar' => $request->input('nama_seminar'),
             'tanggal_seminar' => $request->input('tanggal_seminar'),
+            'waktu_seminar' => $request->input('waktu_seminar'),
             'deskripsi_singkat' => $request->input('deskripsi_singkat'),
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'link' => $request->input('link'),

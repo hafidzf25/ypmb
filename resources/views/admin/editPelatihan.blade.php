@@ -36,7 +36,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form>
+                    
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Pelatihan</label>
@@ -78,7 +78,6 @@
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                    </form>
                 </div>
                 <!-- /.card -->
                 </div>

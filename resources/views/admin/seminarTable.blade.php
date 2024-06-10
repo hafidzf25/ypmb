@@ -69,6 +69,7 @@
                       <th>No</th>
                       <th>Nama</th>
                       <th>Tanggal</th>
+                      <th>Waktu Pelaksanaan</th>
                       <th>Deskripsi Singkat</th>
                       <th>Deskripsi Lengkap</th>
                       <th>Action</th>
@@ -85,6 +86,7 @@
                         <td>{{ $no++ }}</td>
                         <td>{{ $seminar->nama_seminar }}</td>
                         <td>{{ $seminar->tanggal_seminar }}</td>
+                        <td>{{ date('H:i', strtotime($seminar->waktu_seminar)) }} WIB</td>
                         <td>{{ Str::limit($seminar->deskripsi_singkat, 20) }}</td>
                         <td>{{ Str::limit($seminar->deskripsi_lengkap, 20) }}</td>
                         <td>

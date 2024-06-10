@@ -17,6 +17,7 @@ class SeminarSeeder extends Seeder
             [
                 'nama_seminar' => 'Latihan Jogging',
                 'tanggal_seminar' => '2010-03-10',
+                'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
                 'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
@@ -47,6 +48,7 @@ class SeminarSeeder extends Seeder
             [
                 'nama_seminar' => 'Latihan Jogging 2',
                 'tanggal_seminar' => '2010-03-11',
+                'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test2.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
                 'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
@@ -77,6 +79,7 @@ class SeminarSeeder extends Seeder
             [
                 'nama_seminar' => 'Latihan Jogging 3',
                 'tanggal_seminar' => '2010-03-12',
+                'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test3.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
                 'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
@@ -107,6 +110,7 @@ class SeminarSeeder extends Seeder
             [
                 'nama_seminar' => 'Latihan Jogging 4',
                 'tanggal_seminar' => '2010-03-13',
+                'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test4.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
                 'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
@@ -137,6 +141,7 @@ class SeminarSeeder extends Seeder
             [
                 'nama_seminar' => 'Latihan Jogging 4',
                 'tanggal_seminar' => '2010-03-13',
+                'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test4.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
                 'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
@@ -167,6 +172,7 @@ class SeminarSeeder extends Seeder
             [
                 'nama_seminar' => 'Latihan Jogging 5',
                 'tanggal_seminar' => '2010-03-14',
+                'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test5.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
                 'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
@@ -197,6 +203,7 @@ class SeminarSeeder extends Seeder
             [
                 'nama_seminar' => 'Latihan Jogging 6',
                 'tanggal_seminar' => '2010-03-15',
+                'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test6.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
                 'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
@@ -227,6 +234,7 @@ class SeminarSeeder extends Seeder
             [
                 'nama_seminar' => 'Latihan Jogging 7',
                 'tanggal_seminar' => '2010-03-16',
+                'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test7.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
                 'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.

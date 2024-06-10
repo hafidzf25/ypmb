@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id_seminar');
             $table->string('nama_seminar');
             $table->date('tanggal_seminar');
+            $table->time('waktu_seminar');
             $table->string('foto_sampul');
             $table->text('deskripsi_singkat');
             $table->text('deskripsi_lengkap');
