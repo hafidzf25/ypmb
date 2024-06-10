@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('t_partisipan_seminar', function (Blueprint $table) {
-            $table->id('id_partisipan_seminar');
+        Schema::create('t_partisipan_pembayaran_pelatihan', function (Blueprint $table) {
+            $table->id('id_partisipan_pembayaran_pelatihan');
             $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_seminar');
-            $table->string('sertifikat');
+            $table->unsignedBigInteger('id_pelatihan');
+            $table->integer('konfirmasi')->default(0);
+            $table->string('bukti_pembayaran');
 
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_seminar')->references('id_seminar')->on('t_seminar');
+            $table->foreign('id_pelatihan')->references('id_pelatihan')->on('t_pelatihan');
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('t_partisipan_seminar');
+        Schema::dropIfExists('t_partisipan_pembayaran_pelatihan');
     }
 };

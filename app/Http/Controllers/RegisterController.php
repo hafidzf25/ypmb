@@ -29,8 +29,8 @@ class RegisterController extends Controller
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('images'), $filename);
-            $path = 'images/' . $filename;
+            $file->move(public_path('images/user'), $filename);
+            $path = 'images/user/' . $filename;
         }
 
         $user = User::create([

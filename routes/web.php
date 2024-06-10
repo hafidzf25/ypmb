@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Auth\LoginAdminController;
 use App\Http\Controllers\Admin\Auth\AuthenticateUsers;
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\DetailPelatihanController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SeminarController;
 use App\Http\Controllers\UserController;
@@ -36,9 +39,10 @@ Route::get('/detailseminar/{id}', [SeminarController::class, 'detailseminar'])->
 Route::post('/detailseminar/daftar', [SeminarController::class, 'daftarseminar'])->name('daftarseminar');
 
 Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
-    Route::get('/pembayaran', [AnggotaController::class, 'pembayaran'])->name('pembayaran');
+    Route::get('/pembayaran/{id}', [DetailPelatihanController::class, 'pembayaran'])->name('pembayaran');
     Route::get('editprofil/{id}', [UserController::class, 'edit'])->name('editprofil');
     Route::post('editprofil/{id}', [UserController::class, 'update'])->name('updateprofil');
+    Route::post('/pembayaran', [PembayaranController::class, 'store'])->name('pembayaran.store');
 });
 
 Route::get('/login', function () {
@@ -71,15 +75,39 @@ Route::post('/actionregister', [RegisterController::class, 'actionregister'])->n
 Route::get('/pelatihan', [PelatihanController::class, 'pelatihan'])->name('pelatihan');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
-
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/login', [LoginAdminController::class, 'index'])->name('login');
-    Route::post('/login', [LoginAdminController::class, 'login_proses']);
+    Route::get('/', [LoginAdminController::class, 'index'])->name('login');
+    Route::post('/', [LoginAdminController::class, 'login_proses']);
     Route::get('/logout', [LoginAdminController::class, 'logout'])->name('logout');
 });
 
 // Rute yang memerlukan autentikasi admin
 Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'admin.'], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    
+    Route::get('/create', [AdminController::class, 'create'])->name('create');
+    Route::post('/store', [AdminController::class, 'store'])->name('store');
+    
+    Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::delete('/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
+    Route::get('/user/toggle/{id}', [UserController::class, 'toggleStatus'])->name('user.toggle');
+
+    Route::get('/seminar', [SeminarController::class, 'index'])->name('seminar');
+    Route::get('/seminar/create', [SeminarController::class, 'create'])->name('seminar.create');
+    Route::post('/seminar/store', [SeminarController::class, 'store'])->name('seminar.store');
+    Route::get('/seminar/edit/{id_seminar}', [SeminarController::class, 'edit'])->name('seminar.edit');
+    Route::put('/seminar/update/{id_seminar}', [SeminarController::class, 'update'])->name('seminar.update');
+    Route::delete('/seminar/delete/{id_seminar}', [SeminarController::class, 'delete'])->name('seminar.delete');
+    Route::get('/seminar/toggle/{id_seminar}', [SeminarController::class, 'toggleStatus'])->name('seminar.toggle');
+
+    Route::get('/pelatihan', [PelatihanController::class, 'index'])->name('pelatihan');
+    Route::get('/pelatihan/create', [PelatihanController::class, 'create'])->name('pelatihan.create');
+    Route::post('/pelatihan/store', [PelatihanController::class, 'store'])->name('pelatihan.store');
+    Route::get('/pelatihan/edit/{id_pelatihan}', [PelatihanController::class, 'edit'])->name('pelatihan.edit');
+    Route::put('/pelatihan/update/{id_pelatihan}', [PelatihanController::class, 'update'])->name('pelatihan.update');
+    Route::delete('/pelatihan/delete/{id_pelatihan}', [PelatihanController::class, 'delete'])->name('pelatihan.delete');
+    Route::get('/pelatihan/toggle/{id_pelatihan}', [PelatihanController::class, 'toggleStatus'])->name('pelatihan.toggle');
+    Route::get('/admin/pelatihan/{id_pelatihan}/participants', [App\Http\Controllers\PelatihanController::class, 'participants'])->name('pelatihan.participants');
+
 });
 
