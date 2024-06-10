@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_partisipan_seminar');
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_seminar');
-            $table->string('sertifikat');
+            $table->string('sertifikat')->nullable();
 
             $table->timestamps();
 

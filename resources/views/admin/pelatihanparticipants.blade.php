@@ -36,6 +36,7 @@
                                         <th>Nama Peserta</th>
                                         <th>Status Konfirmasi</th>
                                         <th>Bukti Pembayaran</th>
+                                        <th>Konfirmasi Pembayaran</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,6 +71,11 @@
                                             @else
                                             Tidak ada bukti
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp]) }}" class="btn btn-info">
+                                                <i class="fas fa-edit"></i> Konfirmasi
+                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach
