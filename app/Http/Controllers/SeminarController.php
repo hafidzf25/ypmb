@@ -7,9 +7,7 @@ use App\Exports\ParticipantsExport;
 use App\Models\PartisipanSeminar;
 use App\Models\Seminar;
 use Carbon\Carbon;
-use Illuminate\Contracts\Session\Session as SessionSession;
-use Illuminate\Support\Facades\Auth;
-use Session;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -80,11 +78,20 @@ class SeminarController extends Controller
             ->first();
 
         $sertifikat = 'null';
+        $isSertif = 0;
+
         if ($datapartisipan != null) {
             if ($datapartisipan->sertifikat == '') {
                 $sertifikat = 'null';
             } else {
                 $sertifikat = $datapartisipan->sertifikat;
+                $isSertif = public_path('doc/Sertifikat_Seminar/' . $datapartisipan->sertifikat);
+
+                if (File::exists($isSertif)) {
+                    $isSertif = 1;
+                } else {
+                    $isSertif = 0;
+                }
             }
         }
 
@@ -92,7 +99,7 @@ class SeminarController extends Controller
             $status = 1;
         }
 
-        return view('detailseminar', compact('data', 'title', 'status', 'sertifikat', 'tgl_pelaksanaan'));
+        return view('detailseminar', compact('data', 'title', 'status', 'sertifikat', 'tgl_pelaksanaan', 'isSertif'));
     }
 
     public function daftarseminar(Request $request)
@@ -110,7 +117,7 @@ class SeminarController extends Controller
         $post = new PartisipanSeminar();
         $post->id_user = $request->id_user;
         $post->id_seminar = $request->id_seminar;
-        $post->sertifikat = $request->sertifikat;
+        $post->sertifikat = $request->id_seminar . '_' . auth()->user()->email . '.pdf';
 
         if ($datapartisipan == null) {
             // Buat post baru berdasarkan data yang diterima dari request
@@ -306,10 +313,5 @@ class SeminarController extends Controller
             $participant->save();
         }
         return redirect()->back()->with('success', 'Surat Undangan Berhasil diupload!');
-    }
-
-    public function exportParticipants($id_seminar)
-    {
-        return Excel::download(new ParticipantsExport, 'participants.xlsx');
     }
 }

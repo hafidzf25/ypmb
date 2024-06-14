@@ -3,8 +3,8 @@
 @section('content')
 <div class="container-fluid detail-radius" style="padding: 15vh 8vh 4vh 8vh;">
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
-            <img src="{{ asset('images/img_pelatihan1.png') }}" alt="" style="max-width: 100%;">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 align-items-center d-flex">
+            <img src="{{ asset('images/pelatihan/' . $data->foto_sampul) }}" alt="" style="outline: 3px solid white; border-radius: 15px; width: 500px; height: 270px; max-width: 100%;">
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 pt-3">
             <div class="col mb-3 mt-3">
@@ -68,17 +68,11 @@
                 </button>
                 <div class="collapse" id="collapseExample4">
                     <div>
-                        <a class="btn btn-success" style="color: #FFFFFF;">Unduh Surat Undangan</a>
-                        <form action="{{ route('files.upload') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div>
-                                <label for="files">Choose files</label>
-                                <input type="file" name="files[]" id="files" multiple>
-                            </div>
-                            <div>
-                                <button type="submit">Upload Files</button>
-                            </div>
-                        </form>
+                        @if($data->surat_undangan != '')
+                        <a href="{{ asset('doc/' . $data->surat_undangan) }}" class="btn btn-success" style="color: #FFFFFF;" download>Unduh Surat Undangan</a>
+                        @else
+                        <a class="btn btn-warning" style="color: #FFFFFF;">Belum ada surat undangan</a>
+                        @endif
                     </div>
                 </div>
 
@@ -118,7 +112,7 @@
                         @else
                         @if($datapartisipan->konfirmasi == 1)
                         @if($data->link == '')
-                        <button type="button" class="btn btn-danger">Menunggu</button> <br> <br>
+                        <button type="button" class="btn btn-danger">Menunggu Link</button> <br> <br>
                         @else
                         <a target="_blank" href="{{$data->link}}" class="btn btn-success" style="color: #FFFFFF;">Bergabung ke grup</a>
                         @endif
@@ -141,8 +135,8 @@
                         <button type="button" class="btn btn-danger">Belum Terdaftar</button> <br> <br>
                         @else
                         @if($datapartisipan->konfirmasi == 1)
-                        @if($sertifikat == 'null')
-                        <button type="button" class="btn btn-danger">Menunggu</button> <br> <br>
+                        @if($isSertif == 0)
+                        <button type="button" class="btn btn-danger">Menunggu Sertifikat</button> <br> <br>
                         @else
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Unduh </button>
@@ -167,7 +161,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <embed src="{{ asset('doc/' . $sertifikat) }}" type="application/pdf" width="100%" height="550px">
+                <embed src="{{ asset('doc/Sertifikat_Pelatihan/' . $sertifikat) }}" type="application/pdf" width="100%" height="550px">
             </div>
         </div>
     </div>

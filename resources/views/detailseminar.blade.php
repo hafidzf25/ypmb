@@ -4,7 +4,7 @@
 <div class="container-fluid detail-radius" style="padding: 15vh 8vh 4vh 8vh;">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
-            <img src="{{ asset('images/img_pelatihan1.png') }}" alt="" style="max-width: 100%;">
+            <img src="{{ asset('images/pelatihan/' . $data->foto_sampul) }}" alt="" style="outline: 3px solid white; border-radius: 15px; width: 500px; height: 270px; max-width: 100%;">
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 pt-3">
             <div class="col mb-3 mt-3">
@@ -52,6 +52,21 @@
                 Mengenai Seminar
             </div>
             <div class="col text-center mt-3">
+                <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="true" aria-controls="collapseExample4" style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
+                    <span>
+                        Surat Undangan
+                        <i class="bi bi-caret-down-fill"></i>
+                    </span>
+                </button>
+                <div class="collapse" id="collapseExample4">
+                    <div>
+                        @if($data->surat_undangan != '')
+                        <a href="{{ asset('doc/' . $data->surat_undangan) }}" class="btn btn-success" style="color: #FFFFFF;" download>Unduh Surat Undangan</a>
+                        @else
+                        <a class="btn btn-warning" style="color: #FFFFFF;">Belum ada surat undangan</a>
+                        @endif
+                    </div>
+                </div>
                 <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample" style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
                     <span>
                         Meet Seminar
@@ -80,11 +95,13 @@
                     <div>
                         @if($status == 0)
                         <button type="button" class="btn btn-danger">Belum Terdaftar</button> <br> <br>
-                        @elseif($sertifikat == 'null')
-                        <button type="button" class="btn btn-danger">Belum Ada</button> <br> <br>
+                        @else
+                        @if($isSertif == 0)
+                        <button type="button" class="btn btn-danger">Menunggu Sertifikat</button> <br> <br>
                         @else
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Unduh </button>
+                        @endif
                         @endif
                     </div>
                 </div>

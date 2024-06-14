@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Pelatihan;
 use App\Models\PembayaranPelatihan;
+use Illuminate\Support\Facades\File;
 
 class DetailPelatihanController extends Controller
 {

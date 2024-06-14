@@ -31,6 +31,7 @@ class PembayaranController extends Controller
             'id_pelatihan' => $request->id_pelatihan,
             'konfirmasi' => 0,
             'bukti_pembayaran' => $path,
+            'sertifikat' => $request->id_pelatihan . "_" . auth()->user()->email . ".pdf",
         ]);
 
         return redirect()->back()->with('success', 'Pembayaran pelatihan berhasil dikirim!');

@@ -18,7 +18,7 @@ class PembayaranPelatihan extends Model
         'id_pelatihan',
         'konfirmasi',
         'bukti_pembayaran',
-        'sertifikat_pelatihan'
+        'sertifikat'
     ];
 
     public function user()
