@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
+            <div class="row mb-5">
+                <div class="col-sm-8">
                     <h1 class="m-0">Peserta dari {{ $pelatihan->nama_pelatihan }}</h1>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('admin.pelatihan') }}">Pelatihan</a></li>
@@ -16,10 +16,11 @@
                     </ol>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mb-2">
                 <div class="col-sm-12">
                     <button class="btn btn-primary" onclick="showConfirmed()">Peserta Terkonfirmasi</button>
                     <button class="btn btn-primary" onclick="showUnconfirmed()">Peserta Belum Terkonfirmasi</button>
+                    <button class="btn btn-primary" onclick="showFailed()">Peserta Gagal Verifikasi</button>
                 </div>
             </div>
         </div>
@@ -48,7 +49,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($participants->where('konfirmasi', true) as $index => $participant)
+                                    @foreach ($participants->where('konfirmasi', 1) as $index => $participant)
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
                                         <td>{{ $participant->user->name }}</td>
@@ -89,7 +90,7 @@
                                             </form>
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp]) }}" class="btn btn-danger">
+                                            <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp, 'konfirmasi' => 0]) }}" class="btn btn-danger">
                                                 <i class="fas fa-edit"></i> Batalkan
                                             </a>
                                         </td>
@@ -117,11 +118,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($participants->where('konfirmasi', false) as $index => $participant)
+                                    @foreach ($participants->where('konfirmasi', 0) as $index => $participant)
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
                                         <td>{{ $participant->user->name }}</td>
-                                        <td>{{ $participant->konfirmasi ? 'Confirmed' : 'Pending' }}</td>
+                                        <td>{{ $participant->konfirmasi == 1 ? 'Confirmed' : 'Pending' }}</td>
                                         <td>
                                             @if($participant->bukti_pembayaran)
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal{{ $index + $participants->where('konfirmasi', true)->count() }}">
@@ -150,9 +151,67 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp]) }}" class="btn btn-info">
+                                            <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp, 'konfirmasi' => 1]) }}" class="btn btn-info">
                                                 <i class="fas fa-edit"></i> Konfirmasi
                                             </a>
+                                            <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp, 'konfirmasi' => 2]) }}" class="btn btn-danger">
+                                                <i class="fas fa-edit"></i> Tolak
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Failed Participants -->
+                    <div class="card" id="failed-participants" style="display: none;">
+                        <div class="card-header">
+                            <h3 class="card-title">Peserta Gagal Verifikasi {{ $pelatihan->nama_pelatihan }}</h3>
+                        </div>
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Peserta</th>
+                                        <th>Status Konfirmasi</th>
+                                        <th>Bukti Pembayaran</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($participants->where('konfirmasi', 2) as $index => $participant)
+                                    <tr>
+                                        <td>{{ $index + 1 }}</td>
+                                        <td>{{ $participant->user->name }}</td>
+                                        <td>Gagal Verifikasi</td>
+                                        <td>
+                                            @if($participant->bukti_pembayaran)
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal{{ $index + $participants->where('konfirmasi', true)->count() }}">
+                                                Lihat Bukti
+                                            </button>
+                                            <div class="modal fade" id="paymentModal{{ $index + $participants->where('konfirmasi', true)->count() }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Bukti Pembayaran</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <img src="{{ asset($participant->bukti_pembayaran) }}" class="img-fluid" alt="Bukti Pembayaran">
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @else
+                                            Tidak ada bukti
+                                            @endif
                                         </td>
                                     </tr>
                                     @endforeach
@@ -175,11 +234,19 @@
     function showConfirmed() {
         document.getElementById('confirmed-participants').style.display = 'block';
         document.getElementById('unconfirmed-participants').style.display = 'none';
+        document.getElementById('failed-participants').style.display = 'none';
     }
 
     function showUnconfirmed() {
         document.getElementById('confirmed-participants').style.display = 'none';
         document.getElementById('unconfirmed-participants').style.display = 'block';
+        document.getElementById('failed-participants').style.display = 'none';
+    }
+
+    function showFailed() {
+        document.getElementById('confirmed-participants').style.display = 'none';
+        document.getElementById('unconfirmed-participants').style.display = 'none';
+        document.getElementById('failed-participants').style.display = 'block';
     }
 </script>
 @endsection

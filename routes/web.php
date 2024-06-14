@@ -39,10 +39,13 @@ Route::get('/detailseminar/{id}', [SeminarController::class, 'detailseminar'])->
 Route::post('/detailseminar/daftar', [SeminarController::class, 'daftarseminar'])->name('daftarseminar');
 
 Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth']], function () {
+    Route::get('/editpembayaran/{id}/{id_user}', [DetailPelatihanController::class, 'editpembayaran'])->name('editpembayaran');
     Route::get('/pembayaran/{id}', [DetailPelatihanController::class, 'pembayaran'])->name('pembayaran');
     Route::get('editprofil/{id}', [UserController::class, 'edit'])->name('editprofil');
     Route::post('editprofil/{id}', [UserController::class, 'update'])->name('updateprofil');
     Route::post('/pembayaran', [PembayaranController::class, 'store'])->name('pembayaran.store');
+    Route::put('/pembayaranwew', [PembayaranController::class, 'edit'])->name('pembayaran.edit');
+    Route::post('/upload-files', [PembayaranController::class, 'upload'])->name('files.upload');
 });
 
 Route::get('/login', function () {
@@ -112,7 +115,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
     Route::delete('/pelatihan/delete/{id_pelatihan}', [PelatihanController::class, 'delete'])->name('pelatihan.delete');
     Route::get('/pelatihan/toggle/{id_pelatihan}', [PelatihanController::class, 'toggleStatus'])->name('pelatihan.toggle');
     Route::get('/pelatihan/{id_pelatihan}/participants', [App\Http\Controllers\PelatihanController::class, 'participants'])->name('pelatihan.participants');
-    Route::get('/pembayaran/toggle/{id_ppp}', [PembayaranController::class, 'toggleStatusP'])->name('pembayaran.toggle');
+    Route::get('/pembayaran/toggle/{id_ppp}/{konfirmasi}', [PembayaranController::class, 'toggleStatusP'])->name('pembayaran.toggle');
 
     Route::post('/seminar/upload-certificate', [SeminarController::class, 'uploadCertificate'])->name('seminar.upload-certificate');
     Route::post('/pelatihan/upload-certificate', [PelatihanController::class, 'uploadCertificate'])->name('pelatihan.upload-certificate');

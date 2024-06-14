@@ -81,10 +81,6 @@
             <i class="bi bi-people-fill" style="color: #38B6FF"></i>
             <img src="people.png" alt=""> Peserta {{$index->totalPendaftar}}
           </p>
-          <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-            <i class="bi bi-star-fill" style="color: #38B6FF"></i>
-            <img src="star.png" alt=""> 4.8
-          </p>
           <div style="text-align: center;">
             <a href="{{ url('/detailpelatihan/' . $index->id_pelatihan) }}" class="btn btn-info" style="text-decoration: none; color:white">
               Lihat Selengkapnya
@@ -125,10 +121,6 @@
           <p class="card-text align-items-center" style="margin-bottom: 0.6em;">
             <i class="bi bi-people-fill" style="color: #38B6FF"></i>
             <img src="people.png" alt=""> Peserta {{$index->totalPendaftar}}
-          </p>
-          <p class="card-text align-items-center" style="margin-bottom: 1.8em;">
-            <i class="bi bi-star-fill" style="color: #38B6FF"></i>
-            <img src="star.png" alt=""> 4.8
           </p>
           <div style="text-align: center;">
             <a href="{{ url('/detailseminar/' . $index->id_seminar) }}" class="btn btn-info" style="text-decoration: none; color:white">
