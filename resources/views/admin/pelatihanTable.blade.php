@@ -69,27 +69,44 @@
                     <tr>
                       <th>No</th>
                       <th>Nama</th>
+                      <th>Daftar Peserta</th>
                       <th>Tanggal Awal</th>
                       <th>Tanggal Akhir</th>
+                      <th>Harga</th>
                       <th>Deskripsi Singkat</th>
                       <th>Deskripsi Lengkap</th>
-                      <th>Action</th>
+                      <th>Upload Surat Undangan</th>
                       <th>Status</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     @php
                       use Illuminate\Support\Str;
                       $no = 1;
-                    @endphp
+                      @endphp
                     @foreach ($pelatihans as $pelatihan)
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $pelatihan->nama_pelatihan }}</td>
+                        <td>
+                          <a href="{{ route('admin.pelatihan.participants', ['id_pelatihan' => $pelatihan->id_pelatihan]) }}" class="btn btn-secondary">
+                            <i class="fas fa-users"></i> Peserta
+                          </a>
+                        </td>
                         <td>{{ $pelatihan->tanggal_awal }}</td>
                         <td>{{ $pelatihan->tanggal_akhir }}</td>
+                        <td>Rp.{{ number_format($pelatihan->harga_pelatihan, 0, ',', '.') }}</td>
                         <td>{{ Str::limit($pelatihan->deskripsi_singkat, 20) }}</td>
-                        <td>{{ Str::limit($pelatihan->deskripsi_lengkap, 20) }}</td>
+                        <td>{!! Str::limit($pelatihan->deskripsi_lengkap, 20) !!}</td>
+                        <td>
+                            <form action="{{ route('admin.pelatihan.upload-surat') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="id_pelatihan" value="{{ $pelatihan->id_pelatihan }}">
+                                <input type="file" name="surat_undangan" required>
+                                <button type="submit" class="btn btn-primary btn-sm">Upload</button>
+                            </form>
+                        </td>
                         <td>
                           <span class="tag {{ $pelatihan->status ? 'tag-success' : 'tag-danger' }}">
                             {{ $pelatihan->status ? 'OnGoing' : 'END' }}
@@ -104,9 +121,6 @@
                           </a>
                           <a href="{{ route('admin.pelatihan.toggle', ['id_pelatihan' => $pelatihan->id_pelatihan]) }}" class="btn btn-info">
                             <i class="fas fa-edit"></i> Status
-                          </a>
-                          <a href="{{ route('admin.pelatihan.participants', ['id_pelatihan' => $pelatihan->id_pelatihan]) }}" class="btn btn-secondary">
-                            <i class="fas fa-users"></i> Peserta
                           </a>
                         </td>
                       </tr>

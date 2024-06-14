@@ -21,6 +21,7 @@ class Seminar extends Model
         'deskripsi_singkat',
         'deskripsi_lengkap',
         'link',
-        'status'
+        'status',
+        'surat_undangan'
     ];
 }

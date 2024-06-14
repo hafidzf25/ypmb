@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class PelatihanController extends Controller
 {
     public function index(){
-        $pelatihans = Pelatihan::select('id_pelatihan', 'nama_pelatihan', 'tanggal_awal', 'tanggal_akhir', 'deskripsi_singkat', 'deskripsi_lengkap', 'status')->get();
+        $pelatihans = Pelatihan::select('id_pelatihan', 'nama_pelatihan', 'tanggal_awal', 'tanggal_akhir', 'deskripsi_singkat', 'deskripsi_lengkap', 'status', 'harga_pelatihan')->get();
 
         return view('admin.pelatihanTable', compact('pelatihans'));
     }
@@ -25,7 +25,7 @@ class PelatihanController extends Controller
     {
         $search = $request->input('search');
         
-        $data = Pelatihan::select('id_pelatihan', 'nama_pelatihan', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul', 'deskripsi_singkat', 'deskripsi_lengkap')
+        $data = Pelatihan::select('id_pelatihan', 'nama_pelatihan', 'tanggal_awal', 'tanggal_akhir', 'foto_sampul', 'deskripsi_singkat', 'deskripsi_lengkap', 'harga_pelatihan')
             ->when($search, function ($query, $search) {
                 return $query->where('nama_pelatihan', 'like', '%' . $search . '%');
             })
@@ -117,6 +117,8 @@ class PelatihanController extends Controller
             'foto_sampul' => $filename,
             'link' => null,
             'status' => 1, // Set status to 1
+            'surat_undangan' => null,
+            'harga_pelatihan' => $request->input('harga_pelatihan'),
         ]);
     
         // Save the pelatihan to the database
@@ -169,6 +171,7 @@ class PelatihanController extends Controller
             'deskripsi_lengkap' => $request->input('deskripsi_lengkap'),
             'link' => $request->input('link'),
             'foto_sampul' => $filename,
+            'harga_pelatihan' => $request->input('harga_pelatihan'),
         ]);
     
         // Redirect to the pelatihan list or any other page with a success message
@@ -190,7 +193,6 @@ class PelatihanController extends Controller
         $pelatihans = Pelatihan::find($id_pelatihan);
 
         if ($pelatihans) {
-            // Toggle the active status
             $pelatihans->status = $pelatihans->status ? 0 : 1;
             $pelatihans->save();
         }
@@ -221,5 +223,22 @@ class PelatihanController extends Controller
             $participant->save();
         }
         return redirect()->back()->with('success', 'Sertifikat uploaded successfully!');
+    }
+
+    public function uploadSurat(Request $request)
+    {
+        $participant = Pelatihan::find($request->id_pelatihan);
+    
+        $path = null;
+        if ($request->hasFile('surat_undangan')) {
+            $file = $request->file('surat_undangan');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('doc/Surat_Undangan'), $filename);
+            $path = 'Surat_Undangan/' . $filename;
+    
+            $participant->surat_undangan = $path;
+            $participant->save();
+        }
+        return redirect()->back()->with('success', 'Surat Undangan Berhasil diupload!');
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ParticipantsExport;
 
 use App\Models\PartisipanSeminar;
 use App\Models\Seminar;
@@ -179,6 +181,7 @@ class SeminarController extends Controller
             'foto_sampul' => $filename,
             'link' => null,
             'status' => 1, // Set status to 1
+            'surat_undangan' => null,
         ]);
 
         // Save the seminar to the database
@@ -286,5 +289,27 @@ class SeminarController extends Controller
             $participant->save();
         }
         return redirect()->back()->with('success', 'Sertifikat uploaded successfully!');
+    }
+
+    public function uploadSurat(Request $request)
+    {
+        $participant = seminar::find($request->id_seminar);
+    
+        $path = null;
+        if ($request->hasFile('surat_undangan')) {
+            $file = $request->file('surat_undangan');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('doc/Surat_Undangan'), $filename);
+            $path = 'Surat_Undangan/' . $filename;
+    
+            $participant->surat_undangan = $path;
+            $participant->save();
+        }
+        return redirect()->back()->with('success', 'Surat Undangan Berhasil diupload!');
+    }
+
+    public function exportParticipants($id_seminar)
+    {
+        return Excel::download(new ParticipantsExport, 'participants.xlsx');
     }
 }

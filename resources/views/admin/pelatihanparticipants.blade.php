@@ -16,6 +16,12 @@
                     </ol>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button class="btn btn-primary" onclick="showConfirmed()">Peserta Terkonfirmasi</button>
+                    <button class="btn btn-primary" onclick="showUnconfirmed()">Peserta Belum Terkonfirmasi</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -25,7 +31,7 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Confirmed Participants -->
-                    <div class="card">
+                    <div class="card" id="confirmed-participants">
                         <div class="card-header">
                             <h3 class="card-title">Peserta Terkonfirmasi {{ $pelatihan->nama_pelatihan }}</h3>
                         </div>
@@ -37,7 +43,8 @@
                                         <th>Nama Peserta</th>
                                         <th>Status Konfirmasi</th>
                                         <th>Bukti Pembayaran</th>
-                                        <th>Konfirmasi Pembayaran</th>
+                                        <th>Upload Sertifikat</th>
+                                        <th>Batalkan Konfirmasi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -82,8 +89,8 @@
                                             </form>
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp]) }}" class="btn btn-info">
-                                                <i class="fas fa-edit"></i> Konfirmasi
+                                            <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp]) }}" class="btn btn-danger">
+                                                <i class="fas fa-edit"></i> Batalkan
                                             </a>
                                         </td>
                                     </tr>
@@ -94,7 +101,7 @@
                     </div>
 
                     <!-- Pending Participants -->
-                    <div class="card">
+                    <div class="card" id="unconfirmed-participants" style="display: none;">
                         <div class="card-header">
                             <h3 class="card-title">Peserta Belum Terkonfirmasi {{ $pelatihan->nama_pelatihan }}</h3>
                         </div>
@@ -143,14 +150,6 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <form action="{{ route('admin.pelatihan.upload-certificate') }}" method="POST" enctype="multipart/form-data">
-                                                @csrf
-                                                <input type="hidden" name="id_ppp" value="{{ $participant->id_ppp }}">
-                                                <input type="file" name="sertifikat" required>
-                                                <button type="submit" class="btn btn-primary btn-sm">Upload</button>
-                                            </form>
-                                        </td>
-                                        <td>
                                             <a href="{{ route('admin.pembayaran.toggle', ['id_ppp' => $participant->id_ppp]) }}" class="btn btn-info">
                                                 <i class="fas fa-edit"></i> Konfirmasi
                                             </a>
@@ -170,4 +169,17 @@
         </div>
     </section>
 </div>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script>
+    function showConfirmed() {
+        document.getElementById('confirmed-participants').style.display = 'block';
+        document.getElementById('unconfirmed-participants').style.display = 'none';
+    }
+
+    function showUnconfirmed() {
+        document.getElementById('confirmed-participants').style.display = 'none';
+        document.getElementById('unconfirmed-participants').style.display = 'block';
+    }
+</script>
 @endsection

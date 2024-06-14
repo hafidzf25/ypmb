@@ -7,7 +7,7 @@
             <div class="container-fluid" style="border: 2px solid #000000; border-radius: 10px;">
                 <div class="row" style="background-color: #38B6FF;">
                     <div class="col pt-2 pb-2 d-flex align-items-center" style="border-bottom: 2px solid #000000;">
-                        <span style="font-size: larger; font-weight:900">Pelatihan Meningkatkan Keterampilan Komunikasi di Tempat Kerja</span>
+                        <span style="font-size: larger; font-weight:900">{{ $data->nama_pelatihan }}</span>
                     </div>
                 </div>
                 <div class="row">
@@ -45,7 +45,7 @@
                             @csrf
                             <div class="row mb-4">
                                 <div class="col-12 mb-3">
-                                    <span>Biaya pendaftaran untuk pelatihan ini adalah Rp.15.000</span>
+                                    <span>Biaya pendaftaran untuk pelatihan ini adalah Rp.{{ number_format($data->harga_pelatihan, 0, ',', '.') }}</span>
                                 </div>
                                 <div class="col-12">
                                     <span>BNI : 192810293123</span>

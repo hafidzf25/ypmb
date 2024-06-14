@@ -68,10 +68,12 @@
                     <tr>
                       <th>No</th>
                       <th>Nama</th>
+                      <th>Daftar Peserta</th>
                       <th>Tanggal</th>
                       <th>Waktu Pelaksanaan</th>
                       <th>Deskripsi Singkat</th>
                       <th>Deskripsi Lengkap</th>
+                      <th>Upload Surat Undangan</th>
                       <th>Action</th>
                       <th>Status</th>
                     </tr>
@@ -85,10 +87,23 @@
                       <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $seminar->nama_seminar }}</td>
+                        <td>
+                          <a href="{{ route('admin.seminar.participants', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-secondary">
+                            <i class="fas fa-users"></i> Peserta
+                          </a>
+                        </td>
                         <td>{{ $seminar->tanggal_seminar }}</td>
                         <td>{{ date('H:i', strtotime($seminar->waktu_seminar)) }} WIB</td>
                         <td>{{ Str::limit($seminar->deskripsi_singkat, 20) }}</td>
                         <td>{{ Str::limit($seminar->deskripsi_lengkap, 20) }}</td>
+                        <td>
+                          <form action="{{ route('admin.seminar.upload-surat') }}" method="POST" enctype="multipart/form-data">
+                              @csrf
+                              <input type="hidden" name="id_seminar" value="{{ $seminar->id_seminar }}">
+                              <input type="file" name="surat_undangan" required>
+                              <button type="submit" class="btn btn-primary btn-sm">Upload</button>
+                          </form>
+                      </td>
                         <td>
                           <span class="tag {{ $seminar->status ? 'tag-success' : 'tag-danger' }}">
                             {{ $seminar->status ? 'OnGoing' : 'END' }}
@@ -103,9 +118,6 @@
                           </a>
                           <a href="{{ route('admin.seminar.toggle', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-info">
                             <i class="fas fa-edit"></i> Status
-                          </a>
-                          <a href="{{ route('admin.seminar.participants', ['id_seminar' => $seminar->id_seminar]) }}" class="btn btn-secondary">
-                            <i class="fas fa-users"></i> Peserta
                           </a>
                         </td>
                       </tr>
