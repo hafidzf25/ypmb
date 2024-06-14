@@ -95,7 +95,7 @@
                         <td>{{ $seminar->tanggal_seminar }}</td>
                         <td>{{ date('H:i', strtotime($seminar->waktu_seminar)) }} WIB</td>
                         <td>{{ Str::limit($seminar->deskripsi_singkat, 20) }}</td>
-                        <td>{{ Str::limit($seminar->deskripsi_lengkap, 20) }}</td>
+                        <td>{!! Str::limit($seminar->deskripsi_lengkap, 20) !!}</td>
                         <td>
                           <form action="{{ route('admin.seminar.upload-surat') }}" method="POST" enctype="multipart/form-data">
                               @csrf

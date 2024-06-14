@@ -45,7 +45,7 @@
                 Informasi Umum
             </span>
             <br><br>
-            <p>{!! nl2br(e($data->deskripsi_lengkap)) !!}</p>
+            <p>{!! $data->deskripsi_lengkap !!}</p>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 m-3" style="padding-right:0; padding-left:0; height: auto; box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); border-radius: 20px; font-weight:bold">
             <div class="col" style="background-color: #38B6FF; color:white; padding:2.5vh; border-radius: 20px 20px 0 0; ">
