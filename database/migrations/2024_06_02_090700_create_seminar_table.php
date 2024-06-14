@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('deskripsi_lengkap');
             $table->string('link')->nullable();
             $table->integer('status');
+            $table->string('surat_undangan')->nullable();
 
             $table->timestamps();
         });

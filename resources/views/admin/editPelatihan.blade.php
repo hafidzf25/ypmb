@@ -52,11 +52,15 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Deskripsi Singkat</label>
-                            <textarea class="form-control" name="deskripsi_singkat" rows="3" placeholder="Enter ...">{{ $pelatihans->deskripsi_singkat }}</textarea>
+                            <textarea class="form-control" name="deskripsi_singkat" id="deskripsi_singkat" rows="3" placeholder="Enter ...">{{ $pelatihans->deskripsi_singkat }}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Deskpripsi Lengkap</label>
-                            <textarea class="form-control" name="deskripsi_lengkap" rows="3" placeholder="Enter ...">{{ $pelatihans->deskripsi_lengkap }}</textarea>
+                            <label for="exampleInputPassword1">Deskripsi Lengkap</label>
+                            <textarea class="form-control" name="deskripsi_lengkap" id="deskripsi_lengkap" rows="3" placeholder="Enter ...">{{ $pelatihans->deskripsi_lengkap }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Harga</label>
+                            <input class="form-control" name="harga_pelatihan" placeholder="Masukan Harga" value="{{ $pelatihans->harga_pelatihan }}"></input>
                         </div>
                         <div class="form-group">
                             <label for="link">Link</label>
@@ -90,20 +94,22 @@
     <!-- /.content -->
   </div> 
 
+  <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
   <script>
-  function previewImage(event) {
-    var reader = new FileReader();
-    reader.onload = function(){
-      var output = document.getElementById('imagePreview');
-      output.src = reader.result;
-      output.style.display = 'block';
+    CKEDITOR.replace('deskripsi_lengkap');
+
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('imagePreview');
+            output.src = reader.result;
+            output.style.display = 'block';
+        }
+        reader.readAsDataURL(event.target.files[0]);
+        
+        var fileName = event.target.files[0].name;
+        var label = document.getElementById('exampleInputFileLabel');
+        label.textContent = fileName;
     }
-    reader.readAsDataURL(event.target.files[0]);
-    
-    // Update the label with the selected file name
-    var fileName = event.target.files[0].name;
-    var label = document.getElementById('exampleInputFileLabel');
-    label.textContent = fileName;
-  }
-</script>
+  </script>
 @endsection

@@ -14,7 +14,8 @@
             </div>
             <div class="col mb-3 mt-3" style="line-height: 2.5vh; font-weight:500">
                 <span style="font-size: 0.9rem; line-height:1vh;">
-                    {{$data->deskripsi_singkat}}</span>
+                    {{ $data->deskripsi_singkat }}
+                </span>
             </div>
             <div class="row align-items-center" style="font-size: smaller; font-weight:500; padding: 1vh 1vh 1vh 1vh;">
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-5">
@@ -46,7 +47,7 @@
                 Informasi Umum
             </span>
             <br><br>
-            <p>{!! nl2br(e($data->deskripsi_lengkap)) !!}</p>
+            <p>{!! $data->deskripsi_lengkap !!}</p>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 m-3" style="padding-right:0; padding-left:0; box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); border-radius: 20px; font-weight:bold;">
             <div class="col" style="background-color: #38B6FF; color:white; padding:2.5vh; border-radius: 20px 20px 0 0; ">

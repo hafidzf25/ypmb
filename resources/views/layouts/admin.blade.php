@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="{{ asset('assets_admin/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('assets_admin/plugins/summernote/summernote-bs4.min.css') }}">
+  <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
   <style>
     .sidebar {
@@ -74,7 +75,7 @@
     <!-- Brand Logo -->
     <a href="{{ route('admin.dashboard') }}" class="brand-link">
       <img src="/images/Logo/ypmb.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">PMB Admin</span>
     </a>
 
     <!-- Sidebar -->

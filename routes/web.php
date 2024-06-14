@@ -116,5 +116,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminMiddle'], 'as' => 'adm
 
     Route::post('/seminar/upload-certificate', [SeminarController::class, 'uploadCertificate'])->name('seminar.upload-certificate');
     Route::post('/pelatihan/upload-certificate', [PelatihanController::class, 'uploadCertificate'])->name('pelatihan.upload-certificate');
-});
+    
+    Route::post('/pelatihan/upload-surat', [PelatihanController::class, 'uploadSurat'])->name('pelatihan.upload-surat');
+    Route::post('/seminar/upload-surat', [SeminarController::class, 'uploadSurat'])->name('seminar.upload-surat');
+
+    // Route::get('seminar/{id_seminar}/export-participants', [SeminarController::class, 'exportParticipants'])->name('seminar.export-participants');
+
+    });
 

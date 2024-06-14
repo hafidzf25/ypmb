@@ -21,6 +21,8 @@ class Pelatihan extends Model
         'deskripsi_singkat',
         'deskripsi_lengkap',
         'link',
-        'status'
+        'status',
+        'surat_undangan',
+        'harga_pelatihan'
     ];
 }
