@@ -55,7 +55,7 @@
 <div class="container-fluid" style="padding-left: 2em; padding-right: 2em; padding-top: 1em;">
   <div class="row align-items-center">
     <div class="col" style="font-weight: bolder; font-size: 2em;">
-      Pelatihan Populer
+      Pelatihan Terbaru
     </div>
     <div class="col text-end" style="font-weight: bolder; font-size: 1.2em;">
       <a href="{{ url('pelatihan') }}" style="text-decoration: none; color: inherit;">
@@ -100,7 +100,7 @@
 <div class="container-fluid" style="padding-left: 2em; padding-right: 2em;">
   <div class="row align-items-center">
     <div class="col" style="font-weight: bolder; font-size: 2em;">
-      Seminar Populer
+      Seminar Terbaru
     </div>
     <div class="col text-end" style="font-weight: bolder; font-size: 1.2em;">
       <a href="{{ url('seminar') }}" style="text-decoration: none; color: inherit;">
