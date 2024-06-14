@@ -20,28 +20,24 @@ class SeminarSeeder extends Seeder
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
-                'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
-                                        
-                                        Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
-                                        
-                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
-                                        
-                                         Pada pelatihan ini peserta akan mempelajari :
+                'deskripsi_lengkap' => '<p><strong>Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.</strong></p>
 
-                                        1. Implementasi Kurikulum Merdeka dalam Layanan Bimbingan dan Konseling 
-                                        2. Penyusunan Program Bimbingan dan Konseling
-                                        3. Strategi Layanan Bimbingan dan Konseling
-                                        4. Layanan Peminatan dan Perencanaan Individual
-                                        5. Evaluasi, Pelaporan, dan Tindak Lanjut
-                                        
-                                        Setelah mengikuti pelatihan ini, peserta diharapkan mampu Membuat Media Pembelajaran Berbasis Artificial Intelligence. Pelatihan ini akan berlangsung selama 5 hari. 
-                                        
-                                        Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
-                                        
-                                        Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
-                                        Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
-                                        Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+<p>Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.<br />
+Peserta wajib mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.</p>
+
+<p>Pada pelatihan ini peserta akan mempelajari :</p>
+
+<ol>
+	<li>Implementasi Kurikulum Merdeka dalam Layanan Bimbingan dan Konseling&nbsp;</li>
+	<li>Penyusunan Program Bimbingan dan Konseling</li>
+	<li>Strategi Layanan Bimbingan dan Konseling</li>
+	<li>Layanan Peminatan dan Perencanaan Individual</li>
+	<li>Evaluasi, Pelaporan, dan Tindak Lanjut</li>
+</ol>
+
+<p>Setelah mengikuti pelatihan ini, peserta diharapkan mampu Membuat Media Pembelajaran Berbasis Artificial Intelligence. Pelatihan ini akan berlangsung selama 5 hari.&nbsp;</p>
+
+<p>Setelah mendaftar, silakan gabung ke grup diskusi Pelatihan dengan cara scan QRCode atau klik<em>&nbsp;l</em><em>ink</em>&nbsp;berikut :&nbsp;</p>',
                 'link' => null,
                 'status' => 1,
             ],
@@ -51,27 +47,21 @@ class SeminarSeeder extends Seeder
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test2.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
-                'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
-                                        
-                                        Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
-                                        
-                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
-                                        
-                                        Pada pelatihan ini peserta akan mempelajari :
+                'deskripsi_lengkap' => '<p><strong>Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.</strong></p>
 
-                                        1. Artificial Intelligent (AI) dalam Pembelajaran
-                                        2. Pembuatan Presentasi Multimedia pembelajaran Berbasis AI
-                                        3. Pembuatan Video Pembelajaran Berbasis AI
-                                        4. Pembuatan Asesmen Pembelajaran Berbasis AI
-                                        
-                                        Setelah mengikuti pelatihan ini, peserta diharapkan mampu Membuat Media Pembelajaran Berbasis Artificial Intelligence. Pelatihan ini akan berlangsung selama 5 hari. 
+<p>Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.<br />
+Peserta wajib mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.</p>
 
-                                        Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
-                                        
-                                        Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
-                                        Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
-                                        Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+<p>Pada pelatihan ini peserta akan mempelajari :</p>
+
+<ol>
+	<li>Artificial Intelligent (AI) dalam Pembelajaran</li>
+	<li>Pembuatan Presentasi Multimedia pembelajaran Berbasis AI</li>
+	<li>Pembuatan Video Pembelajaran Berbasis AI</li>
+	<li>Pembuatan Asesmen Pembelajaran Berbasis AI</li>
+</ol>
+
+<p>Setelah mengikuti pelatihan ini, peserta diharapkan mampu Membuat Media Pembelajaran Berbasis Artificial Intelligence. Pelatihan ini akan berlangsung selama 5 hari.&nbsp;</p>',
                 'link' => null,
                 'status' => 1,
             ],
@@ -81,19 +71,10 @@ class SeminarSeeder extends Seeder
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test3.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
-                'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
-                                        
-                                        Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
-                                        
-                                       Peserta diharapkan mendaftar dan melakukan pelatihan sampai selesai secara mandiri. 
-                                       Pelatihan dilaksanakan selama 5 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
-                                        
-                                       Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
-                                        
-                                        Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
-                                        Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
-                                        Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+                'deskripsi_lengkap' => '<p><strong>Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.</strong></p>
+
+<p>Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.<br />
+Peserta diharapkan mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 5 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.</p>',
                 'link' => null,
                 'status' => 1,
             ],
@@ -103,34 +84,24 @@ class SeminarSeeder extends Seeder
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test4.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
-                'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
-                                        
-                                        Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
-                                        
-                                       Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
+                'deskripsi_lengkap' => '<p><strong>Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.</strong></p>
 
-                                        Anti Perundungan (Anti- Bullying) dan Kekerasan Terhadap Murid
+<p>Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.<br />
+Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.</p>
 
-                                        Sasaran
+<p><strong>Anti Perundungan (Anti- Bullying) dan Kekerasan Terhadap Murid</strong></p>
 
-                                        Sasaran dari pelatihan ini adalah tenga pendidik dan kependidikan, wali dari peserta didik, dan masyarakat umum yang memerlukan dan berkeinginan untuk meningkatkan pemahaman dan keterampilan dalam mencegah serta menanggapi perundungan dan kekerasan pada peserta didik
+<p><strong>Sasaran</strong></p>
 
-                                        ⁠Tujuan
+<p>Sasaran dari pelatihan ini adalah tenga pendidik dan kependidikan, wali dari peserta didik, dan masyarakat umum yang memerlukan dan berkeinginan untuk meningkatkan pemahaman dan keterampilan dalam mencegah serta menanggapi perundungan dan kekerasan pada peserta didik</p>
 
-                                        Tujuan dari pelatihan ini adalah meningkatkan pemahaman peserta terhadap fenomena perundungan dan kekerasan, sambil memberikan strategi yang efektif dalam mencegah, mendeteksi, dan menanggapi situasi tersebut di konteks pendidikan.                 
+<p><strong>⁠Tujuan</strong></p>
 
-                                        ⁠Latar Belakang
+<p>Tujuan dari pelatihan ini adalah meningkatkan pemahaman peserta terhadap fenomena perundungan dan kekerasan, sambil memberikan strategi yang efektif dalam mencegah, mendeteksi, dan menanggapi situasi tersebut di konteks pendidikan.<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
 
-                                        Pelatihan ini diselenggarakan sebagai tanggapan terhadap meningkatnya kasus perundungan dan kekerasan di kalangan peserta didik. Hal ini mendasari kebutuhan akan pendidikan yang lebih mendalam bagi para profesional pendidikan.  
+<p><strong>⁠Latar Belakang</strong></p>
 
- 
-                                        
-                                        Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
-                                        
-                                        Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
-                                        Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
-                                        Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+<p>Pelatihan ini diselenggarakan sebagai tanggapan terhadap meningkatnya kasus perundungan dan kekerasan di kalangan peserta didik. Hal ini mendasari kebutuhan akan pendidikan yang lebih mendalam bagi para profesional pendidikan.<strong>&nbsp;&nbsp;</strong></p>',
                 'link' => null,
                 'status' => 1,
             ],
@@ -140,28 +111,23 @@ class SeminarSeeder extends Seeder
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test4.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
-                'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
-                                        
-                                        Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
-                                        
-                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 5 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
-                                        Setelah mengikuti pelatihan ini, peserta diharapkan mampu mengimplementasikan Kurikulum Merdeka di Madrasah. 
+                'deskripsi_lengkap' => '<p><strong>Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.</strong></p>
 
-                                        Pada pelatihan ini peserta akan mempelajari :
+<p>Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.<br />
+Peserta diharapkan mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanaan selama 5 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.</p>
 
-                                        1.Perubahan Paradigma Pendidikan Madrasah
-                                        2.Pembelajaran Berdiferensiasi (Pengelolaan Pembelajaran pada Kurikulum Merdeka)
-                                        3.Asesmen Pembelajaran pada Kurikulum Merdeka
-                                        4.Proyek Penguatan Profil Pelajar Pancasila dan Profil Pelajar Rahmatan Lil alamin (P5 PPRA) 
-                                        5.Penyusunan Kurikulum Operasional Madrasah (KOM) 
-                                        6.Teknik Coaching dan Mentoring
-                                        
-                                        Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
-                                        
-                                        Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
-                                        Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
-                                        Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+<p>Setelah mengikuti pelatihan ini, peserta diharapkan mampu mengimplementasikan Kurikulum Merdeka di Madrasah.&nbsp;</p>
+
+<p>Pada pelatihan ini peserta akan mempelajari :</p>
+
+<ol>
+	<li>Perubahan Paradigma Pendidikan Madrasah</li>
+	<li>Pembelajaran Berdiferensiasi (Pengelolaan Pembelajaran pada Kurikulum Merdeka)</li>
+	<li>Asesmen Pembelajaran pada Kurikulum Merdeka</li>
+	<li>Proyek Penguatan Profil Pelajar Pancasila dan Profil Pelajar Rahmatan Lil&#39;alamin (P5 PPRA)</li>
+	<li>Penyusunan Kurikulum Operasional Madrasah (KOM)&nbsp;</li>
+	<li>Teknik Coaching dan Mentoring</li>
+</ol>',
                 'link' => null,
                 'status' => 1,
             ],
@@ -171,28 +137,22 @@ class SeminarSeeder extends Seeder
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test5.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
-                'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
-                                        
-                                        Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
-                                        
-                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
-                                        
-                                        Dalam pelatihan ini peserta akan mempelajari :
+                'deskripsi_lengkap' => '<p><strong>Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.</strong></p>
 
-                                        1.Karya Tulis Ilmiah sebagai Pengembangan Profesi
-                                        2.Sistematika Karya Tulis Ilmiah dan Tata Bahasa Indonesia dalam Penyusunan KTI
-                                        3.Teknik Analisis Data
-                                        4.Penyusunan Karya Tulis Ilmiah
-                                        5.Media Publikasi
-                                        
-                                        Setelah mengikuti pelatihan ini, peserta diharapkan mampu memahami dan menyusun Karya Tulis Ilmiah sesuai kaidah. Pelatihan ini akan dilaksanakan selama 5 hari
-                                        
-                                        Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
-                                        
-                                        Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
-                                        Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
-                                        Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+<p>Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.<br />
+Peserta wajib mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.</p>
+
+<p><strong>Dalam pelatihan ini peserta akan mempelajari :</strong></p>
+
+<ol>
+	<li>Karya Tulis Ilmiah sebagai Pengembangan Profesi</li>
+	<li>Sistematika Karya Tulis Ilmiah dan Tata Bahasa Indonesia dalam Penyusunan KTI</li>
+	<li>Teknik Analisis Data</li>
+	<li>Penyusunan Karya Tulis Ilmiah</li>
+	<li>Media Publikasi</li>
+</ol>
+
+<p>Setelah mengikuti pelatihan ini, peserta diharapkan mampu memahami dan menyusun Karya Tulis Ilmiah sesuai kaidah. Pelatihan ini akan dilaksanakan selama 5 hari.</p>',
                 'link' => null,
                 'status' => 1,
             ],
@@ -202,41 +162,29 @@ class SeminarSeeder extends Seeder
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test6.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
-                'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
-                                        
-                                        Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
-                                        
-                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
-                                        
-                                       Pada pelatihan ini, peserta akan mempelajari : 
+                'deskripsi_lengkap' => '<p><strong>Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.</strong></p>
 
-                                        Best Practice Kewirausahaan dan Ekonomi Kreatif di Pesantren
+<p>Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.<br />
+Peserta wajib mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.</p>
 
-                                        1.Entrepreneurship MIndset : Dra. Budi Lestari, M.Pd
-                                        2.Business Skill : Dr. Fatma Widyastuti, S.Pd., M.Ed
-                                        3.Business Plan : Achmad Subkhan, S.H.I., M.S.I.
-                                        4.Marketing Mix : Dra. Hj. Ngamilah, M.S.I
-                                        5.Akuntansi dan Manajemen Keuangan : Dr. Hj. Siti Rokhanah, M.Ag.
+<p><strong>Pada pelatihan ini, peserta akan mempelajari :&nbsp;</strong></p>
 
+<ol>
+	<li>Best Practice Kewirausahaan dan Ekonomi Kreatif di Pesantren</li>
+	<li>Entrepreneurship MIndset : Dra. Budi Lestari, M.Pd</li>
+	<li>Business Skill : Dr. Fatma Widyastuti, S.Pd., M.Ed</li>
+	<li>Business Plan : Achmad Subkhan, S.H.I., M.S.I.</li>
+	<li>Marketing Mix : Dra. Hj. Ngamilah, M.S.I</li>
+	<li>Akuntansi dan Manajemen Keuangan : Dr. Hj. Siti Rokhanah, M.Ag.</li>
+</ol>
 
-                                        Sasaran Pelatihan : pengelola pondok pesantren, santri/santriwati, alumni pondok pesantren.
+<p>Sasaran Pelatihan : pengelola pondok pesantren, santri/santriwati, alumni pondok pesantren.</p>
 
-                                        Tujuan Pelatihan : Untuk menginternalisasi nilai, sikap dan keterampilan kewirausahaan di lingkungan pondok pesantren dengan pengelolaan modern. 
+<p>Tujuan Pelatihan : Untuk menginternalisasi nilai, sikap dan keterampilan kewirausahaan di lingkungan pondok pesantren dengan pengelolaan modern.&nbsp;</p>
 
-                                        Latar Belakang Pelatihan
+<p><strong>Latar Belakang Pelatihan</strong></p>
 
-                                        Pondok pesantren sebagai pusat pendidikan Islam sering memainkan peran krusial dalam membentuk karakter dan pengetahuan para santri. Dengan memahami pentingnya pengembangan ekonomi di tingkat komunitas, pesantren-pesantren modern mulai menyelenggarakan pelatihan kewirausahaan dan ekonomi kreatif. Langkah ini dilakukan untuk memberdayakan santri dan masyarakat sekitarnya agar mampu menghadapi tantangan ekonomi serta menciptakan lapangan kerja. Pelatihan tersebut bertujuan membangun keterampilan bisnis, pengetahuan manajemen, dan kreativitas dalam rangka mendukung pembangunan ekonomi lokal. Dengan demikian, pesantren bukan hanya tempat pendidikan agama, tetapi juga menjadi motor penggerak ekonomi yang berkelanjutan di wilayahnya.
-
-                                        
-
-                                        Pelatihan ini akan berlangsung selama 5 hari. 
-                                        
-                                        Mengapa harus ikuti Seminar ini : Seminar ini sangat dibutuhkan untuk meningkatkan keterampilan digital penyuluh agar dapat menyediakan media penyuluhan yang lebih atraktif dan inovatif serta dapat meningkatkan efisiensi dan produktivitas para penyuluh dalam membuat media penyuluhan.
-                                        
-                                        Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
-                                        Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
-                                        Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                        Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+<p>Pondok pesantren sebagai pusat pendidikan Islam sering memainkan peran krusial dalam membentuk karakter dan pengetahuan para santri. Dengan memahami pentingnya pengembangan ekonomi di tingkat komunitas, pesantren-pesantren modern mulai menyelenggarakan pelatihan kewirausahaan dan ekonomi kreatif. Langkah ini dilakukan untuk memberdayakan santri dan masyarakat sekitarnya agar mampu menghadapi tantangan ekonomi serta menciptakan lapangan kerja. Pelatihan tersebut bertujuan membangun keterampilan bisnis, pengetahuan manajemen, dan kreativitas dalam rangka mendukung pembangunan ekonomi lokal. Dengan demikian, pesantren bukan hanya tempat pendidikan agama, tetapi juga menjadi motor penggerak ekonomi yang berkelanjutan di wilayahnya.</p>',
                 'link' => null,
                 'status' => 1,
             ],
@@ -246,37 +194,32 @@ class SeminarSeeder extends Seeder
                 'waktu_seminar' => '14:00',
                 'foto_sampul' => 'test7.png',
                 'deskripsi_singkat' => 'Seminar ini akan membahas strategi dan teknik efektif untuk meningkatkan keterampilan komunikasi di tempat kerja. Peserta akan belajar bagaimana membangun hubungan yang baik dengan rekan kerja, atasan, dan klien melalui komunikasi yang jelas dan efektif. Selain itu, Seminar ini juga akan membahas cara mengatasi konflik komunikasi dan meningkatkan kepercayaan dalam berkomunikasi di lingkungan kerja. Jika Anda ingin menjadi seorang komunikator yang lebih baik dan sukses di tempat kerja, Seminar ini cocok untuk Anda!',
-                'deskripsi_lengkap' => 'Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama.
-                                        
-                                        Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.
-                                        
-                                        Peserta dapat mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dilaksanakan selama 4 hari, dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.
-                                        
-                                        Pada pelatihan ini peserta akan mempelajari :
+                'deskripsi_lengkap' => '<p><strong>Selamat datang di Pelatihan Mandiri Bersertifikat Kementerian Agama. Pelatihan ini akan berlangsung selama 5 hari.&nbsp;</strong></p>
 
-                                            A. Numerasi di mana-mana:
+<p>Pelatihan di Pintar berbasis MOOC (Massive Open Online Course) dilakukan secara Asynchronous dan full online, sehingga tidak ada jadwal Zoom ataupun tatap muka.<br />
+Peserta wajib mendaftar dan melakukan pelatihan sampai selesai secara mandiri. Pelatihan dapat dilakukan kapanpun dan dimanapun sesuai dengan kebutuhan peserta selama masih dalam periode pelaksanaan pelatihan.</p>
 
-                                            1. Pengantar Penguatan Numerasi dalam Kurikulum Merdeka
+<p><strong>Pada pelatihan ini peserta akan mempelajari :</strong></p>
 
-                                            2. Pendekatan Numerasi Lintas Kurikulum
+<p>A. Numerasi di mana-mana:</p>
 
-                                            3. Numerasi di Lingkungan Sekitar
+<p>1. Pengantar Penguatan Numerasi dalam Kurikulum Merdeka</p>
 
-                                            B. Ide-Ide Praktis Penggunaan Alat Matematika
+<p>2. Pendekatan Numerasi Lintas Kurikulum</p>
 
-                                            1. Numerasi Berbasis Alat Elektronik
+<p>3. Numerasi di Lingkungan Sekitar</p>
 
-                                            2. Numerasi Berbasis Alat Non Elektronik
+<p>B. Ide-Ide Praktis Penggunaan Alat Matematika</p>
 
-                                            C. Permainan Kaya Numerasi
+<p>1. Numerasi Berbasis Alat Elektronik</p>
 
-                                            1. Permainan Berbasis Digital Kaya Numerasi 
+<p>2. Numerasi Berbasis Alat Non Elektronik</p>
 
-                                            2. Permainan Berbasis Non Digital Kaya Numerasi
-                                            Penyusunan Materi Penyuluhan Berbasis TIK : Media Eka Putra, M.Ag.
-                                            Pembuatan Blog bagi Penyuluh : El Azadivon Fhelsi, S.Si., M.Biomed.
-                                            Pembuatan Media Penyuluhan Berbasis Android : Suryadi, M.Si.
-                                            Publikasi Konten Video di Media Digital : Rivana Upitasari, S.E., M.M.',
+<p>C. Permainan Kaya Numerasi</p>
+
+<p>1. Permainan Berbasis Digital Kaya Numerasi&nbsp;</p>
+
+<p>2. Permainan Berbasis Non Digital Kaya Numerasi</p>',
                 'link' => null,
                 'status' => 1,
             ],

@@ -51,11 +51,11 @@
                         </div>
                         <div class="form-group">
                         <label for="exampleInputPassword1">Deskripsi Singkat</label>
-                        <textarea class="form-control" name="deskripsi_singkat" rows="3" placeholder="Enter ..."></textarea>
+                        <textarea class="form-control" name="deskripsi_singkat" id="deskripsi_singkat" rows="3" placeholder="Enter ..."></textarea>
                         </div>
                         <div class="form-group">
                         <label for="exampleInputPassword1">Deskpripsi Lengkap</label>
-                        <textarea class="form-control" name="deskripsi_lengkap" rows="3" placeholder="Enter ..."></textarea>
+                        <textarea class="form-control" name="deskripsi_lengkap" id='deskripsi_lengkap' rows="3" placeholder="Enter ..."></textarea>
                         </div>
                         <div class="form-group">
                         <label for="foto_sampul">Foto Sampul</label>
@@ -85,8 +85,10 @@
     </section>
     <!-- /.content -->
   </div> 
-
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
   <script>
+
+  CKEDITOR.replace('deskripsi_lengkap');
   function previewImage(event) {
     var reader = new FileReader();
     reader.onload = function(){
