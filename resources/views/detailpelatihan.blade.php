@@ -26,7 +26,13 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl  text-end">
                     @if($status == 1)
+                    @if($datapartisipan->konfirmasi == 0)
+                    <a class="btn btn-warning text-white custom-width" style="border-radius:1vh; width:20vh">Pending</a>
+                    @elseif($datapartisipan->konfirmasi == 1)
                     <a class="btn btn-success text-white custom-width" style="border-radius:1vh; width:20vh">Terdaftar</a>
+                    @elseif($datapartisipan->konfirmasi == 2)
+                    <a class="btn btn-danger text-white custom-width" style="border-radius:1vh; width:20vh">Gagal Verif</a>
+                    @endif
                     @else
                     @if(auth()->check())
                     <a href="{{ url('/pembayaran/' . $data->id_pelatihan) }}" class="btn btn-info text-white custom-width" style="background-color: #FEAD01; border-radius:1vh; width:20vh">Daftar</a>
@@ -53,10 +59,55 @@
             <div class="col" style="background-color: #38B6FF; color:white; padding:2.5vh; border-radius: 20px 20px 0 0; ">
                 Mengenai Pelatihan
             </div>
-            <div class="col text-center mt-3">
+            <div class="col text-center mt-3 mb-3">
+                <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="true" aria-controls="collapseExample4" style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
+                    <span>
+                        Surat Undangan
+                        <i class="bi bi-caret-down-fill"></i>
+                    </span>
+                </button>
+                <div class="collapse" id="collapseExample4">
+                    <div>
+                        <a class="btn btn-success" style="color: #FFFFFF;">Unduh Surat Undangan</a>
+                        <form action="{{ route('files.upload') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div>
+                                <label for="files">Choose files</label>
+                                <input type="file" name="files[]" id="files" multiple>
+                            </div>
+                            <div>
+                                <button type="submit">Upload Files</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="true" aria-controls="collapseExample3  " style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
+                    <span>
+                        Status Verifikasi
+                        <i class="bi bi-caret-down-fill"></i>
+                    </span>
+                </button>
+                <div class="collapse" id="collapseExample3">
+                    <div>
+                        @if($status == 0)
+                        <button type="button" class="btn btn-danger">Belum Terdaftar</button> <br> <br>
+                        @else
+                        @if($datapartisipan->konfirmasi == 1)
+                        <button type="button" class="btn btn-success">Terdaftar!</button> <br>
+                        @elseif($datapartisipan->konfirmasi == 2)
+                        <p>Bukti yang diberikan tidak valid</p>
+                        <a href="{{ url('/editpembayaran/' . $data->id_pelatihan . '/' . auth()->user()->id) }}" class="btn btn-info" style="color: #FFFFFF;">Edit Bukti</a>
+                        @else
+                        Pembayaran sedang diverifikasi terlebih dahulu.<br><br>
+                        @endif
+                        @endif
+                    </div>
+                </div>
+
                 <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample" style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
                     <span>
-                        Classroom Pelatihan
+                        Grup Pelatihan
                         <i class="bi bi-caret-down-fill"></i>
                     </span>
                 </button>
@@ -69,7 +120,7 @@
                         @if($data->link == '')
                         <button type="button" class="btn btn-danger">Menunggu</button> <br> <br>
                         @else
-                        <a href="{{$data->link}}" class="btn btn-success" style="color: #FFFFFF;">Join</a>
+                        <a target="_blank" href="{{$data->link}}" class="btn btn-success" style="color: #FFFFFF;">Bergabung ke grup</a>
                         @endif
                         @else
                         Pembayaran sedang diverifikasi terlebih dahulu.<br><br>
@@ -77,6 +128,7 @@
                         @endif
                     </div>
                 </div>
+
                 <button class="btn btn mt-3 mb-3 p-3 text-start" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="true" aria-controls="collapseExample2  " style="background-color:#38B6FF; color:white; font-weight:bold; border-radius:20px; width:50vh">
                     <span>
                         Sertifikat
