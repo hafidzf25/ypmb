@@ -26,9 +26,6 @@
                         <label for="password_user" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password" required>
                     </div>
-                    <div class="mb-3 text-center">
-                        <p class="small mb-3"><a class="text-black-50" href="{{ url('/') }}">Lupa Password?</a></p>
-                    </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 10px; background-color:#38B6FF">Masuk</button>
                     </div>

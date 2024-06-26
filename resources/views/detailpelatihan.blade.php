@@ -49,10 +49,6 @@
 <div class="container-fluid">
     <div class="row" style="padding:2em; margin-top:1vh; margin-bottom:5vh; display: flex; align-items: flex-start;">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 p-3 m-3" style="box-shadow: 0 0 4px rgba(0,0,0,0.5); border-radius:20px">
-            <span style="font-weight:bolder; font-size:3vh">
-                Informasi Umum
-            </span>
-            <br><br>
             <p>{!! $data->deskripsi_lengkap !!}</p>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 m-3" style="padding-right:0; padding-left:0; box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); border-radius: 20px; font-weight:bold;">
@@ -71,7 +67,7 @@
                         @if($data->surat_undangan != '')
                         <a href="{{ asset('doc/' . $data->surat_undangan) }}" class="btn btn-success" style="color: #FFFFFF;" download>Unduh Surat Undangan</a>
                         @else
-                        <a class="btn btn-warning" style="color: #FFFFFF;">Belum ada surat undangan</a>
+                        <a class="btn btn-danger" style="color: #FFFFFF;">Belum ada surat undangan</a>
                         @endif
                     </div>
                 </div>

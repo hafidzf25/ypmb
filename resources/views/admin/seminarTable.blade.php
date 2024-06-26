@@ -74,8 +74,8 @@
                       <th>Deskripsi Singkat</th>
                       <th>Deskripsi Lengkap</th>
                       <th>Upload Surat Undangan</th>
-                      <th>Action</th>
                       <th>Status</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>

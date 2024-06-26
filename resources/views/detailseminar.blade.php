@@ -41,10 +41,6 @@
 <div class="container-fluid">
     <div class="row" style="padding:2em; margin-top:1vh; margin-bottom:0vh; display: flex; align-items: flex-start;">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 p-3 m-3" style="box-shadow: 0 0 4px rgba(0,0,0,0.5); border-radius:20px">
-            <span style="font-weight:bolder; font-size:3vh">
-                Informasi Umum
-            </span>
-            <br><br>
             <p>{!! $data->deskripsi_lengkap !!}</p>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 m-3" style="padding-right:0; padding-left:0; height: auto; box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); border-radius: 20px; font-weight:bold">
