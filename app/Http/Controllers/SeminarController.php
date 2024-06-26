@@ -245,6 +245,16 @@ class SeminarController extends Controller
             'foto_sampul' => $filename,
         ]);
 
+        $uploadedFilePaths = [];
+        if ($request->hasFile('files')) {
+            foreach ($request->file('files') as $file) {
+                $filename = $file->getClientOriginalName();
+                $file->move(public_path('doc/Sertifikat_Seminar'), $filename);
+                $path = 'doc/Sertifikat_Seminar/' . $filename;
+                $uploadedFilePaths[] = $path;
+            }
+        }
+
         // Redirect to the seminar list or any other page with a success message
         return redirect()->route('admin.seminar')->with('success', 'Seminar updated successfully');
     }
